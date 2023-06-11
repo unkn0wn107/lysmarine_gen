@@ -63,8 +63,8 @@ cd "$BK_DIR"
 mkdir tmp-o-bundle-"$LMARCH" || exit 2
 cd tmp-o-bundle-"$LMARCH"
 
-wget -O opencpn-plugins-bundle-o_5_6_x-"$LMARCH".tar.gz https://github.com/bareboat-necessities/opencpn-plugins-bundle/raw/main/bundles/opencpn-plugins-bundle-o_5_6_x-bullseye-"$LMARCH".tar.gz?raw=true
-gzip -cd opencpn-plugins-bundle-o_5_6_x-"$LMARCH".tar.gz | tar xvf -
+wget -O opencpn-plugins-bundle-"$LMARCH".tar.gz https://github.com/bareboat-necessities/lysmarine_gen/releases/download/vTest/opencpn-plugins-bundle-o_5_8_x-bullseye-"$LMARCH".tar.gz
+gzip -cd opencpn-plugins-bundle-"$LMARCH".tar.gz | tar xvf -
 
 cp -r -p lib/* /usr/lib/
 cp -r -p bin/* /usr/bin/
@@ -74,47 +74,6 @@ cp -r -p include/* /usr/include/
 
 cd ..
 rm -rf tmp-o-bundle-"$LMARCH"
-
-if [ "$LMARCH" == 'arm64' ]; then
-  mkdir tmp-op && cd tmp-op
-  wget https://github.com/bareboat-necessities/opencpn-plugins-bundle/raw/main/rtlsdr_pi/bullseye-arm64/librtlsdr_pi.so && \
-  mv librtlsdr_pi.so /usr/lib/opencpn/
-
-  wget https://github.com/bareboat-necessities/opencpn-plugins-bundle/raw/main/launcher_pi/bullseye-arm64/liblauncher_pi.so && \
-  mv liblauncher_pi.so /usr/lib/opencpn/
-  mkdir -p /usr/share/opencpn/plugins/launcher_pi/data
-  wget -O /usr/share/opencpn/plugins/launcher_pi/data/launcher_pi.svg https://github.com/nohal/launcher_pi/raw/master/data/launcher_pi.svg
-  wget -O /usr/share/opencpn/plugins/launcher_pi/data/launcher_pi_rollover.svg https://github.com/nohal/launcher_pi/raw/master/data/launcher_pi_rollover.svg
-  wget -O /usr/share/opencpn/plugins/launcher_pi/data/launcher_pi_toggled.svg https://github.com/nohal/launcher_pi/raw/master/data/launcher_pi_toggled.svg
-
-  wget https://github.com/bareboat-necessities/opencpn-plugins-bundle/raw/main/ocpndebugger_pi/bullseye-arm64/libocpndebugger_pi.so && \
-  mv libocpndebugger_pi.so /usr/lib/opencpn/
-  mkdir -p /usr/share/opencpn/plugins/ocpndebugger_pi/data
-  wget -O /usr/share/opencpn/plugins/ocpndebugger_pi/data/ocpndebugger_pi.svg https://github.com/nohal/ocpndebugger_pi/raw/master/data/ocpndebugger_pi.svg
-  wget -O /usr/share/opencpn/plugins/ocpndebugger_pi/data/ocpndebugger_pi_rollover.svg https://github.com/nohal/ocpndebugger_pi/raw/master/data/ocpndebugger_pi_rollover.svg
-  wget -O /usr/share/opencpn/plugins/ocpndebugger_pi/data/ocpndebugger_pi_toggled.svg https://github.com/nohal/ocpndebugger_pi/raw/master/data/ocpndebugger_pi_toggled.svg
-
-  wget https://github.com/bareboat-necessities/opencpn-plugins-bundle/raw/main/objsearch_pi/bullseye-arm64/libobjsearch_pi.so && \
-  mv libobjsearch_pi.so /usr/lib/opencpn/
-  mkdir -p /usr/share/opencpn/plugins/objsearch_pi/data
-  wget -O /usr/share/opencpn/plugins/objsearch_pi/data/objsearch_pi.svg https://github.com/nohal/objsearch_pi/raw/master/data/objsearch_pi.svg
-  wget -O /usr/share/opencpn/plugins/objsearch_pi/data/objsearch_pi_rollover.svg https://github.com/nohal/objsearch_pi/raw/master/data/objsearch_pi_rollover.svg
-  wget -O /usr/share/opencpn/plugins/objsearch_pi/data/objsearch_pi_toggled.svg https://github.com/nohal/objsearch_pi/raw/master/data/objsearch_pi_toggled.svg
-
-  wget https://github.com/bareboat-necessities/opencpn-plugins-bundle/raw/main/iacfleet_pi/bullseye-arm64/IACFleet-0.30.0%2B2208221341.badb38c_debian-11-arm64.tar.gz
-  gzip -cd IACFleet-0.30.0+2208221341.badb38c_debian-11-arm64.tar.gz | tar xvf - --strip-components=1
-  cp -r -p lib/* /usr/lib/
-  cp -r -p share/* /usr/share/
-  mv /usr/share/opencpn/plugins/IACFleet_pi /usr/share/opencpn/plugins/iacfleet_pi
-
-  wget https://dl.cloudsmith.io/public/opencpn/windvane-prod/raw/names/windvane_pi-1.0.26.0-flatpak-aarch64-20.08-flatpak-arm64-tarball/versions/v1.0.26.0/windvane_pi-1.0.26.0-aarch64_flatpak-20.08.tar.gz
-  gzip -cd windvane_pi-1.0.26.0-aarch64_flatpak-20.08.tar.gz | tar xvf - --strip-components=1
-  cp -r -p lib/* /usr/lib/
-  cp -r -p share/* /usr/share/
-
-  cd .. && rm -rf tmp-op
-fi
-
 
 if [ -f /usr/lib/opencpn/libPolar_pi.so ]; then
   mv /usr/lib/opencpn/libPolar_pi.so /usr/lib/opencpn/libpolar_pi.so
@@ -142,10 +101,9 @@ mv readme.txt /usr/local/share/rastow/
 
 
 # TODO: temp fix
-wget https://github.com/bareboat-necessities/lysmarine_gen/releases/download/vTest/opencpn_5.6.2+dfsg-2_arm64.deb
-wget https://github.com/bareboat-necessities/lysmarine_gen/releases/download/vTest/opencpn-data_5.6.2+dfsg-2_all.deb
-dpkg -i opencpn_5.6.2+dfsg-2_arm64.deb opencpn-data_5.6.2+dfsg-2_all.deb
-rm opencpn_5.6.2*.deb opencpn-data_5.6.2*.deb
+wget https://github.com/bareboat-necessities/lysmarine_gen/releases/download/vTest/opencpn_5.8.2+7987+9f64845a3.ubuntu20.04.1_arm64.deb
+dpkg -i opencpn_5.8.2+7987+9f64845a3.ubuntu20.04.1_arm64.deb
+rm opencpn_5.8*_arm64.deb
 rm /etc/apt/sources.list.d/opencpn.list
 
 # ImgKap https://github.com/nohal
