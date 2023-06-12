@@ -78,18 +78,18 @@ chown -R user:user /home/user/.local
 cd ..
 rm -rf tmp-o-bundle-"$LMARCH"
 
-if [ -f /usr/lib/opencpn/libPolar_pi.so ]; then
-  mv /usr/lib/opencpn/libPolar_pi.so /usr/lib/opencpn/libpolar_pi.so
+if [ -f /home/user/.local/lib/opencpn/libPolar_pi.so ]; then
+  mv /home/user/.local/lib/opencpn/libPolar_pi.so /usr/lib/opencpn/libpolar_pi.so
 fi
 
-if [ -f /usr/lib/opencpn/liblogbookkonni_pi.so ]; then
-  rm -f /usr/lib/opencpn/libLogbookKonni_pi.so
+if [ -f /home/user/.local/lib/opencpn/liblogbookkonni_pi.so ]; then
+  rm -f /home/user/.local/lib/opencpn/libLogbookKonni_pi.so
 fi
 
-mv /usr/share/opencpn/plugins/tactics_pi/data/Tactics.svg /usr/share/opencpn/plugins/tactics_pi/data/tactics.svg
-mv /usr/share/opencpn/plugins/tactics_pi/data/Tactics_rollover.svg /usr/share/opencpn/plugins/tactics_pi/data/tactics_rollover.svg
-mv /usr/share/opencpn/plugins/tactics_pi/data/Tactics_toggled.svg /usr/share/opencpn/plugins/tactics_pi/data/tactics_toggled.svg
-#mv /usr/share/opencpn/plugins/CanadianTides_pi/data/canadiantides_panel_icon.png /usr/share/opencpn/plugins/CanadianTides_pi/data/CanadianTides_panel_icon.png
+mv /home/user/.local/share/opencpn/plugins/tactics_pi/data/Tactics.svg /home/user/.local/share/opencpn/plugins/tactics_pi/data/tactics.svg
+mv /home/user/.local/share/opencpn/plugins/tactics_pi/data/Tactics_rollover.svg /home/user/.local/share/opencpn/plugins/tactics_pi/data/tactics_rollover.svg
+mv /home/user/.local/share/opencpn/plugins/tactics_pi/data/Tactics_toggled.svg /home/user/.local/share/opencpn/plugins/tactics_pi/data/tactics_toggled.svg
+#mv /home/user/.local/share/opencpn/plugins/CanadianTides_pi/data/canadiantides_panel_icon.png /home/user/.local/share/opencpn/plugins/CanadianTides_pi/data/CanadianTides_panel_icon.png
 
 wget https://download.tuxfamily.org/xinutop/rastow/rastow-0.4.tgz
 gzip -cd rastow-0.4.tgz | tar xvf -
