@@ -66,6 +66,7 @@ cd tmp-o-bundle-"$LMARCH"
 wget -O opencpn-plugins-bundle-"$LMARCH".tar.gz https://github.com/bareboat-necessities/lysmarine_gen/releases/download/vTest/opencpn-plugins-bundle-o_5_8_x-bullseye-"$LMARCH".tar.gz
 gzip -cd opencpn-plugins-bundle-"$LMARCH".tar.gz | tar xvf -
 
+mkdir -p /home/user/.local/lib /home/user/.local/bin /home/user/.local/share /home/user/.local/doc /home/user/.local/include
 cp -r -p lib/* /home/user/.local/lib/
 cp -r -p bin/* /home/user/.local/bin/
 cp -r -p share/* /home/user/.local/share/
