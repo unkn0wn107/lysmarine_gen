@@ -64,17 +64,15 @@ mkdir tmp-o-bundle-"$LMARCH" || exit 2
 cd tmp-o-bundle-"$LMARCH"
 
 wget -O opencpn-plugins-bundle-"$LMARCH".tar.gz https://github.com/bareboat-necessities/lysmarine_gen/releases/download/vTest/opencpn-plugins-bundle-o_5_8_x-bullseye-"$LMARCH".tar.gz
-CUR_DIR=$(pwd)
-cd /home/user/.local
 gzip -cd $CUR_DIR/opencpn-plugins-bundle-"$LMARCH".tar.gz | tar xvf -
-chown -R user:user /home/user/.local
-cd $CUR_DIR
 
-cp -r -p lib/* /usr/lib/
-cp -r -p bin/* /usr/bin/
-cp -r -p share/* /usr/share/
-cp -r -p doc/* /usr/doc/
-cp -r -p include/* /usr/include/
+cp -r -p lib/* /home/user/.local/lib/
+cp -r -p bin/* /home/user/.local/bin/
+cp -r -p share/* /home/user/.local/share/
+cp -r -p doc/* /home/user/.local/doc/
+cp -r -p include/* /home/user/.local/include/
+
+chown -R user:user /home/user/.local
 
 cd ..
 rm -rf tmp-o-bundle-"$LMARCH"
