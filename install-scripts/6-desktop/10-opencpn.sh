@@ -104,8 +104,8 @@ mv readme.txt /usr/local/share/rastow/
 
 
 # TODO: temp fix
-wget https://github.com/bareboat-necessities/lysmarine_gen/releases/download/vTest/opencpn_5.8.2+7987+9f64845a3.ubuntu20.04.1_arm64.deb
-dpkg -i opencpn_5.8.2+7987+9f64845a3.ubuntu20.04.1_arm64.deb
+wget https://github.com/bareboat-necessities/lysmarine_gen/releases/download/vTest/opencpn_5.8.4+8089+1637c28fb.ubuntu20.04.1_arm64.deb
+dpkg -i opencpn_5.8.4+8089+1637c28fb.ubuntu20.04.1_arm64.deb
 rm opencpn_5.8*_arm64.deb
 rm /etc/apt/sources.list.d/opencpn.list
 
