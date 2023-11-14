@@ -3,7 +3,7 @@
 mkdir -p /var/log/chrony
 
 apt-get install -y -q chrony
-systemctl disable systemd-timesyncd
+systemctl disable systemd-timesyncd || true
 
 ## TimeZone
 ln -fs /usr/share/zoneinfo/Etc/UTC /etc/localtime
