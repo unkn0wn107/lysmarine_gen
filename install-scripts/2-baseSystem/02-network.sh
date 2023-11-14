@@ -19,7 +19,7 @@ if service --status-all | grep -Fq 'dhcpcd'; then
 	systemctl disable dhcpcd.service
 fi
 systemctl disable wpa_supplicant.service
-systemctl disable hostapd.service
+systemctl disable hostapd.service || true
 
 
 ## Disable some useless networking services
