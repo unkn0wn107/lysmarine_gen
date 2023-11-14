@@ -6,11 +6,11 @@ executors:
   boot-linux:
     machine:
       resource_class: large
-      image: ubuntu-2004:2023.10.1
+      image: ubuntu-2204:2023.10.1
   boot-linux-arm:
     machine:
       resource_class: arm.large
-      image: ubuntu-2004:2023.10.1
+      image: ubuntu-2204:2023.10.1
 commands:
   git-checkout:
     steps:
