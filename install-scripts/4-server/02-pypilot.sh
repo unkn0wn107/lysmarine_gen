@@ -103,7 +103,7 @@ pushd ./stageCache
       python3 setup.py build
     popd
   fi
-  pushd /usr/local/lib/python3.9/dist-packages/wmm2020
+  pushd /usr/local/lib/python3.11/dist-packages/wmm2020
     mkdir build
     cd build
     cmake ..

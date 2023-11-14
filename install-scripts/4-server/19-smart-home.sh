@@ -24,10 +24,10 @@ chown homeassistant:homeassistant /home/homeassistant
 {
 cat << EOF
   cd /srv/homeassistant
-  python3.9 -m venv .
+  python3.11 -m venv .
   source bin/activate
-  python3.9 -m pip install wheel
-  pip3.9 install "homeassistant" sqlalchemy fnvhash setuptools
+  python3.11 -m pip install wheel
+  pip3.11 install "homeassistant" sqlalchemy fnvhash setuptools
   mkdir -p /home/homeassistant/.homeassistant
   rm -rf /home/homeassistant/.cache
 EOF
@@ -60,10 +60,10 @@ chown homeassistant:homeassistant esphome
 {
 cat << EOF
   cd /srv/esphome
-  python3.9 -m venv .
+  python3.11 -m venv .
   source bin/activate
-  python3.9 -m pip install wheel
-  pip3.9 install esphome tornado esptool
+  python3.11 -m pip install wheel
+  pip3.11 install esphome tornado esptool
   rm -rf /home/homeassistant/.cache
 EOF
 } | sudo -u homeassistant -H -s
