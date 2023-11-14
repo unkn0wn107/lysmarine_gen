@@ -25,7 +25,7 @@ systemctl disable hostapd.service || true
 ## Disable some useless networking services
 systemctl disable NetworkManager-wait-online.service # if we do not boot remote user over the network this is not needed
 systemctl disable ModemManager.service # for 2G/3G/4G
-systemctl disable pppd-dns.service # For dial-up Internet LOL
+systemctl disable pppd-dns.service || true # For dial-up Internet LOL
 
 install -v -m 0644 "$FILE_FOLDER"/wifi_powersave@.service "/etc/systemd/system/"
 systemctl disable wifi_powersave@on.service
