@@ -7,10 +7,10 @@
 
   thisArch="raspios"
   cpuArch="arm64"
-  zipName="raspios_lite_arm64/images/raspios_lite_arm64-2023-05-03/2023-05-03-raspios-bullseye-arm64-lite.img.xz"
+  zipName="raspios_lite_arm64/images/raspios_lite_arm64-2023-10-10/2023-10-10-raspios-bookworm-arm64-lite.img.xz"
   if [ "armhf" == "$MY_CPU_ARCH" ]; then
     cpuArch="armhf"
-    zipName="raspios_lite_armhf/images/raspios_lite_armhf-2023-02-22/2023-02-21-raspios-bullseye-armhf-lite.img.xz"
+    zipName="raspios_lite_armhf/images/raspios_lite_armhf-2023-10-10/2023-10-10-raspios-bookworm-armhf-lite.img.xz"
   fi
   imageSource="https://downloads.raspberrypi.org/${zipName}"
 
@@ -73,7 +73,7 @@ EOF
   ls -l ./work/$thisArch/"$imageName"
 
   # Renaming the OS and moving it to the release folder.
-  cp -v ./work/$thisArch/"$imageName" ./release/$thisArch/lysmarine-bbn-bullseye_"${LYSMARINE_VER}"-${thisArch}-${cpuArch}.img
+  cp -v ./work/$thisArch/"$imageName" ./release/$thisArch/test-bbn-bookworm_"${LYSMARINE_VER}"-${thisArch}-${cpuArch}.img
 
   exit 0
 }

@@ -24,10 +24,10 @@ install -m 0644 -v "$FILE_FOLDER"/bbn-noaa-apt.list "/etc/apt/sources.list.d/"
 #install -m 0644 -v "$FILE_FOLDER"/openplotter.list "/etc/apt/sources.list.d/"
 install -m 0644 -v "$FILE_FOLDER"/chirp.list "/etc/apt/sources.list.d/"
 install -m 0644 -v "$FILE_FOLDER"/stellarium.list "/etc/apt/sources.list.d/"
-#install -m 0644 -v "$FILE_FOLDER"/piaware-bullseye.list "/etc/apt/sources.list.d/"
+#install -m 0644 -v "$FILE_FOLDER"/piaware-bookworm.list "/etc/apt/sources.list.d/"
 install -m 0644 -v "$FILE_FOLDER"/box86.list "/etc/apt/sources.list.d/"
 
-wget -O /etc/apt/sources.list.d/piaware-bullseye.list https://abcd567a.github.io/rpi/abcd567a.list
+wget -O /etc/apt/sources.list.d/piaware-bookworm.list https://abcd567a.github.io/rpi/abcd567a.list
 #wget -O /etc/apt/sources.list.d/box86.list https://ryanfortner.github.io/box86-debs/box86.list
 
 

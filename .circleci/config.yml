@@ -35,24 +35,24 @@ commands:
       - git-checkout
       - build-n-publish-debian
 jobs:
-  build-raspbian-bullseye-arm32:
+  build-raspbian-bookworm-arm32:
     executor: boot-linux-arm
     environment:
-      - DOCKER_IMAGE=arm32v7/debian:bullseye
-      - CONTAINER_DISTRO=debian:bullseye
+      - DOCKER_IMAGE=arm32v7/debian:bookworm
+      - CONTAINER_DISTRO=debian:bookworm
       - PKG_RELEASE=raspbian
-      - PKG_DISTRO=bullseye
+      - PKG_DISTRO=bookworm
       - PKG_ARCH=armhf
       - EMU=off
     steps:
       - do-all
-  build-raspbian-bullseye-arm64:
+  build-raspbian-bookworm-arm64:
     executor: boot-linux-arm
     environment:
-      - DOCKER_IMAGE=arm64v8/debian:bullseye
-      - CONTAINER_DISTRO=debian:bullseye
+      - DOCKER_IMAGE=arm64v8/debian:bookworm
+      - CONTAINER_DISTRO=debian:bookworm
       - PKG_RELEASE=raspbian
-      - PKG_DISTRO=bullseye
+      - PKG_DISTRO=bookworm
       - PKG_ARCH=arm64
       - EMU=off
     steps:
@@ -61,5 +61,5 @@ workflows:
   version: 2
   build_all:
     jobs:
-      - build-raspbian-bullseye-arm64
-#      - build-raspbian-bullseye-arm32
+      - build-raspbian-bookworm-arm64
+#      - build-raspbian-bookworm-arm32
