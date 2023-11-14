@@ -11,7 +11,7 @@ sed -i '/raspberrypi/d' /etc/hosts
 
 # Access Point management
 install -m0600 -v "$FILE_FOLDER"/lysmarine-hotspot.nmconnection "/etc/NetworkManager/system-connections/"
-systemctl disable dnsmasq
+systemctl disable dnsmasq || true
 
 
 ##  NetworkManager provide its own wpa_supplicant, stop the others to avoid conflicts.
