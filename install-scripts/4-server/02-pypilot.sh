@@ -69,6 +69,8 @@ fi
 
 echo $HOSTNAME
 cat /etc/hosts
+HOSTNAME=lysmarine
+export HOSTNAME
 #exit 0 # TODO: skip for now
 
 pushd ./stageCache
