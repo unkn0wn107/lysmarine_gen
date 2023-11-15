@@ -68,6 +68,8 @@ pushd /home/signalk/.signalk
   su signalk -s /bin/bash -c "export MAKEFLAGS='-j 4'; \
                  export NODE_ENV=production; \
                  pnpm install \
+                 @serialport+bindings-cpp@11.0.3 \
+                 @serialport+bindings@8.0.8 \
                  @signalk/charts-plugin  \
                  sk-resources-fs  \
                  freeboard-sk-helper  \
