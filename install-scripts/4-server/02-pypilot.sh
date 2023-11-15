@@ -60,6 +60,14 @@ fi
 #  dpkg -i wiringpi-2.61-g.deb && rm wiringpi-2.61-g.deb
 #fi
 
+## Give permission to sudo chrt without a password for the user pypilot.
+{
+  echo ""
+  echo 'pypilot ALL=(ALL) NOPASSWD: /usr/bin/chrt'
+  echo 'pypilot ALL=(ALL) NOPASSWD: /usr/bin/stty'
+  echo 'user ALL=(ALL) NOPASSWD: /usr/local/sbin/pypilot-restart'
+} >>/etc/sudoers
+
 pushd ./stageCache
   # Install RTIMULib2 as it's a dependency of pypilot
   if [[ ! -d ./RTIMULib2 ]]; then
@@ -177,14 +185,6 @@ install -v "$FILE_FOLDER"/pypilot_control.desktop "/usr/local/share/applications
 
 install -m 755 "$FILE_FOLDER"/pypilot-restart "/usr/local/sbin/pypilot-restart"
 install -m 755 "$FILE_FOLDER"/pypilot_detect.sh "/usr/local/sbin/pypilot_detect"
-
-## Give permission to sudo chrt without a password for the user pypilot.
-{
-  echo ""
-  echo 'pypilot ALL=(ALL) NOPASSWD: /usr/bin/chrt'
-  echo 'pypilot ALL=(ALL) NOPASSWD: /usr/bin/stty'
-  echo 'user ALL=(ALL) NOPASSWD: /usr/local/sbin/pypilot-restart'
-} >>/etc/sudoers
 
 ## Reduce excessive logging
 sed '1 i :msg, contains, "autopilot failed to read imu at time" stop' -i /etc/rsyslog.conf
