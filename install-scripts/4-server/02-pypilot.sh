@@ -67,7 +67,7 @@ fi
   echo 'user ALL=(ALL) NOPASSWD: /usr/local/sbin/pypilot-restart'
 } >>/etc/sudoers
 
-exit 0 # TODO: skip for now
+#exit 0 # TODO: skip for now
 
 pushd ./stageCache
   # Install RTIMULib2 as it's a dependency of pypilot
