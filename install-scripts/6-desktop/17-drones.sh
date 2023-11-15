@@ -2,6 +2,8 @@
 
 # https://github.com/ArduPilot/apm_planner
 
+exit 0 # TODO: disabled temporarily
+
 if [ "$LMARCH" == 'armhf' ]; then
   wget https://github.com/bareboat-necessities/apm_planner_4rpi/releases/download/v2.0.29-rc1-36-g1fba2b8fc/apmplanner2_2.0.29-rc1-36-g1fba2b8fc_armhf.deb -O apmplanner2.deb
 fi
