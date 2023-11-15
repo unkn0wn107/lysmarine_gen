@@ -115,6 +115,8 @@ pushd ./stageCache
       sed -i "s/ugfx_defs = \[\]/ugfx_defs = \['-DWIRINGPI'\]/" setup.py 
       git clone --depth=1 https://github.com/wiringPi/wiringPi
       cd wiringPi
+      WIRINGPI_SUDO=""
+      export WIRINGPI_SUDO
       ./build
       cd ..
       python3 setup.py build
