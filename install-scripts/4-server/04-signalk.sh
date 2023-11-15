@@ -63,11 +63,11 @@ npm cache clean --force
 npm install -g npm pnpm patch-package
 npm install -g --unsafe-perm --production signalk-server
 
-exit 0 # TODO: disabled temporarily
+#exit 0 # TODO: disabled temporarily
 
 ## Install signalk published plugins
 pushd /home/signalk/.signalk
-  su signalk -s /bin/bash -c "export MAKEFLAGS='-j 4'; \
+  sudo -u signalk -H /bin/bash -c "export MAKEFLAGS='-j 8'; \
                  export NODE_ENV=production; \
                  pnpm install \
                  @serialport+bindings-cpp@11.0.3 \
