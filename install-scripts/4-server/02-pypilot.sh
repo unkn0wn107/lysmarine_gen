@@ -67,6 +67,7 @@ fi
   echo 'user ALL=(ALL) NOPASSWD: /usr/local/sbin/pypilot-restart'
 } >>/etc/sudoers
 
+cat /etc/hosts
 #exit 0 # TODO: skip for now
 
 pushd ./stageCache
