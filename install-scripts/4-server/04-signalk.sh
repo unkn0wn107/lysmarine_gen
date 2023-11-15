@@ -63,7 +63,7 @@ npm cache clean --force
 npm install -g npm pnpm patch-package
 npm install -g --unsafe-perm --production signalk-server
 
-exit 0 # TODO: disabled temporarily
+#exit 0 # TODO: disabled temporarily
 
 ## Install signalk published plugins
 pushd /home/signalk/.signalk
@@ -188,7 +188,7 @@ echo 'user ALL=(ALL) NOPASSWD: /usr/local/sbin/signalk-restart' >>/etc/sudoers
 
 systemctl enable signalk
 
-sudo bash -c 'cat << EOF > /usr/local/share/applications/signalk-node-red.desktop
+bash -c 'cat << EOF > /usr/local/share/applications/signalk-node-red.desktop
 [Desktop Entry]
 Type=Application
 Name=SignalK-Node-Red
@@ -200,7 +200,7 @@ Icon=gtk-no
 Categories=Utility;
 EOF'
 
-sudo bash -c 'cat << EOF > /usr/local/share/applications/signalk-polar.desktop
+bash -c 'cat << EOF > /usr/local/share/applications/signalk-polar.desktop
 [Desktop Entry]
 Type=Application
 Name=SignalK-Polar
