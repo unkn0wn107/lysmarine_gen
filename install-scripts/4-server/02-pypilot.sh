@@ -24,7 +24,7 @@ apt-get install -y -q --no-install-recommends git python3 python3-pip python3-de
   python3-opengl \
   pigpio python3-pigpio python3-rpi.gpio \
   libelf1 libftdi1-2 libhidapi-libusb0 libusb-0.1-4 libusb-1.0-0 \
-  meson cmake make acl octave # https://kingtidesailing.blogspot.com/2016/02/how-to-setup-mpu-9250-on-raspberry-pi_25.html
+  meson cmake make acl octave avrdude # https://kingtidesailing.blogspot.com/2016/02/how-to-setup-mpu-9250-on-raspberry-pi_25.html
 
 systemctl disable watchdog
 systemctl disable lircd
@@ -205,9 +205,9 @@ echo > /RTIMULib.ini
 chown pypilot:pypilot /RTIMULib.ini
 chmod 664 /RTIMULib.ini
 
-wget https://github.com/bareboat-necessities/lysmarine_gen/releases/download/vTest/avrdude_7.0-20221004-1_arm64.deb
-dpkg -i avrdude_7*.deb
-rm -f avrdude_7*.deb
+#wget https://github.com/bareboat-necessities/lysmarine_gen/releases/download/vTest/avrdude_7.0-20221004-1_arm64.deb
+#dpkg -i avrdude_7*.deb
+#rm -f avrdude_7*.deb
 ln -s /etc/avrdude.conf /usr/local/etc/avrdude.conf
 
 # Fix displaying 3D boat in pypilot calibration tool
