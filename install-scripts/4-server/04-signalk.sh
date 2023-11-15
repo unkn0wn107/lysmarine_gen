@@ -63,11 +63,11 @@ npm cache clean --force
 npm install -g npm pnpm patch-package
 npm install -g --unsafe-perm --production signalk-server
 
-exit 0 # TODO: disabled temporarily
+#exit 0 # TODO: disabled temporarily
 
 ## Install signalk published plugins
 pushd /home/signalk/.signalk
-  sudo -u signalk -H /bin/bash -c "export MAKEFLAGS='-j 8'; \
+  su signalk --shell=/bin/bash --pty -c "export MAKEFLAGS='-j 8'; \
                  export NODE_ENV=production; \
                  pnpm install \
                  @signalk/charts-plugin  \
