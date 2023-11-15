@@ -12,6 +12,8 @@ apt-get -y --no-install-recommends install mopidy mopidy-mpd mopidy-tunein xdoto
 adduser mopidy video
 adduser mopidy audio
 
+exit 0 # TODO: disabled temporarily
+
 # Install some needed packages
 pip3 install install systems
 
