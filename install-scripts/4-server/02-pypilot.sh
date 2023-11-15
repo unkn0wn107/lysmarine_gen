@@ -1,6 +1,5 @@
 #!/bin/bash -e
 
-
 ## Create pypilot user to run the services.
 if [ ! -d /home/pypilot ]; then
 	echo "Creating pypilot user"
@@ -67,6 +66,8 @@ fi
   echo 'pypilot ALL=(ALL) NOPASSWD: /usr/bin/stty'
   echo 'user ALL=(ALL) NOPASSWD: /usr/local/sbin/pypilot-restart'
 } >>/etc/sudoers
+
+exit 0 # TODO: skip for now
 
 pushd ./stageCache
   # Install RTIMULib2 as it's a dependency of pypilot
