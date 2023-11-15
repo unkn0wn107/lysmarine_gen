@@ -21,6 +21,9 @@ chown homeassistant:homeassistant /srv/homeassistant
 mkdir -p /home/homeassistant
 chown homeassistant:homeassistant /home/homeassistant
 
+SHELL=/bin/bash
+export SHELL
+
 {
 cat << EOF
   cd /srv/homeassistant
