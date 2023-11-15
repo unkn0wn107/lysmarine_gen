@@ -21,20 +21,15 @@ chown homeassistant:homeassistant /srv/homeassistant
 mkdir -p /home/homeassistant
 chown homeassistant:homeassistant /home/homeassistant
 
-SHELL=/bin/bash
-export SHELL
+su homeassistant --shell=/bin/bash -c "
+  cd /srv/homeassistant;
+  python3.11 -m venv . ;
+  source bin/activate;
+  python3.11 -m pip install wheel;
+  pip3.11 install homeassistant sqlalchemy fnvhash setuptools;
+  mkdir -p /home/homeassistant/.homeassistant;
+  rm -rf /home/homeassistant/.cache"
 
-{
-cat << EOF
-  cd /srv/homeassistant
-  python3.11 -m venv .
-  source bin/activate
-  python3.11 -m pip install wheel
-  pip3.11 install "homeassistant" sqlalchemy fnvhash setuptools
-  mkdir -p /home/homeassistant/.homeassistant
-  rm -rf /home/homeassistant/.cache
-EOF
-} | sudo -u homeassistant -H -s
 
 bash -c 'cat << EOF > /etc/systemd/system/home-assistant@homeassistant.service
 [Unit]
@@ -60,17 +55,13 @@ cd /srv
 mkdir esphome
 chown homeassistant:homeassistant esphome
 
-{
-cat << EOF
-  cd /srv/esphome
-  python3.11 -m venv .
-  source bin/activate
-  python3.11 -m pip install wheel
-  pip3.11 install esphome tornado esptool
-  rm -rf /home/homeassistant/.cache
-EOF
-} | sudo -u homeassistant -H -s
-
+su homeassistant --shell=/bin/bash -c "
+  cd /srv/esphome;
+  python3.11 -m venv . ;
+  source bin/activate;
+  python3.11 -m pip install wheel;
+  pip3.11 install esphome tornado esptool;
+  rm -rf /home/homeassistant/.cache"
 
 bash -c 'cat << EOF > /etc/systemd/system/esphome@homeassistant.service
 [Unit]
