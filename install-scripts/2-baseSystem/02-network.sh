@@ -5,7 +5,6 @@ apt-get install -y -q network-manager make avahi-daemon bridge-utils wakeonlan #
 
 # Resolve lysmarine.local
 install -v "$FILE_FOLDER"/hostname "/etc/"
-echo "::1 localhost" >> /etc/hosts
 cat "$FILE_FOLDER"/hosts >> /etc/hosts
 sed -i '/raspberrypi/d' /etc/hosts
 
