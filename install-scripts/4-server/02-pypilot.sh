@@ -67,12 +67,6 @@ fi
   echo 'user ALL=(ALL) NOPASSWD: /usr/local/sbin/pypilot-restart'
 } >>/etc/sudoers
 
-echo $HOSTNAME
-cat /etc/hosts
-HOSTNAME=lysmarine
-export HOSTNAME
-#exit 0 # TODO: skip for now
-
 pushd ./stageCache
   # Install RTIMULib2 as it's a dependency of pypilot
   if [[ ! -d ./RTIMULib2 ]]; then
@@ -194,11 +188,11 @@ install -m 755 "$FILE_FOLDER"/pypilot-restart "/usr/local/sbin/pypilot-restart"
 install -m 755 "$FILE_FOLDER"/pypilot_detect.sh "/usr/local/sbin/pypilot_detect"
 
 ## Reduce excessive logging
-sed '1 i :msg, contains, "autopilot failed to read imu at time" stop' -i /etc/rsyslog.conf
-sed '1 i :msg, contains, "No IMU detected" stop' -i /etc/rsyslog.conf
-sed '1 i :msg, contains, "No IMU Detected" stop' -i /etc/rsyslog.conf
-sed '1 i :msg, contains, "Failed to open I2C bus" stop' -i /etc/rsyslog.conf
-sed '1 i :msg, contains, "Using fusion algorithm Kalman" stop' -i /etc/rsyslog.conf
+sed '1 i :msg, contains, "autopilot failed to read imu at time" stop' -i /etc/rsyslog.conf || true
+sed '1 i :msg, contains, "No IMU detected" stop' -i /etc/rsyslog.conf || true
+sed '1 i :msg, contains, "No IMU Detected" stop' -i /etc/rsyslog.conf || true
+sed '1 i :msg, contains, "Failed to open I2C bus" stop' -i /etc/rsyslog.conf || true
+sed '1 i :msg, contains, "Using fusion algorithm Kalman" stop' -i /etc/rsyslog.conf || true
 
 # prevent pypilot from changing port
 sed -i 's/8000/8080/' /etc/systemd/system/pypilot_web.service || true
