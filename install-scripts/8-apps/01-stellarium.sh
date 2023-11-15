@@ -7,10 +7,10 @@ apt-get -y -q install geographiclib-tools libqt5charts5 libqt5multimediawidgets5
 wget http://ppa.launchpad.net/stellarium/stellarium-releases/ubuntu/pool/main/s/stellarium/stellarium_23.3.0-upstream1.0~ubuntu22.04.1_arm64.deb
 wget http://ppa.launchpad.net/stellarium/stellarium-releases/ubuntu/pool/main/s/stellarium/stellarium-data_23.3.0-upstream1.0~ubuntu22.04.1_all.deb
 
-sudo dpkg-deb -xv stellarium_*.deb /
-sudo dpkg-deb -xv stellarium-data*.deb /
-sudo chown root:root /
-sudo chmod 755 /
+dpkg-deb -xv stellarium_*.deb /
+dpkg-deb -xv stellarium-data*.deb /
+chown root:root /
+chmod 755 /
 rm -f stellarium*.deb
 
 install -d -o 1000 -g 1000 -m 0755 "/home/user/.stellarium"
