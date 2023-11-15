@@ -43,7 +43,8 @@ if [ "$LMARCH" == 'arm64' ]; then
 #    python-socketio flask-socketio wmm2020
   apt-get install -y -q python3-pywavefront python3-pyglet python3-gps python3-gevent-websocket \
     python3-websocket-client python3-importlib-metadata \
-    python3-socketio python3-flask-socketio python3-wmm2020
+    python3-socketio python3-flask-socketio
+  pip3 install --break-system-packages wmm2020
 else
   apt-get install -y -q python3-flask-socketio
   pip3 install pywavefront pyglet gps gevent-websocket importlib_metadata "python-socketio<5" wmm2020
