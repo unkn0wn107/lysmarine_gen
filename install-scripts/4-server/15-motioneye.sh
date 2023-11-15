@@ -7,7 +7,7 @@ apt-get clean
 apt-get -y -q --no-install-recommends install ca-certificates curl python3 \
   python3-dev python3-pip libcurl4-openssl-dev gcc libssl-dev
 
-exit 0 # TODO: disable for now
+exit 0 # TODO: disable temporarily
 
 pip3 install 'https://github.com/motioneye-project/motioneye/archive/dev.tar.gz'
 
