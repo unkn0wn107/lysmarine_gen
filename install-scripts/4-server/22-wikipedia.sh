@@ -2,6 +2,8 @@
 
 apt-get install -y liblzma5 libicu72 libzstd1 libxapian30 libcurl3-gnutls aria2
 
+exit 0 # TODO: disabled temporarily
+
 if [ "$LMARCH" == 'arm64' ]; then
   wget https://github.com/bareboat-necessities/lysmarine_gen/releases/download/vTest/libzim7_7.2.0.0_arm64.deb
   wget https://github.com/bareboat-necessities/lysmarine_gen/releases/download/vTest/libkiwix10_10.1.1.0_arm64.deb
