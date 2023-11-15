@@ -65,7 +65,7 @@ npm install -g --unsafe-perm --production signalk-server
 
 ## Install signalk published plugins
 pushd /home/signalk/.signalk
-  su signalk --shell=/bin/bash -c "export MAKEFLAGS='-j 7'; \
+  su signalk --shell=/bin/bash -c "export MAKEFLAGS='-j 8'; \
                  export NODE_ENV=production; \
                  pnpm install \
                  @signalk/charts-plugin  \
