@@ -210,4 +210,4 @@ rm -f avrdude_7*.deb
 ln -s /etc/avrdude.conf /usr/local/etc/avrdude.conf
 
 # Fix displaying 3D boat in pypilot calibration tool
-pip3 install pyglet==1.5.27
+#pip3 install pyglet==1.5.27
