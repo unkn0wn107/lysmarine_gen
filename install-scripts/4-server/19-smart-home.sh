@@ -1,7 +1,7 @@
 #!/bin/bash -e
 
 apt-get install -y python3 python3-dev python3-venv python3-pip libffi-dev libssl-dev libjpeg-dev \
-   zlib1g-dev autoconf build-essential libopenjp2-7 libtiff5 libturbojpeg0 tzdata libsqlite3-dev
+   zlib1g-dev autoconf build-essential libopenjp2-7 libtiff6 libturbojpeg0 tzdata libsqlite3-dev
 
 mkdir libffi-tmp && cd libffi-tmp
 wget "https://github.com/libffi/libffi/releases/download/v3.3/libffi-3.3.tar.gz"
