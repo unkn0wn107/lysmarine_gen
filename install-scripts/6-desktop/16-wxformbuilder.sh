@@ -2,6 +2,8 @@
 
 apt-get -y install libwxgtk3.2-dev libwxgtk-media3.2-dev libboost-dev meson cmake make git
 
+exit 0 # TODO: disabled
+
 git clone https://github.com/wxFormBuilder/wxFormBuilder
 cd wxFormBuilder
 git checkout 0efcecf0214321ce94469a47d0e0ceef131de602  # 4.0.0
