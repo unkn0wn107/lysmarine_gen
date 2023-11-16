@@ -14,7 +14,7 @@ install -v -m 0644 "$FILE_FOLDER"/88-nuand-bootloader.rules "/etc/udev/rules.d/"
 install -v -m 0644 "$FILE_FOLDER"/99-direwolf-cmedia.rules "/etc/udev/rules.d/"
 install -v -m 0644 "$FILE_FOLDER"/99-thumbdv.rules "/etc/udev/rules.d/"
 
-apt-get -y -q install multimon-ng netcat\
+apt-get -y -q install multimon-ng       \
   cubicsdr                              \
   cutesdr                               \
   fldigi                                \
