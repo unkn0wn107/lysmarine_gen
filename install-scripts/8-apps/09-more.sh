@@ -140,11 +140,11 @@ cd "$CUR_DIR"
 
 install -v "$FILE_FOLDER"/term-weather.desktop "/usr/local/share/applications/"
 
-
-git clone --depth=1 https://github.com/formatc1702/WireViz
-cd WireViz/
-python3 setup.py install
-cd .. && rm -rf WireViz/
+# TODO: disabled temp
+#git clone --depth=1 https://github.com/formatc1702/WireViz
+#cd WireViz/
+#python3 setup.py install
+#cd .. && rm -rf WireViz/
 
 
 O_DIR=$(pwd)
