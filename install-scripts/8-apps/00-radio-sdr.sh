@@ -39,7 +39,6 @@ apt-get -y -q install multimon-ng       \
   dvb-tools                             \
   dvb-apps                              \
   dtv-scan-tables                       \
-  gr-dab                                \
   aprx                                  \
   wmctrl                                \
   chirp                                 \
