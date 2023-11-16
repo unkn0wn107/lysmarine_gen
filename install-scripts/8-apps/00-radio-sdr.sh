@@ -61,6 +61,8 @@ install -v "$FILE_FOLDER"/direwolf.conf -o 1000 -g 1000 "/home/user/"
 
 systemctl disable aprx
 
+exit 0 # TODO: disabled temp
+
 install -d -m 755 "/usr/local/share/noaa-apt"
 install -d -m 755 "/usr/local/share/noaa-apt/res"
 install -d -m 755 "/usr/local/share/noaa-apt/res/shapefiles"
