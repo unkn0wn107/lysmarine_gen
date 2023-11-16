@@ -31,7 +31,8 @@ npm cache clean --force
 
 #apt-get -q -y install arduino
 
-pip3 install adafruit-ampy
+# TODO: disabled temp
+#pip3 install adafruit-ampy
 
 install -v -m 0755 "$FILE_FOLDER"/bbn-change-password.sh "/usr/local/bin/bbn-change-password"
 install -v -m 0755 "$FILE_FOLDER"/bbn-rename-host.sh "/usr/local/sbin/bbn-rename-host"
