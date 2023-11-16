@@ -147,7 +147,8 @@ install -v "$FILE_FOLDER"/term-weather.desktop "/usr/local/share/applications/"
 #cd .. && rm -rf WireViz/
 
 
-O_DIR=$(pwd)
-chmod +x "$FILE_FOLDER"/add-ons/maiana-ais-install.sh
-"$FILE_FOLDER"/add-ons/maiana-ais-install.sh
-cd $O_DIR
+# TODO: disabled temp
+#O_DIR=$(pwd)
+#chmod +x "$FILE_FOLDER"/add-ons/maiana-ais-install.sh
+#"$FILE_FOLDER"/add-ons/maiana-ais-install.sh
+#cd $O_DIR
