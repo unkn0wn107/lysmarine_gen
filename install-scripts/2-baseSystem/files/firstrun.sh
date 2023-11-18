@@ -5,15 +5,15 @@
 
 set +e
 
-CURRENT_HOSTNAME=`cat /etc/hostname | tr -d " \t\n\r"`
+CURRENT_HOSTNAME=$(cat /etc/hostname | tr -d " \t\n\r")
 if [ -f /usr/lib/raspberrypi-sys-mods/imager_custom ]; then
    /usr/lib/raspberrypi-sys-mods/imager_custom set_hostname lysmarine
 else
    echo lysmarine >/etc/hostname
    sed -i "s/127.0.1.1.*$CURRENT_HOSTNAME/127.0.1.1\tlysmarine/g" /etc/hosts
 fi
-FIRSTUSER=`getent passwd 1000 | cut -d: -f1`
-FIRSTUSERHOME=`getent passwd 1000 | cut -d: -f6`
+FIRSTUSER=$(getent passwd 1000 | cut -d: -f1)
+FIRSTUSERHOME=$(getent passwd 1000 | cut -d: -f6)
 if [ -f /usr/lib/raspberrypi-sys-mods/imager_custom ]; then
    /usr/lib/raspberrypi-sys-mods/imager_custom enable_ssh
 else
@@ -56,7 +56,7 @@ WPAEOF
    chmod 600 /etc/wpa_supplicant/wpa_supplicant.conf
    rfkill unblock wifi
    for filename in /var/lib/systemd/rfkill/*:wlan ; do
-       echo 0 > $filename
+       echo 0 > "$filename"
    done
 fi
 if [ -f /usr/lib/raspberrypi-sys-mods/imager_custom ]; then
