@@ -1,6 +1,7 @@
 #!/bin/bash
 
 # rpi-imager generated with defaults for user, host etc
+# goes into /boot/
 
 set +e
 
