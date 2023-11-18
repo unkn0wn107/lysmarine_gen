@@ -17,12 +17,15 @@ fi
 
 ## RaspOS
 if [ -f /boot/cmdline.txt ]; then
-  sed -i '$s/$/\ loglevel=1\ splash\ logo.nologo\ vt.global_cursor_default=1\ plymouth.ignore-serial-consoles\ systemd.firstboot=off\ console=tty3\ rd.systemd.show_status=false/' /boot/cmdline.txt
+  #TODO: disabled
+  #sed -i '$s/$/\ loglevel=1\ splash\ logo.nologo\ vt.global_cursor_default=1\ plymouth.ignore-serial-consoles\ systemd.firstboot=off\ console=tty3\ rd.systemd.show_status=false/' /boot/cmdline.txt
   sed -i 's#console=serial0,115200 ##' /boot/cmdline.txt
   sed -i 's#console=/dev/serial0,115200 ##' /boot/cmdline.txt
   sed -i 's#console=serial0,9600 ##' /boot/cmdline.txt
   sed -i 's#console=/dev/serial0,9600 ##' /boot/cmdline.txt
-	setterm -cursor on >> /etc/issue
+
+	#TODO: disabled
+	#setterm -cursor on >> /etc/issue
 	echo 'i2c_dev' | tee -a /etc/modules
 fi
 
@@ -42,9 +45,10 @@ fi
 #fi
 
 ## Theming of the boot process
-install -v "$FILE_FOLDER"/ascii_logo.txt "/etc/motd"
-cp -r "$FILE_FOLDER"/dreams "/usr/share/plymouth/themes/"
-plymouth-set-default-theme dreams
+#TODO: disable
+#install -v "$FILE_FOLDER"/ascii_logo.txt "/etc/motd"
+#cp -r "$FILE_FOLDER"/dreams "/usr/share/plymouth/themes/"
+#plymouth-set-default-theme dreams
 
 # Armbian
 if [ -f /etc/issue ]; then
