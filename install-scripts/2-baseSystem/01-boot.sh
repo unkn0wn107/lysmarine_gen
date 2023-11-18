@@ -15,6 +15,7 @@
 #fi
 #
 ### RaspOS
+## console=serial0,115200 console=tty1 root=PARTUUID=7788c428-02 rootfstype=ext4 fsck.repair=yes rootwait quiet init=/usr/lib/raspberrypi-sys-mods/firstboot cfg80211.ieee80211_regdom=US systemd.run=/boot/firstrun.sh systemd.run_success_action=reboot systemd.unit=kernel-command-line.target
 #if [ -f /boot/cmdline.txt ]; then
 #  #TODO: disabled
 #  #sed -i '$s/$/\ loglevel=1\ splash\ logo.nologo\ vt.global_cursor_default=1\ plymouth.ignore-serial-consoles\ systemd.firstboot=off\ console=tty3\ rd.systemd.show_status=false/' /boot/cmdline.txt
