@@ -2,8 +2,9 @@
 apt-get install -y -q plymouth plymouth-label libblockdev-mdraid2
 
 ## This override the default tty1 behaviour to make it more discrete during the boot process
-install -v -d "/etc/systemd/system/getty@tty1.service.d"
-install -v -m0644 "$FILE_FOLDER"/skip-prompt.conf "/etc/systemd/system/getty@tty1.service.d/"
+# TODO: disabled
+#install -v -d "/etc/systemd/system/getty@tty1.service.d"
+#install -v -m0644 "$FILE_FOLDER"/skip-prompt.conf "/etc/systemd/system/getty@tty1.service.d/"
 
 ## RaspOS
 if [ -f /boot/config.txt ]; then
@@ -31,13 +32,14 @@ if [ -f /boot/armbianEnv.txt ]; then
 fi
 
 ## Debian
-if [ -f /etc/default/grub ] ; then
-  install -m0644 -v "$FILE_FOLDER"/grub "/etc/default/grub"
-  install -m0644 -v "$FILE_FOLDER"/background.png "/boot/grub/background.png"
-  echo FRAMEBUFFER=y >> /etc/initramfs-tools/conf.d/splash
-  update-initramfs -u
-  update-grub
-fi
+# TODO: disabled
+#if [ -f /etc/default/grub ] ; then
+#  install -m0644 -v "$FILE_FOLDER"/grub "/etc/default/grub"
+#  install -m0644 -v "$FILE_FOLDER"/background.png "/boot/grub/background.png"
+#  echo FRAMEBUFFER=y >> /etc/initramfs-tools/conf.d/splash
+#  update-initramfs -u
+#  update-grub
+#fi
 
 ## Theming of the boot process
 install -v "$FILE_FOLDER"/ascii_logo.txt "/etc/motd"
@@ -53,13 +55,15 @@ fi
 systemctl disable triggerhappy.service
 systemctl disable triggerhappy.socket
 
-install -v -m0644 "$FILE_FOLDER"/plymouth-start.service "/etc/systemd/system/"
+# TODO: disable
+#install -v -m0644 "$FILE_FOLDER"/plymouth-start.service "/etc/systemd/system/"
 
-install -v -d "/etc/systemd/system/console-setup.service.d"
-bash -c 'cat << EOF > /etc/systemd/system/console-setup.service.d/override.conf
-[Unit]
-After=systemd-tmpfiles-setup.service
-EOF'
+# TODO: disable
+#install -v -d "/etc/systemd/system/console-setup.service.d"
+#bash -c 'cat << EOF > /etc/systemd/system/console-setup.service.d/override.conf
+#[Unit]
+#After=systemd-tmpfiles-setup.service
+#EOF'
 
 #
 #install -v -d "/etc/systemd/system/keyboard-setup.service.d"
