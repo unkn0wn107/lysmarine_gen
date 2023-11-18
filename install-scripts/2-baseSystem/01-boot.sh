@@ -74,3 +74,5 @@ systemctl disable triggerhappy.socket
 
 # Swap
 sed -i 's/CONF_SWAPSIZE=100$/CONF_SWAPSIZE=2048/' /etc/dphys-swapfile
+
+systemctl disable systemd-firstboot.service
