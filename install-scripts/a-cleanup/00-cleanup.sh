@@ -8,7 +8,7 @@ apt-get remove -y --purge greybird-gtk-theme murrine-themes rpd-icons userconf-p
 
 apt-get -y autoremove
 apt-get clean
-npm cache clean --force
+npm cache clean --force || true
 rm -rf ~/.local/share/pnpm
 
 # remove python pip cache
