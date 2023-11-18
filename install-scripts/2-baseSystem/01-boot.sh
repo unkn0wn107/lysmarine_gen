@@ -23,8 +23,7 @@ if [ -f /boot/cmdline.txt ]; then
   sed -i 's#console=serial0,9600 ##' /boot/cmdline.txt
   sed -i 's#console=/dev/serial0,9600 ##' /boot/cmdline.txt
 
-	#TODO: disabled
-	#setterm -cursor on >> /etc/issue
+	setterm -cursor on >> /etc/issue
 	echo 'i2c_dev' | tee -a /etc/modules
 fi
 
