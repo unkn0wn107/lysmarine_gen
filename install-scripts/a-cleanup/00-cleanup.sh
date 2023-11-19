@@ -78,3 +78,7 @@ fake-hwclock save
 
 chown root:root /
 chmod 755 /
+
+rm -rf /boot/issue.txt
+#install -v -m0644 "$FILE_FOLDER"/issue.txt "/boot/"
+install -v -m0644 "$FILE_FOLDER"/firstrun.sh "/boot/"
