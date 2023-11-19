@@ -15,10 +15,11 @@
 #fi
 
 ## RaspOS
+#  systemd.run=/boot/firstrun.sh systemd.run_success_action=reboot systemd.unit=kernel-command-line.target
 # console=serial0,115200 console=tty1 root=PARTUUID=7788c428-02 rootfstype=ext4 fsck.repair=yes rootwait quiet init=/usr/lib/raspberrypi-sys-mods/firstboot cfg80211.ieee80211_regdom=US systemd.run=/boot/firstrun.sh systemd.run_success_action=reboot systemd.unit=kernel-command-line.target
 if [ -f /boot/cmdline.txt ]; then
   #sed -i '$s/$/\ console=tty1\ loglevel=1\ splash\ logo.nologo\ vt.global_cursor_default=1\ plymouth.ignore-serial-consoles\ console=tty3/' /boot/cmdline.txt
-  sed -i '$s/$/\ init=\/usr\/lib\/raspberrypi-sys-mods\/firstboot\ cfg80211.ieee80211_regdom=US\ systemd.run=\/boot\/firstrun.sh\ systemd.run_success_action=reboot\ systemd.unit=kernel-command-line.target/' /boot/cmdline.txt
+  sed -i '$s/$/\ systemd.run=\/boot\/firstrun.sh\ systemd.run_success_action=reboot\ systemd.unit=kernel-command-line.target/' /boot/cmdline.txt
   #sed -i 's#console=serial0,115200 ##' /boot/cmdline.txt
   #sed -i 's#console=/dev/serial0,115200 ##' /boot/cmdline.txt
   #sed -i 's#console=serial0,9600 ##' /boot/cmdline.txt
@@ -76,6 +77,7 @@ fi
 ## Swap
 #sed -i 's/CONF_SWAPSIZE=100$/CONF_SWAPSIZE=2048/' /etc/dphys-swapfile
 #
-##systemctl disable systemd-firstboot.service
+
+#systemctl disable systemd-firstboot.service
 
 install -v -m0755 "$FILE_FOLDER"/firstrun.sh "/boot/"
