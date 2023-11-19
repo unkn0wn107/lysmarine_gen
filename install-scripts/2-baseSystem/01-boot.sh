@@ -80,5 +80,5 @@ fi
 
 #systemctl disable systemd-firstboot.service
 
-install -v -m0644 "$FILE_FOLDER"/issue.txt "/boot/"
+#install -v -m0644 "$FILE_FOLDER"/issue.txt "/boot/"
 install -v -m0644 "$FILE_FOLDER"/firstrun.sh "/boot/"
