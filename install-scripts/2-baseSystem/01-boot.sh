@@ -18,7 +18,7 @@ fi
 #  systemd.run=/boot/firstrun.sh systemd.run_success_action=reboot systemd.unit=kernel-command-line.target
 # console=serial0,115200 console=tty1 root=PARTUUID=7788c428-02 rootfstype=ext4 fsck.repair=yes rootwait quiet init=/usr/lib/raspberrypi-sys-mods/firstboot cfg80211.ieee80211_regdom=US systemd.run=/boot/firstrun.sh systemd.run_success_action=reboot systemd.unit=kernel-command-line.target
 if [ -f /boot/cmdline.txt ]; then
-  sed -i '$s/$/\ console=tty1\ loglevel=1\ splash\ logo.nologo\ vt.global_cursor_default=1\ plymouth.ignore-serial-consoles\ console=tty3/' /boot/cmdline.txt
+  #sed -i '$s/$/\ console=tty1\ loglevel=1\ splash\ logo.nologo\ vt.global_cursor_default=1\ plymouth.ignore-serial-consoles\ console=tty3/' /boot/cmdline.txt
   sed -i '$s/$/\ cfg80211.ieee80211_regdom=US\ systemd.run=\/boot\/firstrun.sh\ systemd.run_success_action=reboot\ systemd.unit=kernel-command-line.target/' /boot/cmdline.txt
   sed -i 's#console=serial0,115200 ##' /boot/cmdline.txt
   sed -i 's#console=/dev/serial0,115200 ##' /boot/cmdline.txt
