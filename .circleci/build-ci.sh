@@ -7,7 +7,7 @@
 # bailout on errors and echo commands.
 set -xe
 
-LYSMARINE_VER=$(date +%Y-%m-%d-%H-%M)
+LYSMARINE_VER=$(date +%Y-%m-%d-r%H%M)
 DOCKER_SOCK="unix:///var/run/docker.sock"
 
 echo "DOCKER_OPTS=\"-H tcp://127.0.0.1:2375 -H $DOCKER_SOCK -s overlay2\"" | sudo tee /etc/default/docker >/dev/null
