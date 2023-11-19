@@ -27,8 +27,10 @@ else
       usermod -l "user" "$FIRSTUSER"
       usermod -m -d "/home/user" "user"
       groupmod -n "user" "$FIRSTUSER"
-      if grep -q "^autologin-user=" /etc/lightdm/lightdm.conf ; then
-         sed /etc/lightdm/lightdm.conf -i -e "s/^autologin-user=.*/autologin-user=user/"
+      if [ -f /etc/lightdm/lightdm.conf ]; then
+        if grep -q "^autologin-user=" /etc/lightdm/lightdm.conf ; then
+           sed /etc/lightdm/lightdm.conf -i -e "s/^autologin-user=.*/autologin-user=user/"
+        fi
       fi
       if [ -f /etc/systemd/system/getty@tty1.service.d/autologin.conf ]; then
          sed /etc/systemd/system/getty@tty1.service.d/autologin.conf -i -e "s/$FIRSTUSER/user/"
