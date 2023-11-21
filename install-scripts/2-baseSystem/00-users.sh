@@ -22,7 +22,7 @@ fi
 ## Add default user.
 adduser --uid 1000 --home /home/user --quiet --disabled-password -gecos "lysmarine" user
 echo 'user:changeme' | chpasswd
-echo "user ALL=(ALL:ALL) ALL" >> /etc/sudoers
+#echo "user ALL=(ALL:ALL) ALL" >> /etc/sudoers
 usermod -a -G netdev user
 usermod -a -G adm user
 usermod -a -G tty user
