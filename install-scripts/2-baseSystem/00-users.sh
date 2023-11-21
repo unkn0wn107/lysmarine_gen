@@ -10,39 +10,39 @@ sed -i "s/XKBLAYOUT=.*/XKBLAYOUT=\"us\"/g" /etc/default/keyboard
 #DPASS=$(echo 'changeme' | openssl passwd -6 -stdin)
 #echo "user:$DPASS" > /boot/userconf.txt
 #
-### Remove default user (if any).
-#oldUser=$(grep 1000:1000 /etc/passwd | cut -f1 -d:)
-#if [[ -n $oldUser ]]; then
-#	echo "Removing user $oldUser"
-#	userdel -r -f "$oldUser"
-#else
-#	echo "No default user found !"
-#fi
-#
-### Add default user.
-#adduser --uid 1000 --home /home/user --quiet --disabled-password -gecos "lysmarine" user
-#echo 'user:changeme' | chpasswd
-#echo "user ALL=(ALL:ALL) ALL" >> /etc/sudoers
-#usermod -a -G netdev user
-#usermod -a -G adm user
-#usermod -a -G tty user
-#usermod -a -G i2c user
-#usermod -a -G spi user
-#usermod -a -G gpio user
-#usermod -a -G sudo user
-#usermod -a -G video user
-#usermod -a -G input user     # for evdev-rce
-#usermod -a -G audio user
-#usermod -a -G dialout user
-#usermod -a -G lp user
-##usermod -a -G scanner user
-#usermod -a -G cdrom user
-#usermod -a -G plugdev user
-#usermod -a -G fax user
-#usermod -a -G voice user
-#usermod -a -G bluetooth user
-#usermod -a -G games user
-#usermod -a -G users user
+## Remove default user (if any).
+oldUser=$(grep 1000:1000 /etc/passwd | cut -f1 -d:)
+if [[ -n $oldUser ]]; then
+	echo "Removing user $oldUser"
+	userdel -r -f "$oldUser"
+else
+	echo "No default user found !"
+fi
+
+## Add default user.
+adduser --uid 1000 --home /home/user --quiet --disabled-password -gecos "lysmarine" user
+echo 'user:changeme' | chpasswd
+echo "user ALL=(ALL:ALL) ALL" >> /etc/sudoers
+usermod -a -G netdev user
+usermod -a -G adm user
+usermod -a -G tty user
+usermod -a -G i2c user
+usermod -a -G spi user
+usermod -a -G gpio user
+usermod -a -G sudo user
+usermod -a -G video user
+usermod -a -G input user     # for evdev-rce
+usermod -a -G audio user
+usermod -a -G dialout user
+usermod -a -G lp user
+#usermod -a -G scanner user
+usermod -a -G cdrom user
+usermod -a -G plugdev user
+usermod -a -G fax user
+usermod -a -G voice user
+usermod -a -G bluetooth user
+usermod -a -G games user
+usermod -a -G users user
 #
 #
 #groupadd -r lirc
