@@ -5,29 +5,29 @@ apt-get install -y -q plymouth plymouth-label libblockdev-mdraid2
 #install -v -d "/etc/systemd/system/getty@tty1.service.d"
 #install -v -m0644 "$FILE_FOLDER"/skip-prompt.conf "/etc/systemd/system/getty@tty1.service.d/"
 #
-### RaspOS
-#if [ -f /boot/config.txt ]; then
-#  if [ "$LMARCH" == 'armhf' ]; then
-#    echo "arm_64bit=1" >> /boot/config.txt
-#  fi
-#	cat "$FILE_FOLDER"/appendToConfig.txt >> /boot/config.txt
-#	sed -i 's/-kms-v3d$/-fkms-v3d,cma-128/' /boot/config.txt
-#fi
-#
-### RaspOS
-##  systemd.run=/boot/firstrun.sh systemd.run_success_action=reboot systemd.unit=kernel-command-line.target
-## console=serial0,115200 console=tty1 root=PARTUUID=7788c428-02 rootfstype=ext4 fsck.repair=yes rootwait quiet init=/usr/lib/raspberrypi-sys-mods/firstboot cfg80211.ieee80211_regdom=US systemd.run=/boot/firstrun.sh systemd.run_success_action=reboot systemd.unit=kernel-command-line.target
-#if [ -f /boot/cmdline.txt ]; then
-#  #sed -i '$s/$/\ console=tty1\ loglevel=1\ splash\ logo.nologo\ vt.global_cursor_default=1\ plymouth.ignore-serial-consoles\ console=tty3/' /boot/cmdline.txt
-#  sed -i '$s/$/\ cfg80211.ieee80211_regdom=US\ systemd.run=\/boot\/firstrun.sh\ systemd.run_success_action=reboot\ systemd.unit=kernel-command-line.target/' /boot/cmdline.txt
-#  sed -i 's#console=serial0,115200 ##' /boot/cmdline.txt
-#  sed -i 's#console=/dev/serial0,115200 ##' /boot/cmdline.txt
-#  sed -i 's#console=serial0,9600 ##' /boot/cmdline.txt
-#  sed -i 's#console=/dev/serial0,9600 ##' /boot/cmdline.txt
-#
-#	setterm -cursor on >> /etc/issue
-#	echo 'i2c_dev' | tee -a /etc/modules
-#fi
+## RaspOS
+if [ -f /boot/config.txt ]; then
+  if [ "$LMARCH" == 'armhf' ]; then
+    echo "arm_64bit=1" >> /boot/config.txt
+  fi
+	cat "$FILE_FOLDER"/appendToConfig.txt >> /boot/config.txt
+	sed -i 's/-kms-v3d$/-fkms-v3d,cma-128/' /boot/config.txt
+fi
+
+## RaspOS
+#  systemd.run=/boot/firstrun.sh systemd.run_success_action=reboot systemd.unit=kernel-command-line.target
+# console=serial0,115200 console=tty1 root=PARTUUID=7788c428-02 rootfstype=ext4 fsck.repair=yes rootwait quiet init=/usr/lib/raspberrypi-sys-mods/firstboot cfg80211.ieee80211_regdom=US systemd.run=/boot/firstrun.sh systemd.run_success_action=reboot systemd.unit=kernel-command-line.target
+if [ -f /boot/cmdline.txt ]; then
+  #sed -i '$s/$/\ console=tty1\ loglevel=1\ splash\ logo.nologo\ vt.global_cursor_default=1\ plymouth.ignore-serial-consoles\ console=tty3/' /boot/cmdline.txt
+  sed -i '$s/$/\ cfg80211.ieee80211_regdom=US\ systemd.run=\/boot\/firstrun.sh\ systemd.run_success_action=reboot\ systemd.unit=kernel-command-line.target/' /boot/cmdline.txt
+  sed -i 's#console=serial0,115200 ##' /boot/cmdline.txt
+  sed -i 's#console=/dev/serial0,115200 ##' /boot/cmdline.txt
+  sed -i 's#console=serial0,9600 ##' /boot/cmdline.txt
+  sed -i 's#console=/dev/serial0,9600 ##' /boot/cmdline.txt
+
+	#setterm -cursor on >> /etc/issue
+	echo 'i2c_dev' | tee -a /etc/modules
+fi
 #
 ### Armbian
 #if [ -f /boot/armbianEnv.txt ]; then
