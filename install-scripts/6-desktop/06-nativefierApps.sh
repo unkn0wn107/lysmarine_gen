@@ -245,6 +245,8 @@ if [ "$LMOS" == Debian ]; then
   chmod 4755 /opt/sk-autopilot/chrome-sandbox
 fi
 
+chmod 755 /opt/*
+
 # Minimize space by linking identical files
 hardlink -v -t /opt/* /usr/lib/node_modules/electron/*
 npm cache clean --force
