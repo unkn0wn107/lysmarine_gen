@@ -23,7 +23,6 @@ apt-get -y -q install multimon-ng       \
   rtl-sdr                               \
   librtlsdr-dev                         \
   gnss-sdr                              \
-  gnuradio                              \
   gnuais                                \
   gnuaisgui                             \
   dos2unix                              \
@@ -50,6 +49,8 @@ apt-get -y -q install multimon-ng       \
   libtool                               \
   libfftw3-dev                          \
   direwolf
+
+#   gnuradio                              \
 
 install -d -m 755 -o 1000 -g 1000 "/home/user/.config/gqrx/"
 install -v "$FILE_FOLDER"/gqrx-default.conf -o 1000 -g 1000 "/home/user/.config/gqrx/default.conf"
