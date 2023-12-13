@@ -18,8 +18,8 @@ export MOZ_USE_XINPUT2=1
 (rm -rf ~/.opencpn/startcheck.dat ~/.opencpn/_OpenCPN_SILock || true) &
 
 (openbox --replace) &
-#(evdev-rce || true) &
-#(twofing --click=first --grab-by-disabling /dev/twofingtouch || true) &
+(evdev-rce || true) &
+(twofing --click=first --grab-by-disabling /dev/twofingtouch || true) &
 
 # see: https://github.com/bareboat-necessities/lysmarine_gen/issues/316
 #(sleep 30 && autoadb scrcpy -s '{}') &
