@@ -61,8 +61,6 @@ install -v "$FILE_FOLDER"/direwolf.conf -o 1000 -g 1000 "/home/user/"
 
 systemctl disable aprx
 
-exit 0 # TODO: disabled temp
-
 install -d -m 755 "/usr/local/share/noaa-apt"
 install -d -m 755 "/usr/local/share/noaa-apt/res"
 install -d -m 755 "/usr/local/share/noaa-apt/res/shapefiles"
@@ -72,18 +70,12 @@ wget -q -O - https://github.com/martinber/noaa-apt/raw/master/res/shapefiles/cou
 wget -q -O - https://github.com/martinber/noaa-apt/raw/master/res/shapefiles/lakes.shp > "/usr/local/share/noaa-apt/res/shapefiles/lakes.shp"
 wget -q -O - https://github.com/martinber/noaa-apt/raw/master/res/shapefiles/states.shp > "/usr/local/share/noaa-apt/res/shapefiles/states.shp"
 if [ "$LMARCH" == 'arm64' ]; then
-  apt-get -y -q install noaa-apt
+  wget https://github.com/bareboat-necessities/lysmarine_gen/releases/download/vTest/noaa-apt_1.4.0-2_arm64.deb -O noaa-apt.deb
 fi
-if [ "$LMARCH" == 'armhf' ]; then
-  pushd /usr/local/share/noaa-apt
-    wget -q -O - https://github.com/martinber/noaa-apt/releases/download/v1.3.1/noaa-apt-1.3.1-armv7-linux-gnueabihf.zip > noaa-apt.zip
-    unzip -n noaa-apt.zip
-    rm noaa-apt.zip
-    chmod 755 noaa-apt
-    mv noaa-apt /usr/bin/
-  popd
-fi
+dpkg -i noaa-apt.deb && rm -f noaa-apt.deb
 rm -f /usr/local/share/noaa-apt/test/test*.wav
+
+exit 0 # TODO: disabled temp
 
 install -v "$FILE_FOLDER"/gnuaisgui.desktop /usr/local/share/applications/
 install -v "$FILE_FOLDER"/previsat.desktop /usr/local/share/applications/
