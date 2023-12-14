@@ -32,6 +32,8 @@ install -o 1000 -g 1000 -m 644 -v "$FILE_FOLDER"/autostart.desktop  "/home/user/
   echo "dconf load / < /usr/share/onboard/a11y.dconf"
   echo "dconf write /org/gnome/system/location/enabled true"
   echo "dconf write /org/gnome/desktop/interface/enable-animations false"
+  echo "dconf write /org/gnome/desktop/interface/icon-theme \"'gnome'\""
+  echo "dconf write /org/gnome/desktop/background/picture-uri \"''\""
   echo "dconf write /org/gnome/Weather/automatic-location true"
   echo "dconf write /org/gnome/Weather/Application/automatic-location true"
   echo "dconf write /org/ubuntubudgie/plugins/weathershow/windunit \"'Miles'\""
