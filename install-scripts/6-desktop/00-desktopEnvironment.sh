@@ -5,9 +5,12 @@ install  -v "$FILE_FOLDER"/Xwrapper.config "/etc/X11/"
 
 arch=$(dpkg --print-architecture)
 
-if [ "$LMOS" == Raspbian ]; then
+#if [ "$LMOS" == Raspbian ]; then
+
+  # For raspberry
   apt-get -q -y install xserver-xorg-video-fbturbo
-fi
+
+#fi
 
 if [ "$LMOS" == Armbian ]; then
 	apt-get -q -y install xserver-xorg-legacy
