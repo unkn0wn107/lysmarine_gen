@@ -6,6 +6,7 @@ rm -rf rtl88-Themes
 
 install -d -o 1000 -g 1000 -m 755 "/home/user/.config/"
 install -d -o 1000 -g 1000 -m 755 "/home/user/.config/feh/"
+install -d -o 1000 -g 1000 -m 755 "/home/user/.config/gtk-3.0/"
 install -d -o 1000 -g 1000 -m 755 "/home/user/.config/gtk-4.0/"
 install -d -o 1000 -g 1000 -m 755 "/home/user/.config/openbox/"
 install -d -o 1000 -g 1000 -m 755 "/home/user/.config/pcmanfm/"
@@ -14,6 +15,8 @@ install -d -o 1000 -g 1000 -m 755 "/home/user/.config/libfm/"
 
 install -o 1000 -g 1000 -m 644 -v "$FILE_FOLDER"/.gtkrc-2.0    "/home/user/"
 install -o 1000 -g 1000 -m 644 -v "$FILE_FOLDER"/water.jpg     "/home/user/.config/feh/"
+install -o 1000 -g 1000 -m 644 -v "$FILE_FOLDER"/settings.ini  "/home/user/.config/gtk-3.0/"
+install -o 1000 -g 1000 -m 644 -v "$FILE_FOLDER"/gtk.css       "/home/user/.config/gtk-3.0/"
 install -o 1000 -g 1000 -m 644 -v "$FILE_FOLDER"/settings.ini  "/home/user/.config/gtk-4.0/"
 install -o 1000 -g 1000 -m 644 -v "$FILE_FOLDER"/gtk.css       "/home/user/.config/gtk-4.0/"
 install -o 1000 -g 1000 -m 644 -v "$FILE_FOLDER"/rc.xml        "/home/user/.config/openbox/"
