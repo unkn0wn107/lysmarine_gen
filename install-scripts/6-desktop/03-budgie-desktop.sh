@@ -1,9 +1,11 @@
 #!/bin/bash -e
 
-apt-get install -y -q libatk-adaptor libgtk-4-1 libatk1.0-0 libcairo2 libfontconfig1 libfreetype6 \
-  libgdk-pixbuf2.0-0 libglib2.0-0  \
-  libpango-1.0-0 libpangocairo-1.0-0 libpangoft2-1.0-0 librsvg2-common libx11-6 menulibre \
+apt-get install -y -q  menulibre \
   gvfs-fuse gvfs-backends gnome-bluetooth gnome-weather geoclue-2-demo ibus
+
+#  libatk-adaptor libgtk-4-1 libatk1.0-0 libcairo2 libfontconfig1 libfreetype6 \
+#  libgdk-pixbuf2.0-0 libglib2.0-0  \
+#  libpango-1.0-0 libpangocairo-1.0-0 libpangoft2-1.0-0 librsvg2-common libx11-6
 
 install -o 1000 -g 1000 -d /home/user/.config/openbox
 
