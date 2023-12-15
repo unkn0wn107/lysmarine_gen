@@ -18,7 +18,7 @@ install -o 1000 -g 1000 -m 644 -v "$FILE_FOLDER"/water.jpg     "/home/user/.conf
 install -o 1000 -g 1000 -m 644 -v "$FILE_FOLDER"/settings.ini  "/home/user/.config/gtk-3.0/"
 install -o 1000 -g 1000 -m 644 -v "$FILE_FOLDER"/gtk.css       "/home/user/.config/gtk-3.0/"
 install -o 1000 -g 1000 -m 644 -v "$FILE_FOLDER"/settings.ini  "/home/user/.config/gtk-4.0/"
-install -o 1000 -g 1000 -m 644 -v "$FILE_FOLDER"/gtk.css       "/home/user/.config/gtk-4.0/"
+#install -o 1000 -g 1000 -m 644 -v "$FILE_FOLDER"/gtk.css       "/home/user/.config/gtk-4.0/"
 install -o 1000 -g 1000 -m 644 -v "$FILE_FOLDER"/rc.xml        "/home/user/.config/openbox/"
 install -o 1000 -g 1000 -m 644 -v "$FILE_FOLDER"/pcmanfm.conf  "/home/user/.config/pcmanfm/default/"
 install -o 1000 -g 1000 -m 644 -v "$FILE_FOLDER"/libfm.conf    "/home/user/.config/libfm/"
