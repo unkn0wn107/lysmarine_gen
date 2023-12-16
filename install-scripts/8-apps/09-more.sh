@@ -115,6 +115,7 @@ install -v -m 0755 "$FILE_FOLDER"/vessel-data.sh "/usr/local/bin/vessel-data"
 install -v "$FILE_FOLDER"/vessel-data.desktop "/usr/local/share/applications/"
 
 if [ "$LMARCH" == 'arm64' ]; then
+  # TODO: this bullseye version. need boorkworm one
   wget https://github.com/rclone/rclone/releases/download/v1.59.1/rclone-v1.59.1-linux-arm64.deb
   dpkg -i rclone-v1.59.1-linux-arm64.deb
   rm rclone-v1.59.1-linux-arm64.deb
