@@ -142,6 +142,14 @@ cp src/kal /usr/local/bin/
 cd ..
 rm -rf kalibrate-rtl/
 
+# AIS-Catcher https://github.com/jvde-github/AIS-catcher
+apt-get install -y librtlsdr0 libairspy0 libairspyhf1 \
+  libhackrf0 libsoapysdr0.7 libzmq3-dev libcurl4-openssl-dev zlib1g
+
+wget -q -O - https://github.com/bareboat-necessities/lysmarine_gen/releases/download/vTest/AIS-catcher-20231216-bookworm-arm64.zip > AIS-catcher.zip
+unzip AIS-catcher.zip && rm AIS-catcher.zip
+mv AIS-catcher /usr/local/bin/ && chmod +x /usr/local/bin/AIS-catcher
+
 
 exit 0 # TODO: disabled temp
 
@@ -288,16 +296,6 @@ if [ "$LMARCH" == 'arm64' ]; then
   dpkg -i hamfax_0.8.1-1_arm64.deb
   rm hamfax_0.8.1-1_arm64.deb
 fi
-
-
-# AIS-Catcher https://github.com/jvde-github/AIS-catcher
-apt-get install -y librtlsdr0 libairspy0 libairspyhf1 \
-  libhackrf0 libsoapysdr0.7 libzmq3-dev libcurl4-openssl-dev zlib1g
-
-# TODO: this is bullseye version. Need bookworm one
-wget -q -O - https://github.com/bareboat-necessities/lysmarine_gen/releases/download/vTest/AIS-catcher-20221109-arm64.zip > AIS-catcher.zip
-unzip AIS-catcher.zip && rm AIS-catcher.zip
-mv AIS-catcher /usr/local/bin/ && chmod +x /usr/local/bin/AIS-catcher
 
 
 
