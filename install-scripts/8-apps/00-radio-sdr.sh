@@ -150,6 +150,32 @@ wget -q -O - https://github.com/bareboat-necessities/lysmarine_gen/releases/down
 unzip AIS-catcher.zip && rm AIS-catcher.zip
 mv AIS-catcher /usr/local/bin/ && chmod +x /usr/local/bin/AIS-catcher
 
+#####################################################################################################
+# YAAC https://www.ka2ddo.org/ka2ddo/YAAC.html
+
+MY_DIR_OLD=$(pwd)
+cd /home/user
+
+wget https://www.ka2ddo.org/ka2ddo/YAAC.zip
+mkdir YAAC && cd YAAC
+unzip ../YAAC.zip
+rm -f ../YAAC.zip
+
+bash -c 'cat << EOF > /usr/local/share/applications/YAAC.desktop
+[Desktop Entry]
+Type=Application
+Name=YAAC
+GenericName=YAAC
+Comment=YAAC
+Exec=sh -c "cd /home/user/YAAC; java -jar YAAC.jar"
+Terminal=false
+Icon=radio
+Categories=HamRadio;Radio;Weather
+Keywords=HamRadio;Radio;Weather
+EOF'
+
+cd "$MY_DIR_OLD"
+rm -rf ~/.wget*
 
 exit 0 # TODO: disabled temp
 
@@ -179,115 +205,6 @@ rm -rf ~/.cache/pip
 
 apt-get clean
 
-#####################################################################################################
-# YAAC https://www.ka2ddo.org/ka2ddo/YAAC.html
-
-MY_DIR_OLD=$(pwd)
-cd /home/user
-
-wget https://www.ka2ddo.org/ka2ddo/YAAC.zip
-mkdir YAAC && cd YAAC
-unzip ../YAAC.zip
-rm -f ../YAAC.zip
-
-bash -c 'cat << EOF > /usr/local/share/applications/YAAC.desktop
-[Desktop Entry]
-Type=Application
-Name=YAAC
-GenericName=YAAC
-Comment=YAAC
-Exec=sh -c "cd /home/user/YAAC; java -jar YAAC.jar"
-Terminal=false
-Icon=radio
-Categories=HamRadio;Radio;Weather
-Keywords=HamRadio;Radio;Weather
-EOF'
-
-cd "$MY_DIR_OLD"
-rm -rf ~/.wget*
-
-#####################################################################################################
-# Inmarsat
-# See: https://bitbucket.org/scytalec/scytalec/src/develop/
-
-#apt-get -y install mono-complete
-
-#MY_DIR_OLD=$(pwd)
-#cd /home/user
-#
-#mkdir scytalec-inmarsat-bin && cd scytalec-inmarsat-bin
-#
-#echo -n "Install MONO like this:" > readme-first.txt
-#echo -n "sudo apt-get -y install mono-complete dos2unix" >> readme-first.txt
-#
-#wget https://bitbucket.org/scytalec/scytalec/downloads/content-info.4.pdf
-#wget https://bitbucket.org/scytalec/scytalec/downloads/SDRSharp.ScytaleC.5004.NET5.PlusUI.zip
-#wget https://bitbucket.org/scytalec/scytalec/downloads/x64-ScytaleC.QuickUI-17010.zip
-#wget https://bitbucket.org/scytalec/scytalec/downloads/x64-FramePlayer-1002Beta.zip
-#wget https://bitbucket.org/scytalec/scytalec/downloads/x64-SDRSharp.ScytaleC-10213.zip
-#wget https://bitbucket.org/scytalec/scytalec/downloads/ScytaleC.1408.zip
-#wget https://bitbucket.org/scytalec/scytalec/downloads/x64-DebugHelpers.zip
-#
-##historical copy of
-##wget https://bitbucket.org/scytalec/scytalec.decoder/downloads/x64_Scytalec.Decoder.UI_1.0.0.1.zip
-##wget https://bitbucket.org/scytalec/scytalec.decoder/downloads/x64_Scytalec.Decoder.Cmd_1.0.zip
-#wget https://github.com/bareboat-necessities/lysmarine_gen/releases/download/v2022-06-23/x64_Scytalec.Decoder.UI_1.0.0.1.zip
-#wget https://github.com/bareboat-necessities/lysmarine_gen/releases/download/v2022-06-23/x64_Scytalec.Decoder.Cmd_1.0.zip
-#
-##dos2unix content-info.txt
-#
-#mkdir ScytaleC
-#cd ScytaleC/
-#unzip ../ScytaleC.1408.zip
-#chmod +x ./*.exe
-#cd ..
-#
-#mkdir ScytaleC-UI
-#cd ScytaleC-UI
-#unzip ../x64-ScytaleC.QuickUI-17010.zip
-#chmod +x ./*.exe
-#cd ..
-#
-#mkdir ScytaleC-dec
-#cd ScytaleC-dec
-#unzip ../x64_Scytalec.Decoder.Cmd_1.0.zip
-#chmod +x ./*.exe
-#cd ..
-#
-#mkdir ScytaleC-dec-UI
-#cd ScytaleC-dec-UI
-#unzip ../x64_Scytalec.Decoder.UI_1.0.0.1.zip
-#chmod +x ./*.exe
-#cd ..
-#
-#cd "$MY_DIR_OLD"
-#rm -rf ~/.wget*
-
-bash -c 'cat << EOF > /usr/local/share/applications/scytaleC-decoder.desktop
-[Desktop Entry]
-Type=Application
-Name=Scytale-C Inmarsat Decoder
-GenericName=Scytale-C Inmarsat Decoder
-Comment=Scytale-C Inmarsat Decoder
-Exec=/home/user/scytalec-inmarsat-bin/ScytaleC-dec-UI/ScytaleC.Decoder.UI.exe
-Terminal=false
-Icon=ModemManager
-Categories=Hamradio
-Keywords=Hamradio
-EOF'
-
-bash -c 'cat << EOF > /usr/local/share/applications/scytaleC.desktop
-[Desktop Entry]
-Type=Application
-Name=Scytale-C Inmarsat
-GenericName=Scytale-C Inmarsat
-Comment=Scytale-C Inmarsat UI
-Exec=/home/user/scytalec-inmarsat-bin/ScytaleC/ScytaleC.exe
-Terminal=false
-Icon=ModemManager
-Categories=Hamradio
-Keywords=Hamradio
-EOF'
 
 
 if [ "$LMARCH" == 'arm64' ]; then
