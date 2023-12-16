@@ -16,7 +16,7 @@ module.exports = {
     {name: 'video', title: 'Video', img: 'youtube', bg: 'Peru', cmd: '/opt/youtube/youtube', args: []},
     {name: 'commands', title: 'Commands', img: 'travel', bg: 'Tan',  cmd: '/usr/local/bin/bbn-commands', args: []},
     {name: 'www', title: 'WWW', img: 'internet', bg: 'SteelBlue', cmd: 'onlyone', args: ['gnome-www-browser']},
-    {name: 'email', title: 'Email', img: 'email', bg: 'RoyalBlue', cmd: 'onlyone', args: ['geary']},
+    {name: 'email', title: 'Email', img: 'email', bg: 'RoyalBlue', cmd: 'onlyone', args: ['thunderbird']},
   ],
 
   commands2 : [
