@@ -75,6 +75,20 @@ fi
 dpkg -i noaa-apt.deb && rm -f noaa-apt.deb
 rm -f /usr/local/share/noaa-apt/test/test*.wav
 
+install -v "$FILE_FOLDER"/jnx.desktop /usr/local/share/applications/
+install -v "$FILE_FOLDER"/jwx.desktop /usr/local/share/applications/
+
+install -d -m 755 "/usr/local/share/jnx"
+install -d -m 755 "/usr/local/share/jwx"
+
+wget -q -O - https://arachnoid.com/JNX/JNX.jar > /usr/local/share/jnx/JNX.jar
+wget -q -O - https://arachnoid.com/JNX/JNX_source.tar.gz > /usr/local/share/jnx/JNX_source.tar.gz
+
+wget -q -O - https://arachnoid.com/JWX/resources/JWX.jar > /usr/local/share/jwx/JWX.jar
+wget -q -O - https://arachnoid.com/JWX/resources/JWX_source.tar.bz2 > /usr/local/share/jwx/JWX_source.tar.bz2
+
+apt-get -y -q install fontconfig
+
 exit 0 # TODO: disabled temp
 
 install -v "$FILE_FOLDER"/gnuaisgui.desktop /usr/local/share/applications/
@@ -102,19 +116,7 @@ rm -rf ~/.cache/pip
 # python3 -m quisk
 
 
-install -v "$FILE_FOLDER"/jnx.desktop /usr/local/share/applications/
-install -v "$FILE_FOLDER"/jwx.desktop /usr/local/share/applications/
 
-install -d -m 755 "/usr/local/share/jnx"
-install -d -m 755 "/usr/local/share/jwx"
-
-wget -q -O - https://arachnoid.com/JNX/JNX.jar > /usr/local/share/jnx/JNX.jar
-wget -q -O - https://arachnoid.com/JNX/JNX_source.tar.gz > /usr/local/share/jnx/JNX_source.tar.gz
-
-wget -q -O - https://arachnoid.com/JWX/resources/JWX.jar > /usr/local/share/jwx/JWX.jar
-wget -q -O - https://arachnoid.com/JWX/resources/JWX_source.tar.bz2 > /usr/local/share/jwx/JWX_source.tar.bz2
-
-apt-get -y -q install fontconfig
 if [ "$LMARCH" == 'armhf' ]; then
   apt-get -y -q install openjdk-8-jdk
 else
