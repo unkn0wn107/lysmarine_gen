@@ -1,6 +1,6 @@
 #!/bin/bash -e
 
-sudo bash -c 'cat << EOF > /usr/local/share/applications/boatsetter.desktop
+bash -c 'cat << EOF > /usr/local/share/applications/boatsetter.desktop
 [Desktop Entry]
 Type=Application
 Name=BoatSetter

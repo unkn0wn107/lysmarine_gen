@@ -1,6 +1,6 @@
 #!/bin/bash -e
 
-sudo bash -c 'cat << EOF > /usr/local/share/applications/findacrew.desktop
+bash -c 'cat << EOF > /usr/local/share/applications/findacrew.desktop
 [Desktop Entry]
 Type=Application
 Name=Find a Crew

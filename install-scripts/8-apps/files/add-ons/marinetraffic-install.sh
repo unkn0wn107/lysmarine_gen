@@ -1,6 +1,6 @@
 #!/bin/bash -e
 
-sudo bash -c 'cat << EOF > /usr/local/share/applications/marinetraffic.desktop
+bash -c 'cat << EOF > /usr/local/share/applications/marinetraffic.desktop
 [Desktop Entry]
 Type=Application
 Name=Marine Traffic

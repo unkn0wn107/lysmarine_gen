@@ -1,6 +1,6 @@
 #!/bin/bash -e
 
-sudo bash -c 'cat << EOF > /usr/local/share/applications/lightningmaps.desktop
+bash -c 'cat << EOF > /usr/local/share/applications/lightningmaps.desktop
 [Desktop Entry]
 Type=Application
 Name=Lightning Maps

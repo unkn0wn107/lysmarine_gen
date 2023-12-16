@@ -1,6 +1,6 @@
 #!/bin/bash -e
 
-sudo bash -c 'cat << EOF > /usr/local/share/applications/noaa-enc-online.desktop
+bash -c 'cat << EOF > /usr/local/share/applications/noaa-enc-online.desktop
 [Desktop Entry]
 Type=Application
 Name=NOAA ENC Online
