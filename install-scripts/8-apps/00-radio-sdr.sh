@@ -22,9 +22,6 @@ apt-get -y -q install multimon-ng       \
   previsat                              \
   rtl-sdr                               \
   librtlsdr-dev                         \
-  gnss-sdr                              \
-  gnuais                                \
-  gnuaisgui                             \
   dos2unix                              \
   gqrx-sdr                              \
   soapysdr-tools                        \
@@ -50,7 +47,10 @@ apt-get -y -q install multimon-ng       \
   libfftw3-dev                          \
   direwolf
 
-#   gnuradio                              \
+#  gnuradio                              \
+#  gnss-sdr                              \
+#  gnuais                                \
+#  gnuaisgui                             \
 
 install -d -m 755 -o 1000 -g 1000 "/home/user/.config/gqrx/"
 install -v "$FILE_FOLDER"/gqrx-default.conf -o 1000 -g 1000 "/home/user/.config/gqrx/default.conf"
