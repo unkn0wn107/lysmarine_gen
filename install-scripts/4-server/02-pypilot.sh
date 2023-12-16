@@ -19,7 +19,7 @@ usermod -a -G pypilot user
 apt-get install -y -q --no-install-recommends git python3 python3-pip python3-dev python3-setuptools libpython3-dev \
   python3-wheel python3-numpy python3-scipy swig python3-ujson libjpeg62-turbo \
   python3-serial python3-pyudev python3-pil python3-flask python3-engineio \
-  python3-opengl python3-wxgtk4.0 libwxgtk3.2-1=3.2.2+dfsg-2 \
+  python3-opengl python3-wxgtk4.0 libwxgtk3.2-1 \
   libffi-dev python3-gevent python3-zeroconf watchdog lirc gpiod pigpio-tools lm-sensors ir-keytable \
   python3-opengl \
   pigpio python3-pigpio python3-rpi.gpio \
@@ -48,16 +48,6 @@ else
   apt-get install -y -q python3-flask-socketio
   pip3 install pywavefront pyglet gps gevent-websocket importlib_metadata "python-socketio<5" wmm2020
 fi
-
-if [ "$LMOS" == 'Raspbian' ] && [ "$LMARCH" == 'armhf' ]; then
-  wget https://project-downloads.drogon.net/wiringpi-latest.deb
-  dpkg -i wiringpi-latest.deb && rm wiringpi-latest.deb
-fi
-
-#if [ $LMARCH == 'arm64' ]; then
-#  wget https://github.com/guation/WiringPi-arm64/releases/download/2.61-g/wiringpi-2.61-g.deb
-#  dpkg -i wiringpi-2.61-g.deb && rm wiringpi-2.61-g.deb
-#fi
 
 ## Give permission to sudo chrt without a password for the user pypilot.
 {
@@ -96,23 +86,15 @@ pushd ./stageCache
 
   echo "Get pypilot"
   if [[ ! -d ./pypilot ]]; then
-    git clone https://github.com/pypilot/pypilot.git
-    cd pypilot
-    git checkout 8b40189875c3f947e7a893a1a987e837b3dbc104 # Jan 11, 2023
-    cd ..
+    git clone --depth=1 https://github.com/pypilot/pypilot.git
+    #cd pypilot
+    #git checkout 8b40189875c3f947e7a893a1a987e837b3dbc104 # Jan 11, 2023
+    #cd ..
     git clone --depth=1 https://github.com/pypilot/pypilot_data.git
     cp -rv ./pypilot_data/* ./pypilot
     rm -rf ./pypilot_data
     pushd ./pypilot
       sed -i 's/from importlib.metadata/from importlib_metadata/' dependencies.py || true
-      sed -i "s/ugfx_libraries=\[\]/ugfx_libraries=\['wiringPi'\]/" setup.py
-      sed -i "s/ugfx_defs = \[\]/ugfx_defs = \['-DWIRINGPI'\]/" setup.py 
-      git clone --depth=1 https://github.com/wiringPi/wiringPi
-      cd wiringPi
-      WIRINGPI_SUDO=""
-      export WIRINGPI_SUDO
-      ./build
-      cd ..
       python3 setup.py build
     popd
   fi
