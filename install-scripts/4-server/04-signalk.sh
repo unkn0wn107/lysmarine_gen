@@ -72,7 +72,6 @@ pushd /home/signalk/.signalk
                  sk-resources-fs  \
                  freeboard-sk-helper  \
                  skwiz  \
-                 tuktuk-chart-plotter  \
                  signalk-raspberry-pi-bme280  \
                  signalk-raspberry-pi-bmp180  \
                  signalk-raspberry-pi-ina219  \
