@@ -89,6 +89,60 @@ wget -q -O - https://arachnoid.com/JWX/resources/JWX_source.tar.bz2 > /usr/local
 
 apt-get -y -q install fontconfig
 
+#################################
+
+apt-get -y install libaudiofile-dev
+
+mdir=$(pwd)
+
+cd /usr/local/share
+git clone --depth=1 https://github.com/cropinghigh/inmarsatc
+git clone --depth=1 https://github.com/cropinghigh/stdcdec
+
+rm -rf inmarsatc/.git
+rm -rf stdcdec/.git
+
+cd "$mdir"
+
+#################################
+
+apt-get install -y cmake
+
+pushd /usr/local/share
+  git clone --depth=1 https://github.com/bareboat-necessities/aisdecoder
+  cd aisdecoder
+  rm -rf .git/
+  mkdir build && cd build
+  # Moving to first-run due to this bug: https://gitlab.kitware.com/cmake/cmake/-/issues/20568
+  if [ "$LMARCH" == 'arm64' ]; then
+    cmake ../ -DCMAKE_BUILD_TYPE=RELEASE
+    make -j 4
+    cp aisdecoder /usr/local/bin/
+    make clean
+  fi
+  cd ../..
+popd
+
+install -d '/usr/local/share/hf-propagation'
+install -v -m 0644 "$FILE_FOLDER"/propagation.html "/usr/local/share/hf-propagation/"
+install -v "$FILE_FOLDER"/propagation.desktop "/usr/local/share/applications/"
+
+
+git clone --depth=1 https://github.com/globecen/rtl-ais
+cd rtl-ais
+make -j 4
+cp rtl_ais /usr/bin/
+cd ..
+rm -rf rtl-ais
+
+git clone --depth=1 https://github.com/steve-m/kalibrate-rtl
+cd kalibrate-rtl/
+./bootstrap && CXXFLAGS='-W -Wall -O3' ./configure && make -j 4
+cp src/kal /usr/local/bin/
+cd ..
+rm -rf kalibrate-rtl/
+
+
 exit 0 # TODO: disabled temp
 
 install -v "$FILE_FOLDER"/gnuaisgui.desktop /usr/local/share/applications/
@@ -114,14 +168,6 @@ install -v "$FILE_FOLDER"/quisk.desktop /usr/local/share/applications/
 rm -rf ~/.cache/pip
 # To run quisk
 # python3 -m quisk
-
-
-
-if [ "$LMARCH" == 'armhf' ]; then
-  apt-get -y -q install openjdk-8-jdk
-else
-  apt-get -y -q install default-jdk
-fi
 
 apt-get clean
 
@@ -235,64 +281,14 @@ Categories=Hamradio
 Keywords=Hamradio
 EOF'
 
-#################################
-
-apt-get -y install libaudiofile-dev
-
-mdir=$(pwd)
-
-cd /usr/local/share
-git clone --depth=1 https://github.com/cropinghigh/inmarsatc
-git clone --depth=1 https://github.com/cropinghigh/stdcdec
-
-rm -rf inmarsatc/.git
-rm -rf stdcdec/.git
-
-cd "$mdir"
-
-#################################
-
-apt-get install -y cmake
-
-pushd /usr/local/share
-  git clone --depth=1 https://github.com/bareboat-necessities/aisdecoder
-  cd aisdecoder
-  rm -rf .git/
-  mkdir build && cd build
-  # Moving to first-run due to this bug: https://gitlab.kitware.com/cmake/cmake/-/issues/20568
-  if [ "$LMARCH" == 'arm64' ]; then
-    cmake ../ -DCMAKE_BUILD_TYPE=RELEASE
-    make -j 4
-    cp aisdecoder /usr/local/bin/
-    make clean
-  fi
-  cd ../..
-popd
-
-install -d '/usr/local/share/hf-propagation'
-install -v -m 0644 "$FILE_FOLDER"/propagation.html "/usr/local/share/hf-propagation/"
-install -v "$FILE_FOLDER"/propagation.desktop "/usr/local/share/applications/"
 
 if [ "$LMARCH" == 'arm64' ]; then
+  ## TODO: this is bullseye version. need bookworm one
   wget https://github.com/bareboat-necessities/lysmarine_gen/releases/download/vTest/hamfax_0.8.1-1_arm64.deb
   dpkg -i hamfax_0.8.1-1_arm64.deb
   rm hamfax_0.8.1-1_arm64.deb
 fi
 
-
-git clone --depth=1 https://github.com/globecen/rtl-ais
-cd rtl-ais
-make -j 4
-cp rtl_ais /usr/bin/
-cd ..
-rm -rf rtl-ais
-
-git clone --depth=1 https://github.com/steve-m/kalibrate-rtl
-cd kalibrate-rtl/
-./bootstrap && CXXFLAGS='-W -Wall -O3' ./configure && make -j 4
-cp src/kal /usr/local/bin/
-cd ..
-rm -rf kalibrate-rtl/
 
 # AIS-Catcher https://github.com/jvde-github/AIS-catcher
 apt-get install -y librtlsdr0 libairspy0 libairspyhf1 \
