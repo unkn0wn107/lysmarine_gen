@@ -177,11 +177,20 @@ EOF'
 cd "$MY_DIR_OLD"
 rm -rf ~/.wget*
 
-exit 0 # TODO: disabled temp
 
 install -v "$FILE_FOLDER"/gnuaisgui.desktop /usr/local/share/applications/
 install -v "$FILE_FOLDER"/previsat.desktop /usr/local/share/applications/
+
+if [ "$LMARCH" == 'arm64' ]; then
+  wget https://github.com/bareboat-necessities/lysmarine_gen/releases/download/vTest/hamfax_0.8.1.1-1_arm64.deb
+  dpkg -i hamfax_0.8.1.1-1_arm64.deb
+  rm hamfax_0.8.1.1-1_arm64.deb
+fi
+
 install -v "$FILE_FOLDER"/hamfax.desktop -o 1000 -g 1000 "/home/user/.local/share/applications/hamfax.desktop"
+
+exit 0 # TODO: disabled temp
+
 
 pip3 install pyrtlsdr wheel
 
@@ -205,14 +214,6 @@ rm -rf ~/.cache/pip
 
 apt-get clean
 
-
-
-if [ "$LMARCH" == 'arm64' ]; then
-  ## TODO: this is bullseye version. need bookworm one
-  wget https://github.com/bareboat-necessities/lysmarine_gen/releases/download/vTest/hamfax_0.8.1-1_arm64.deb
-  dpkg -i hamfax_0.8.1-1_arm64.deb
-  rm hamfax_0.8.1-1_arm64.deb
-fi
 
 
 
