@@ -9,5 +9,5 @@ Comment=Lightning Maps
 Exec=gnome-www-browser https://www.lightningmaps.org/
 Terminal=false
 Icon=weather-storm
-Categories=WWW;Internet
+Categories=Internet
 EOF'

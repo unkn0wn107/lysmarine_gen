@@ -9,5 +9,5 @@ Comment=Find a Crew
 Exec=gnome-www-browser https://www.findacrew.net/
 Terminal=false
 Icon=gnome-globe
-Categories=WWW;Internet
+Categories=Internet
 EOF'

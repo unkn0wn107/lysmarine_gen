@@ -9,7 +9,7 @@ Comment=HomeAssistant
 Exec=gnome-www-browser http://localhost:8123/
 Terminal=false
 Icon=user-home
-Categories=WWW;Internet
+Categories=Internet
 EOF'
 
 sudo systemctl --system daemon-reload
