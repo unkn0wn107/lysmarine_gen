@@ -21,7 +21,7 @@ apt-get install -y -q --no-install-recommends git python3 python3-pip python3-de
   python3-serial python3-pyudev python3-pil python3-flask python3-engineio \
   python3-opengl python3-wxgtk4.0 libwxgtk3.2-1=3.2.2+dfsg-2 \
   libffi-dev python3-gevent python3-zeroconf watchdog lirc gpiod pigpio-tools lm-sensors ir-keytable \
-  python3-opengl \
+  python3-opengl libgles1 \
   pigpio python3-pigpio python3-rpi.gpio \
   libelf1 libftdi1-2 libhidapi-libusb0 libusb-0.1-4 libusb-1.0-0 \
   meson cmake make acl octave avrdude # https://kingtidesailing.blogspot.com/2016/02/how-to-setup-mpu-9250-on-raspberry-pi_25.html
@@ -87,9 +87,9 @@ pushd ./stageCache
   echo "Get pypilot"
   if [[ ! -d ./pypilot ]]; then
     git clone --depth=1 https://github.com/pypilot/pypilot.git
-    #cd pypilot
-    #git checkout 8b40189875c3f947e7a893a1a987e837b3dbc104 # Jan 11, 2023
-    #cd ..
+    cd pypilot
+    git checkout 8b40189875c3f947e7a893a1a987e837b3dbc104 # Jan 11, 2023
+    cd ..
     git clone --depth=1 https://github.com/pypilot/pypilot_data.git
     cp -rv ./pypilot_data/* ./pypilot
     rm -rf ./pypilot_data
