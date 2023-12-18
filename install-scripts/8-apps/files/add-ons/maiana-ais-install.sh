@@ -3,7 +3,7 @@
 cd /home/user
 git clone --depth=1 https://github.com/peterantypas/maiana
 
-sudo bash -c 'cat << EOF > /usr/local/share/applications/maiana-util.desktop
+bash -c 'cat << EOF > /usr/local/share/applications/maiana-util.desktop
 [Desktop Entry]
 Type=Application
 Name=Maiana AIS Util

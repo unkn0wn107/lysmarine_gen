@@ -13,7 +13,6 @@ systemctl disable openvpn
 
 apt-get clean
 
-
 #apt-get install software-properties-common
 
 # rpi-clone
@@ -114,7 +113,7 @@ install -v -m 0755 "$FILE_FOLDER"/vessel-data.sh "/usr/local/bin/vessel-data"
 install -v "$FILE_FOLDER"/vessel-data.desktop "/usr/local/share/applications/"
 
 if [ "$LMARCH" == 'arm64' ]; then
-  # TODO: this bullseye version. need boorkworm one
+  # TODO: this bullseye version. need bookworm one
   wget https://github.com/rclone/rclone/releases/download/v1.59.1/rclone-v1.59.1-linux-arm64.deb
   dpkg -i rclone-v1.59.1-linux-arm64.deb
   rm rclone-v1.59.1-linux-arm64.deb
@@ -126,7 +125,6 @@ else
   dpkg -i rclone-current-linux-arm.deb
   rm rclone-current-linux-arm.deb
 fi
-
 
 # https://github.com/raspberrypi/usbboot
 CUR_DIR="$(pwd)"
@@ -140,15 +138,13 @@ cd "$CUR_DIR"
 
 install -v "$FILE_FOLDER"/term-weather.desktop "/usr/local/share/applications/"
 
+O_DIR=$(pwd)
+chmod +x "$FILE_FOLDER"/add-ons/maiana-ais-install.sh
+"$FILE_FOLDER"/add-ons/maiana-ais-install.sh
+cd $O_DIR
+
 # TODO: disabled temp
 #git clone --depth=1 https://github.com/formatc1702/WireViz
 #cd WireViz/
 #python3 setup.py install
 #cd .. && rm -rf WireViz/
-
-
-# TODO: disabled temp
-#O_DIR=$(pwd)
-#chmod +x "$FILE_FOLDER"/add-ons/maiana-ais-install.sh
-#"$FILE_FOLDER"/add-ons/maiana-ais-install.sh
-#cd $O_DIR
