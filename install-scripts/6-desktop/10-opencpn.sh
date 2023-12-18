@@ -63,9 +63,9 @@ gzip -cd opencpn-plugins-bundle-"$LMARCH".tar.gz | tar xvf -
 
 mkdir -p /home/user/.local/lib /home/user/.local/bin /home/user/.local/share /home/user/.local/doc /home/user/.local/include
 cp -r -p lib/* /home/user/.local/lib/
-cp -r -p bin/* /home/user/.local/bin/
+cp -r -p bin/* /home/user/.local/bin/ || true
 cp -r -p share/* /home/user/.local/share/
-cp -r -p doc/* /home/user/.local/doc/
+cp -r -p doc/* /home/user/.local/doc/ || true
 cp -r -p include/* /home/user/.local/include/
 
 chown -R user:user /home/user/.local
