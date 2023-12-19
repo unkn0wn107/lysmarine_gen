@@ -15,7 +15,6 @@ install -v -m 0644 "$FILE_FOLDER"/99-direwolf-cmedia.rules "/etc/udev/rules.d/"
 install -v -m 0644 "$FILE_FOLDER"/99-thumbdv.rules "/etc/udev/rules.d/"
 
 apt-get -y -q --no-install-recommends install \
-  multimon-ng                           \
   cubicsdr                              \
   cutesdr                               \
   fldigi                                \
@@ -32,13 +31,7 @@ apt-get -y -q --no-install-recommends install \
   sox                                   \
   soundmodem                            \
   morse2ascii                           \
-  w-scan                                \
-  dvb-tools                             \
-  dvb-apps                              \
-  dtv-scan-tables                       \
-  aprx                                  \
   wmctrl                                \
-  chirp                                 \
   rtl-sdr                               \
   librxtx-java                          \
   libhamlib-utils                       \
@@ -48,6 +41,13 @@ apt-get -y -q --no-install-recommends install \
   libfftw3-dev                          \
   direwolf
 
+#  w-scan                                \
+#  multimon-ng                           \
+#  aprx                                  \
+#  dvb-tools                             \
+#  dvb-apps                              \
+#  dtv-scan-tables                       \
+#  chirp                                 \
 #  gnuradio                              \
 #  gnss-sdr                              \
 #  gnuais                                \
