@@ -2,7 +2,7 @@
 
 apt-get clean
 
-apt-get -q -y --no-install-recommends install avnav xterm mpg123 xvfb
+apt-get -q -y --no-install-recommends install avnav xterm mpg123 xvfb wx3.2-i18n python3-psutil
 
 apt-get -q -y install avnav-history-plugin  avnav-more-nmea-plugin avnav-mapproxy-plugin # TODO: ???  avnav-raspi
 
