@@ -1,11 +1,6 @@
 #!/bin/bash -e
 
-#apt-get install -y -q -o Dpkg::Options::="--force-overwrite" opencpn-sglock-arm32
-
-#apt-get install -y -q opencpn opencpn-plugin-celestial opencpn-plugin-launcher opencpn-plugin-radar \
-#   opencpn-plugin-pypilot opencpn-plugin-objsearch opencpn-plugin-iacfleet imgkap
-
-apt-get install -y -q libglew2.2 gettext libwxsvg3 libtinyxml2.6.2v5 libunarr1 libwxgtk-webview3.2-1 wx3.2-i18n # opencpn-data
+apt-get install -y -q libglew2.2 gettext libwxsvg3 libtinyxml2.6.2v5 libunarr1 libwxgtk-webview3.2-1 wx3.2-i18n
 
 install -o 1000 -g 1000 -d "/home/user/.opencpn"
 install -o 1000 -g 1000 -d "/home/user/.opencpn/plugins"
@@ -14,32 +9,6 @@ install -o 1000 -g 1000 -d "/home/user/.opencpn/plugins/weather_routing/data"
 install -o 1000 -g 1000 -v "$FILE_FOLDER"/opencpn.conf "/home/user/.opencpn/"
 install -o 1000 -g 1000 -v "$FILE_FOLDER"/opencpn.conf "/home/user/.opencpn/opencpn.conf-bbn"
 install -o 1000 -g 1000 -v "$FILE_FOLDER"/opencpn.conf-highres-bbn "/home/user/.opencpn/opencpn.conf-highres-bbn"
-
-if [ "$LMARCH" == 'armhf' ]; then
-  apt-get install -y -q                                         \
-    opencpn-doc                                                 \
-    opencpn-plugin-calculator                                   \
-    opencpn-plugin-celestial                                    \
-    opencpn-plugin-chartscale                                   \
-    opencpn-plugin-climatology                                  \
-    opencpn-plugin-climatology-data                             \
-    opencpn-plugin-iacfleet                                     \
-    opencpn-plugin-launcher                                     \
-    opencpn-plugin-nmeaconverter                                \
-    opencpn-plugin-objsearch                                    \
-    opencpn-plugin-ocpndebugger                                 \
-    opencpn-plugin-plots                                        \
-    opencpn-plugin-pypilot                                      \
-    opencpn-plugin-radar                                        \
-    opencpn-plugin-s63                                          \
-    opencpn-plugin-sar                                          \
-    opencpn-plugin-tactics                                      \
-    opencpn-plugin-vfkaps                                       \
-    opencpn-plugin-watchdog                                     \
-    opencpn-plugin-weatherfax                                   \
-    opencpn-plugin-weatherrouting                               \
-    opencpn-plugin-draw
-fi
 
 # Polar Diagrams
 
@@ -55,7 +24,6 @@ rm All_polar_files.zip
 
 cd "$BK_DIR"
 
-#TODO: temp disabled
 mkdir tmp-o-bundle-"$LMARCH" || exit 2
 cd tmp-o-bundle-"$LMARCH"
 
@@ -95,9 +63,7 @@ wget --no-check-certificate https://download.tuxfamily.org/xinutop/rastow/readme
 mkdir /usr/local/share/rastow
 mv readme.txt /usr/local/share/rastow/
 
-
 #install -v "$FILE_FOLDER"/opencpn.desktop "/usr/share/applications/"
-
 
 # TODO: temp fix
 wget https://github.com/bareboat-necessities/lysmarine_gen/releases/download/vTest/opencpn_5.8.4+8089+1637c28fb.ubuntu22.04.1_arm64.deb
