@@ -31,7 +31,3 @@ systemctl enable wifi_powersave@off.service
 
 echo 'country=US' >> /etc/wpa_supplicant/wpa_supplicant.conf
 
-# See: http://downloads.fars-robotics.net/
-#curl -1sLf http://downloads.fars-robotics.net/wifi-drivers/install-wifi > /usr/local/sbin/install-wifi
-curl -1sLf https://raw.githubusercontent.com/bareboat-necessities/my-bareboat/master/install-wifi/install-wifi > /usr/local/sbin/install-wifi
-chmod +x /usr/local/sbin/install-wifi
