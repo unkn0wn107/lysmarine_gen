@@ -26,7 +26,7 @@ apt-get install -y -q --no-install-recommends git python3 python3-pip python3-de
   libelf1 libftdi1-2 libhidapi-libusb0 libusb-0.1-4 libusb-1.0-0 \
   meson cmake make acl avrdude # https://kingtidesailing.blogspot.com/2016/02/how-to-setup-mpu-9250-on-raspberry-pi_25.html
   # octave
-  
+
 systemctl disable watchdog
 systemctl disable lircd
 

@@ -38,9 +38,9 @@ apt-get -y -q --no-install-recommends install \
   python3-libxml2                       \
   python3-serial                        \
   libtool                               \
-  libfftw3-dev                          \
-  direwolf
+  libfftw3-dev
 
+#  direwolf                              \
 #  w-scan                                \
 #  multimon-ng                           \
 #  aprx                                  \
