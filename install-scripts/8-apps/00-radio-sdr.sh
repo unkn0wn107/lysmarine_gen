@@ -151,35 +151,35 @@ wget -q -O - https://github.com/bareboat-necessities/lysmarine_gen/releases/down
 unzip AIS-catcher.zip && rm AIS-catcher.zip
 mv AIS-catcher /usr/local/bin/ && chmod +x /usr/local/bin/AIS-catcher
 
-#####################################################################################################
-# YAAC https://www.ka2ddo.org/ka2ddo/YAAC.html
+######################################################################################################
+## YAAC https://www.ka2ddo.org/ka2ddo/YAAC.html
+#
+#MY_DIR_OLD=$(pwd)
+#cd /home/user
+#
+#wget https://www.ka2ddo.org/ka2ddo/YAAC.zip
+#mkdir YAAC && cd YAAC
+#unzip ../YAAC.zip
+#rm -f ../YAAC.zip
+#
+#bash -c 'cat << EOF > /usr/local/share/applications/YAAC.desktop
+#[Desktop Entry]
+#Type=Application
+#Name=YAAC
+#GenericName=YAAC
+#Comment=YAAC
+#Exec=sh -c "cd /home/user/YAAC; java -jar YAAC.jar"
+#Terminal=false
+#Icon=radio
+#Categories=HamRadio;Radio;Weather
+#Keywords=HamRadio;Radio;Weather
+#EOF'
+#
+#cd "$MY_DIR_OLD"
+#rm -rf ~/.wget*
 
-MY_DIR_OLD=$(pwd)
-cd /home/user
 
-wget https://www.ka2ddo.org/ka2ddo/YAAC.zip
-mkdir YAAC && cd YAAC
-unzip ../YAAC.zip
-rm -f ../YAAC.zip
-
-bash -c 'cat << EOF > /usr/local/share/applications/YAAC.desktop
-[Desktop Entry]
-Type=Application
-Name=YAAC
-GenericName=YAAC
-Comment=YAAC
-Exec=sh -c "cd /home/user/YAAC; java -jar YAAC.jar"
-Terminal=false
-Icon=radio
-Categories=HamRadio;Radio;Weather
-Keywords=HamRadio;Radio;Weather
-EOF'
-
-cd "$MY_DIR_OLD"
-rm -rf ~/.wget*
-
-
-install -v "$FILE_FOLDER"/gnuaisgui.desktop /usr/local/share/applications/
+#install -v "$FILE_FOLDER"/gnuaisgui.desktop /usr/local/share/applications/
 install -v "$FILE_FOLDER"/previsat.desktop /usr/local/share/applications/
 
 if [ "$LMARCH" == 'arm64' ]; then
