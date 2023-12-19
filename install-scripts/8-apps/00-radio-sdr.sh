@@ -57,10 +57,10 @@ install -d -m 755 -o 1000 -g 1000 "/home/user/.config/gqrx/"
 install -v "$FILE_FOLDER"/gqrx-default.conf -o 1000 -g 1000 "/home/user/.config/gqrx/default.conf"
 install -v "$FILE_FOLDER"/gqrx-bookmarks.csv -o 1000 -g 1000 "/home/user/.config/gqrx/bookmarks.csv"
 
-systemctl disable direwolf
-install -v "$FILE_FOLDER"/direwolf.conf -o 1000 -g 1000 "/home/user/"
+#systemctl disable direwolf
+#install -v "$FILE_FOLDER"/direwolf.conf -o 1000 -g 1000 "/home/user/"
 
-systemctl disable aprx
+#systemctl disable aprx
 
 install -d -m 755 "/usr/local/share/noaa-apt"
 install -d -m 755 "/usr/local/share/noaa-apt/res"
