@@ -2,9 +2,15 @@
 
 apt-get clean
 
-apt-get -q -y --no-install-recommends install avnav xterm mpg123
+apt-get -q -y --no-install-recommends install avnav xterm mpg123 xvfb
 
-apt-get -q -y install avnav-history-plugin  avnav-more-nmea-plugin avnav-mapproxy-plugin # TODO: ??? avnav-ocharts-plugin  avnav-raspi
+apt-get -q -y install avnav-history-plugin  avnav-more-nmea-plugin avnav-mapproxy-plugin # TODO: ???  avnav-raspi
+
+
+wget -O avnav-ocharts-plugin.deb https://www.free-x.de/debpreview/pool/main/a/avnav-ocharts-plugin/avnav-ocharts-plugin_20231216-raspbian-bookworm_arm64.deb
+wget -O avnav-ocharts.deb https://www.free-x.de/debpreview/pool/main/a/avnav-ocharts/avnav-ocharts_1.0.44.0-1bookworm1_arm64.deb
+dpkg -i avnav-ocharts-plugin.deb avnav-ocharts.deb
+rm -f avnav-ocharts-plugin.deb avnav-ocharts.deb
 
 #apt-get -q -y -o Dpkg::Options::="--force-overwrite" install avnav-oesenc
 
