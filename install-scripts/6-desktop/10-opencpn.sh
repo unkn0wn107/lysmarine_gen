@@ -59,7 +59,7 @@ cd "$BK_DIR"
 #mkdir tmp-o-bundle-"$LMARCH" || exit 2
 #cd tmp-o-bundle-"$LMARCH"
 #
-#wget -O opencpn-plugins-bundle-"$LMARCH".tar.gz https://github.com/bareboat-necessities/lysmarine_gen/releases/download/vTest/opencpn-plugins-bundle-o_5_8_x-bookworm-2-"$LMARCH".tar.gz
+#wget -O opencpn-plugins-bundle-"$LMARCH".tar.gz https://github.com/bareboat-necessities/lysmarine_gen/releases/download/vTest/opencpn-plugins-bundle-o_5_8_x-bookworm-3-"$LMARCH".tar.gz
 #gzip -cd opencpn-plugins-bundle-"$LMARCH".tar.gz | tar xvf -
 #
 #mkdir -p /home/user/.local/lib /home/user/.local/bin /home/user/.local/share /home/user/.local/doc /home/user/.local/include
@@ -67,7 +67,7 @@ cd "$BK_DIR"
 #cp -r -p bin/* /home/user/.local/bin/ || true
 #cp -r -p share/* /home/user/.local/share/
 #cp -r -p doc/* /home/user/.local/doc/ || true
-#cp -r -p include/* /home/user/.local/include/
+#cp -r -p include/* /home/user/.local/include/ || true
 #
 #chown -R user:user /home/user/.local
 #
