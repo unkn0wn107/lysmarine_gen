@@ -73,6 +73,10 @@ rm -f /2
 find /usr/share/doc -name changelog\*.gz -exec rm -f {} \;
 find /usr/share/doc -name NEWS\*.gz -exec rm -f {} \;
 
+if [ "$BBN_KIND" == "LIGHT" ] ; then
+  echo 1 > /etc/bbn-light
+fi
+
 date --rfc-3339=seconds > /etc/bbn-build
 fake-hwclock save
 
