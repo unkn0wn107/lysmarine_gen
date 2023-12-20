@@ -4,13 +4,13 @@
 
 # this plugin needs systemd running during install
 apt-get -q -y install avnav-update-plugin || true
-systemctl restart avnav
+systemctl restart avnav || true
 
 # Fix a bug documented somewhere in gentoo bug tracker
 update-mime-database /usr/share/mime
 
 # Keeping it enabled breaks wifi in nm-applet
-systemctl disable dhcpcd.service
+systemctl disable dhcpcd.service || true
 
 # Enable text login prompt on tty1 (Ctrl-Alt-F1)
 systemctl enable getty@tty1
@@ -39,5 +39,5 @@ then
   /boot/first-boot.sh || true
 fi
 
-touch /tmp/FIRSTRUN
+touch /tmp/FIRSTRUN 
 systemctl disable firstRun.service
