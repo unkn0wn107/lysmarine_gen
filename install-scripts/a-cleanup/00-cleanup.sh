@@ -42,7 +42,11 @@ EOF'
 
 echo '/usr/lib /usr/share /usr/include /usr/bin /srv' | xargs -n 1 -P 4 hardlink -v -t
 
-apt-get -q -y install --download-only avnav-update-plugin
+if [ "$BBN_KIND" == "LIGHT" ] ; then
+  true
+else
+  apt-get -q -y install --download-only avnav-update-plugin
+fi
 
 for f in /etc/apt/sources.list.d/bbn-*.list
 do

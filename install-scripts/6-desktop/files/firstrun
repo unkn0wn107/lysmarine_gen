@@ -39,5 +39,5 @@ then
   /boot/first-boot.sh || true
 fi
 
-touch /tmp/FIRSTRUN 
+touch /tmp/FIRSTRUN
 systemctl disable firstRun.service
