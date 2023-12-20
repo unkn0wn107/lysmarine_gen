@@ -4,4 +4,4 @@ Name=Scale Up
 Exec=scale-up
 Terminal=false
 Icon=list-add
-Categories=System
+Categories=Utility;
