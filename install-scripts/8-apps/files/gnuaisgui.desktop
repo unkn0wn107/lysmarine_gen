@@ -6,5 +6,5 @@ Comment=GNU AIS
 Exec=gnuaisgui
 Icon=up
 Terminal=false
-Categories=Navigation;ChartPlotter
+Categories=Navigation;
 Keywords=Navigation;ChartPlotter
