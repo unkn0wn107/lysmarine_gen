@@ -17,8 +17,8 @@ for pkg_file in cross-build-release/release/*/*."$EXT"; do
   mkdir ./tmp
   chmod 755 ./tmp
   cd "$zipDir" || exit 255
-  export XZ_DEFAULTS='--threads=8'
-  xz -z -c -v -7 --threads=8 "${zipName}" > ../../../tmp/"${zipName}".xz
+  export XZ_DEFAULTS='--threads=3'
+  xz -z -c -v -7 --threads=3 "${zipName}" > ../../../tmp/"${zipName}".xz
   cd ../../..
   cloudsmith push raw "$REPO" ./tmp/"${zipName}".xz --summary "BBN OS built by CircleCi on $(date)" --description "BBN OS build"
   RESULT=$?
