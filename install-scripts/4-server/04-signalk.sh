@@ -63,9 +63,36 @@ npm cache clean --force
 npm install -g npm pnpm patch-package
 npm install -g --unsafe-perm --production signalk-server
 
-## Install signalk published plugins
-pushd /home/signalk/.signalk
-  su signalk --shell=/bin/bash -c "export MAKEFLAGS='-j 8'; \
+if [ "$BBN_KIND" == "LIGHT" ] ; then
+  ## Install signalk published plugins
+  pushd /home/signalk/.signalk
+    su signalk --shell=/bin/bash -c "export MAKEFLAGS='-j 8'; \
+                 export NODE_ENV=production; \
+                 pnpm install \
+                 @signalk/charts-plugin  \
+                 sk-resources-fs  \
+                 freeboard-sk-helper  \
+                 signalk-raspberry-pi-bme280  \
+                 signalk-raspberry-pi-bmp180  \
+                 signalk-raspberry-pi-ina219  \
+                 signalk-raspberry-pi-1wire  \
+                 signalk-raspberry-mcs  \
+                 signalk-venus-plugin  \
+                 signalk-mqtt-gw  \
+                 signalk-derived-data  \
+                 signalk-anchoralarm-plugin  \
+                 signalk-alarm-silencer  \
+                 signalk-to-nmea2000  \
+                 @mxtommy/kip  \
+                 nmea0183-to-nmea0183 \
+                 signalk-path-filter \
+                 signalk-datetime \
+                 @meri-imperiumi/signalk-autostate --unsafe-perm --loglevel error"
+  popd
+else
+  ## Install signalk published plugins
+  pushd /home/signalk/.signalk
+    su signalk --shell=/bin/bash -c "export MAKEFLAGS='-j 8'; \
                  export NODE_ENV=production; \
                  pnpm install \
                  @signalk/charts-plugin  \
@@ -153,7 +180,9 @@ pushd /home/signalk/.signalk
                  @meri-imperiumi/signalk-autostate \
                  @meri-imperiumi/signalk-alternator-engine-on \
                  signalk-saillogger --unsafe-perm --loglevel error"
-popd
+  popd
+fi
+
 
 sed -i "s#sudo ##g" /home/signalk/.signalk/node_modules/signalk-raspberry-pi-monitoring/index.js
 sed -i "s#/opt/vc/bin/##g" /home/signalk/.signalk/node_modules/signalk-raspberry-pi-monitoring/index.js
