@@ -3,5 +3,11 @@
 apt-get install -y -q yad ssh-askpass-gnome
 
 install -d '/usr/local/share/applications'
-install -m 755 "$FILE_FOLDER"/servicedialog.sh "/usr/local/bin/servicedialog"
+
+if [ "$BBN_KIND" == "LIGHT" ] ; then
+  install -m 755 "$FILE_FOLDER"/servicedialog-light.sh "/usr/local/bin/servicedialog"
+else
+  install -m 755 "$FILE_FOLDER"/servicedialog.sh "/usr/local/bin/servicedialog"
+fi
+
 install -m 644 "$FILE_FOLDER"/servicedialog.desktop "/usr/local/share/applications/"
