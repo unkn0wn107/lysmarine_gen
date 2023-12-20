@@ -248,6 +248,9 @@ rm -rf /home/signalk/.cache
 rm -rf /home/signalk/.npm
 rm -rf /home/signalk/.node-*
 
+if [ "$BBN_KIND" == "LIGHT" ] ; then
+  exit 0
+fi
 
 # See https://github.com/allinurl/gwsocket
 
