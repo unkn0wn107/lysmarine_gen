@@ -3,7 +3,7 @@
 apt-get clean
 npm cache clean --force
 
-if [ "$BBN_KIND" == "LIGHT" ] ; then
+if [ "$BBN_KIND" == "LITE" ] ; then
   apt-get -q -y install i2c-tools python3-smbus dos2unix traceroute telnet socat gdal-bin openvpn \
     gedit sysstat jq xmlstarlet uhubctl iotop libusb-1.0-0-dev \
     rpi-imager piclone fontconfig gnome-disk-utility xfce4-screenshooter \
@@ -63,7 +63,7 @@ install -v -o 1000 -g 1000 -m 0755 "$FILE_FOLDER"/add-ons/os-settings.sh "/home/
 install -v -o 1000 -g 1000 -m 0755 "$FILE_FOLDER"/add-ons/change-password.sh "/home/user/add-ons/"
 install -v -o 1000 -g 1000 -m 0755 "$FILE_FOLDER"/add-ons/maritime-lib-install.sh "/home/user/add-ons/"
 
-if [ "$BBN_KIND" == "LIGHT" ] ; then
+if [ "$BBN_KIND" == "LITE" ] ; then
   exit 0
 fi
 

@@ -38,7 +38,7 @@ cd "$mdir"
 
 #################################
 
-if [ "$BBN_KIND" == "LIGHT" ] ; then
+if [ "$BBN_KIND" == "LITE" ] ; then
   exit 0
 fi
 

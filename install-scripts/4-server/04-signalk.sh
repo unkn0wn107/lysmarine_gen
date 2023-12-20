@@ -63,7 +63,7 @@ npm cache clean --force
 npm install -g npm pnpm patch-package
 npm install -g --unsafe-perm --production signalk-server
 
-if [ "$BBN_KIND" == "LIGHT" ] ; then
+if [ "$BBN_KIND" == "LITE" ] ; then
   ## Install signalk published plugins
   pushd /home/signalk/.signalk
     su signalk --shell=/bin/bash -c "export MAKEFLAGS='-j 8'; \
@@ -218,7 +218,7 @@ echo 'user ALL=(ALL) NOPASSWD: /usr/local/sbin/signalk-restart' >>/etc/sudoers
 
 systemctl enable signalk
 
-if [ "$BBN_KIND" == "LIGHT" ] ; then
+if [ "$BBN_KIND" == "LITE" ] ; then
   true
 else
   bash -c 'cat << EOF > /usr/local/share/applications/signalk-node-red.desktop
@@ -249,7 +249,7 @@ rm -rf /home/signalk/.cache
 rm -rf /home/signalk/.npm
 rm -rf /home/signalk/.node-*
 
-if [ "$BBN_KIND" == "LIGHT" ] ; then
+if [ "$BBN_KIND" == "LITE" ] ; then
   exit 0
 fi
 

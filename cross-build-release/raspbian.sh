@@ -4,7 +4,7 @@
 
   MY_CPU_ARCH=$1
   LYSMARINE_VER=$2
-  BBN_KIND=LIGHT
+  BBN_KIND=LITE
 
   thisArch="raspios"
   cpuArch="arm64"
@@ -74,8 +74,8 @@ EOF
   ls -l ./work/$thisArch/"$imageName"
 
   # Renaming the OS and moving it to the release folder.
-  if [ "$BBN_KIND" == "LIGHT" ] ; then
-    BBN_IMG=test-bbn-bookworm-light_"${LYSMARINE_VER}"-${thisArch}-${cpuArch}.img
+  if [ "$BBN_KIND" == "LITE" ] ; then
+    BBN_IMG=test-bbn-bookworm-lite_"${LYSMARINE_VER}"-${thisArch}-${cpuArch}.img
   else
     BBN_IMG=test-bbn-bookworm_"${LYSMARINE_VER}"-${thisArch}-${cpuArch}.img
   fi
