@@ -1,5 +1,9 @@
 #!/bin/bash -e
 
+if [ "$BBN_KIND" == "LIGHT" ] ; then
+  exit 0
+fi
+
 apt-get -y -q install  libayatana-appindicator3-1 # TODO: empathy
 
 apt-get clean

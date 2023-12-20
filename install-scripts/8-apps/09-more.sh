@@ -3,17 +3,34 @@
 apt-get clean
 npm cache clean --force
 
-apt-get -q -y install i2c-tools python3-smbus dos2unix traceroute telnet whois socat gdal-bin openvpn seahorse inxi \
-  dconf-editor gedit gnome-calculator \
-  python3-gpiozero libusb-1.0-0-dev \
-  sysstat jq xmlstarlet uhubctl iotop rsync timeshift at \
-  rpi-imager piclone fontconfig gnome-disk-utility catfish xfce4-screenshooter hardinfo baobab #  restic gnome-chess openpref nautic foxtrotgps
+if [ "$BBN_KIND" == "LIGHT" ] ; then
+  apt-get -q -y install i2c-tools python3-smbus dos2unix traceroute telnet socat gdal-bin openvpn \
+    gedit sysstat jq uhubctl \
+    rpi-imager piclone fontconfig gnome-disk-utility xfce4-screenshooter baobab
+else
+  apt-get -q -y install i2c-tools python3-smbus dos2unix traceroute telnet whois socat gdal-bin openvpn seahorse inxi \
+    dconf-editor gedit gnome-calculator \
+    python3-gpiozero libusb-1.0-0-dev \
+    sysstat jq xmlstarlet uhubctl iotop rsync timeshift at \
+    rpi-imager piclone fontconfig gnome-disk-utility catfish xfce4-screenshooter hardinfo baobab #  restic gnome-chess openpref nautic foxtrotgps
+fi
+
+O_DIR=$(pwd)
+chmod +x "$FILE_FOLDER"/add-ons/maiana-ais-install.sh
+"$FILE_FOLDER"/add-ons/maiana-ais-install.sh
+cd $O_DIR
+
+# https://github.com/raspberrypi/usbboot
+CUR_DIR="$(pwd)"
+mkdir -p /home/user/usbboot && cd /home/user/usbboot
+git clone --depth=1 https://github.com/raspberrypi/usbboot
+cd usbboot
+make -j 4
+cp rpiboot /usr/local/sbin/
+rm -rf /home/user/usbboot
+cd "$CUR_DIR"
 
 systemctl disable openvpn
-
-apt-get clean
-
-#apt-get install software-properties-common
 
 # rpi-clone
 git clone --depth=1 https://github.com/bareboat-necessities/rpi-clone.git
@@ -28,13 +45,15 @@ install -v "$FILE_FOLDER"/piclone.desktop -o 1000 -g 1000 "/home/user/.local/sha
 apt-get clean
 npm cache clean --force
 
-#apt-get -q -y install arduino
+install -v -m 0755 "$FILE_FOLDER"/bbn-change-password.sh "/usr/local/bin/bbn-change-password"
+install -v -m 0755 "$FILE_FOLDER"/bbn-rename-host.sh "/usr/local/sbin/bbn-rename-host"
+
+if [ "$BBN_KIND" == "LIGHT" ] ; then
+  exit 0
+fi
 
 # TODO: disabled temp
 #pip3 install adafruit-ampy
-
-install -v -m 0755 "$FILE_FOLDER"/bbn-change-password.sh "/usr/local/bin/bbn-change-password"
-install -v -m 0755 "$FILE_FOLDER"/bbn-rename-host.sh "/usr/local/sbin/bbn-rename-host"
 
 install -v -o 1000 -g 1000 -m 0644 "$FILE_FOLDER"/add-ons/readme.txt "/home/user/add-ons/"
 install -v -o 1000 -g 1000 -m 0755 "$FILE_FOLDER"/add-ons/deskpi-pro-install.sh "/home/user/add-ons/"
@@ -126,22 +145,7 @@ else
   rm rclone-current-linux-arm.deb
 fi
 
-# https://github.com/raspberrypi/usbboot
-CUR_DIR="$(pwd)"
-mkdir -p /home/user/usbboot && cd /home/user/usbboot
-git clone --depth=1 https://github.com/raspberrypi/usbboot
-cd usbboot
-make -j 4
-cp rpiboot /usr/local/sbin/
-rm -rf /home/user/usbboot
-cd "$CUR_DIR"
-
 install -v "$FILE_FOLDER"/term-weather.desktop "/usr/local/share/applications/"
-
-O_DIR=$(pwd)
-chmod +x "$FILE_FOLDER"/add-ons/maiana-ais-install.sh
-"$FILE_FOLDER"/add-ons/maiana-ais-install.sh
-cd $O_DIR
 
 # TODO: disabled temp
 #git clone --depth=1 https://github.com/formatc1702/WireViz

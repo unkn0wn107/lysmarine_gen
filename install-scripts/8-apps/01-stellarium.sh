@@ -1,5 +1,9 @@
 #!/bin/bash -e
 
+if [ "$BBN_KIND" == "LIGHT" ] ; then
+  exit 0
+fi
+
 apt-get clean
 
 apt-get -y -q install geographiclib-tools libqt6charts6 libqt6multimediawidgets6 libqt6webenginewidgets6 libqt6serialport6 # libqt6script6 stellarium stellarium-data

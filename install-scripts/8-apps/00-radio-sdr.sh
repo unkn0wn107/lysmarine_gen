@@ -2,6 +2,10 @@
 
 apt-get clean
 
+if [ "$BBN_KIND" == "LIGHT" ] ; then
+  exit 0
+fi
+
 install -v -m 0644 "$FILE_FOLDER"/50-rtl-sdr.rules "/etc/udev/rules.d/"
 install -v -m 0644 "$FILE_FOLDER"/52-airspy.rules "/etc/udev/rules.d/"
 install -v -m 0644 "$FILE_FOLDER"/52-airspyhf.rules "/etc/udev/rules.d/"

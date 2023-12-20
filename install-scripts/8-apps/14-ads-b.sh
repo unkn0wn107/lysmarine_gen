@@ -1,5 +1,9 @@
 #!/bin/bash -e
 
+if [ "$BBN_KIND" == "LIGHT" ] ; then
+  exit 0
+fi
+
 exit 0 # TODO: disabled temp
 
 apt-get -y -q install dump1090-fa piaware
