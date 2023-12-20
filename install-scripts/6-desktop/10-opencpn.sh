@@ -27,7 +27,11 @@ cd "$BK_DIR"
 mkdir tmp-o-bundle-"$LMARCH" || exit 2
 cd tmp-o-bundle-"$LMARCH"
 
-wget -O opencpn-plugins-bundle-"$LMARCH".tar.gz https://github.com/bareboat-necessities/lysmarine_gen/releases/download/vTest/opencpn-plugins-bundle-o_5_8_x-bookworm-5-"$LMARCH".tar.gz
+if [ "$BBN_KIND" == "LIGHT" ] ; then
+  wget -O opencpn-plugins-bundle-"$LMARCH".tar.gz https://github.com/bareboat-necessities/lysmarine_gen/releases/download/vTest/opencpn-plugins-bundle-o_5_8_x-bookworm-5-light-"$LMARCH".tar.gz
+else
+  wget -O opencpn-plugins-bundle-"$LMARCH".tar.gz https://github.com/bareboat-necessities/lysmarine_gen/releases/download/vTest/opencpn-plugins-bundle-o_5_8_x-bookworm-5-"$LMARCH".tar.gz
+fi
 gzip -cd opencpn-plugins-bundle-"$LMARCH".tar.gz | tar xvf -
 
 mkdir -p /home/user/.local/lib /home/user/.local/bin /home/user/.local/share /home/user/.local/doc /home/user/.local/include
