@@ -16,23 +16,15 @@ fi
 dpkg -i noaa-apt.deb && rm -f noaa-apt.deb
 rm -f /usr/local/share/noaa-apt/test/test*.wav
 
-wget -q -O - https://github.com/bareboat-necessities/lysmarine_gen/releases/download/vTest/AIS-catcher-20231216-bookworm-arm64.zip > AIS-catcher.zip
-unzip AIS-catcher.zip && rm AIS-catcher.zip
-mv AIS-catcher /usr/local/bin/ && chmod +x /usr/local/bin/AIS-catcher
-
 #################################
 
 apt-get -y install libaudiofile-dev
-
 mdir=$(pwd)
-
 cd /usr/local/share
 git clone --depth=1 https://github.com/cropinghigh/inmarsatc
 git clone --depth=1 https://github.com/cropinghigh/stdcdec
-
 rm -rf inmarsatc/.git
 rm -rf stdcdec/.git
-
 cd "$mdir"
 
 #################################
@@ -55,6 +47,11 @@ if [ "$BBN_KIND" == "LITE" ] ; then
   exit 0
 fi
 
+#################################
+
+wget -q -O - https://github.com/bareboat-necessities/lysmarine_gen/releases/download/vTest/AIS-catcher-20231216-bookworm-arm64.zip > AIS-catcher.zip
+unzip AIS-catcher.zip && rm AIS-catcher.zip
+mv AIS-catcher /usr/local/bin/ && chmod +x /usr/local/bin/AIS-catcher
 
 apt-get -y -q --no-install-recommends install \
   cubicsdr                              \
