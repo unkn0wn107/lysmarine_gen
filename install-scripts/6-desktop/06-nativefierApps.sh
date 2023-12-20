@@ -67,6 +67,8 @@ npm cache clean --force
 
 apt-get clean
 
+chmod 755 /opt/*
+
 if [ "$BBN_KIND" == "LIGHT" ] ; then
   exit 0
 fi
