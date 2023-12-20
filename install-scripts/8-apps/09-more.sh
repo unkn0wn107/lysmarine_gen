@@ -50,6 +50,19 @@ npm cache clean --force
 install -v -m 0755 "$FILE_FOLDER"/bbn-change-password.sh "/usr/local/bin/bbn-change-password"
 install -v -m 0755 "$FILE_FOLDER"/bbn-rename-host.sh "/usr/local/sbin/bbn-rename-host"
 
+chmod +x "$FILE_FOLDER"/add-ons/*.sh
+"$FILE_FOLDER"/add-ons/windy-install.sh
+"$FILE_FOLDER"/add-ons/lightningmaps-install.sh
+"$FILE_FOLDER"/add-ons/marinetraffic-install.sh
+"$FILE_FOLDER"/add-ons/boatsetter-install.sh
+"$FILE_FOLDER"/add-ons/findacrew-install.sh
+"$FILE_FOLDER"/add-ons/noaa-enc-online-install.sh
+
+install -v -o 1000 -g 1000 -m 0755 "$FILE_FOLDER"/add-ons/timezone-setup.sh "/home/user/add-ons/"
+install -v -o 1000 -g 1000 -m 0755 "$FILE_FOLDER"/add-ons/os-settings.sh "/home/user/add-ons/"
+install -v -o 1000 -g 1000 -m 0755 "$FILE_FOLDER"/add-ons/change-password.sh "/home/user/add-ons/"
+install -v -o 1000 -g 1000 -m 0755 "$FILE_FOLDER"/add-ons/maritime-lib-install.sh "/home/user/add-ons/"
+
 if [ "$BBN_KIND" == "LIGHT" ] ; then
   exit 0
 fi
@@ -68,11 +81,8 @@ install -v -o 1000 -g 1000 -m 0755 "$FILE_FOLDER"/add-ons/nmea-sleuth-install.sh
 install -v -o 1000 -g 1000 -m 0755 "$FILE_FOLDER"/add-ons/qtvlm-install.sh "/home/user/add-ons/"
 install -v -o 1000 -g 1000 -m 0755 "$FILE_FOLDER"/add-ons/predict-install.sh "/home/user/add-ons/"
 #install -v -o 1000 -g 1000 -m 0755 "$FILE_FOLDER"/add-ons/nodered-install.sh "/home/user/add-ons/"
-install -v -o 1000 -g 1000 -m 0755 "$FILE_FOLDER"/add-ons/timezone-setup.sh "/home/user/add-ons/"
 install -v -o 1000 -g 1000 -m 0755 "$FILE_FOLDER"/add-ons/calibrate-touchscreen.sh "/home/user/add-ons/"
-install -v -o 1000 -g 1000 -m 0755 "$FILE_FOLDER"/add-ons/os-settings.sh "/home/user/add-ons/"
-install -v -o 1000 -g 1000 -m 0755 "$FILE_FOLDER"/add-ons/change-password.sh "/home/user/add-ons/"
-install -v -o 1000 -g 1000 -m 0755 "$FILE_FOLDER"/add-ons/scytalec-inmarsat-install.sh "/home/user/add-ons/"
+#install -v -o 1000 -g 1000 -m 0755 "$FILE_FOLDER"/add-ons/scytalec-inmarsat-install.sh "/home/user/add-ons/"
 install -v -o 1000 -g 1000 -m 0755 "$FILE_FOLDER"/add-ons/winlink-pat-install.sh "/home/user/add-ons/"
 install -v -o 1000 -g 1000 -m 0755 "$FILE_FOLDER"/add-ons/openplotter-install.sh "/home/user/add-ons/"
 install -v -o 1000 -g 1000 -m 0755 "$FILE_FOLDER"/add-ons/argonOne-install.sh "/home/user/add-ons/"
@@ -88,7 +98,6 @@ install -v -o 1000 -g 1000 -m 0755 "$FILE_FOLDER"/add-ons/ads-b-install.sh "/hom
 install -v -o 1000 -g 1000 -m 0755 "$FILE_FOLDER"/add-ons/tvheadend-install.sh "/home/user/add-ons/"
 install -v -o 1000 -g 1000 -m 0755 "$FILE_FOLDER"/add-ons/dvb-t-install.sh "/home/user/add-ons/"
 install -v -o 1000 -g 1000 -m 0755 "$FILE_FOLDER"/add-ons/findacrew-install.sh "/home/user/add-ons/"
-install -v -o 1000 -g 1000 -m 0755 "$FILE_FOLDER"/add-ons/maritime-lib-install.sh "/home/user/add-ons/"
 install -v -o 1000 -g 1000 -m 0755 "$FILE_FOLDER"/add-ons/homeassistant-install.sh "/home/user/add-ons/"
 install -v -o 1000 -g 1000 -m 0755 "$FILE_FOLDER"/add-ons/jellyfin-install.sh "/home/user/add-ons/"
 install -v -o 1000 -g 1000 -m 0755 "$FILE_FOLDER"/add-ons/stdc-install.sh "/home/user/add-ons/"
@@ -98,12 +107,6 @@ install -v -o 1000 -g 1000 -m 0755 "$FILE_FOLDER"/add-ons/tripwire-install.sh "/
 install -v -o 1000 -g 1000 -m 0755 "$FILE_FOLDER"/add-ons/noaa-enc-online-install.sh "/home/user/add-ons/"
 install -v -o 1000 -g 1000 -m 0755 "$FILE_FOLDER"/add-ons/xtide-install.sh "/home/user/add-ons/"
 
-/home/user/add-ons/windy-install.sh
-/home/user/add-ons/lightningmaps-install.sh
-/home/user/add-ons/marinetraffic-install.sh
-/home/user/add-ons/boatsetter-install.sh
-/home/user/add-ons/findacrew-install.sh
-/home/user/add-ons/noaa-enc-online-install.sh
 
 install -v "$FILE_FOLDER"/bbn-checklist.desktop "/usr/local/share/applications/"
 
