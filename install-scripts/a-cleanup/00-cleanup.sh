@@ -69,6 +69,7 @@ rm -rf /usr/share/doc/tcllib/html/
 rm -rf /usr/share/doc/openjdk*/test*/*
 rm -rf /usr/share/doc/python3*/HISTORY.*
 rm -rf /usr/share/doc/python3*/NEWS.*
+rm -rf /usr/share/backgrounds/budgie/*
 rm -rf /var/lib/apt/lists/*
 rm -f /2
 find /usr/share/doc -name changelog\*.gz -exec rm -f {} \;
