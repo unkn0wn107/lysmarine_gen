@@ -6,5 +6,5 @@ Exec=bash -c "cd /usr/local/share/noaa-apt; noaa-apt"
 Icon=noaa-apt
 Terminal=false
 Type=Application
-Categories=Graphics;Utility;2DGraphics;RasterGraphics;HamRadio;Audio;ImageProcessing;
+Categories=Utility;HamRadio;
 Keywords=rtlsdr;rtl;sdr;wav;
