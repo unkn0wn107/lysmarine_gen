@@ -1,5 +1,9 @@
 #!/bin/bash -e
 
+if [ "$BBN_KIND" == "LIGHT" ] ; then
+  exit 0
+fi
+
 apt-get clean
 
 # See: https://github.com/motioneye-project/motioneye/tree/dev

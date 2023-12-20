@@ -2,6 +2,10 @@
 
 apt-get clean
 
+if [ "$BBN_KIND" == "LIGHT" ] ; then
+  exit 0
+fi
+
 apt-get -y -q install influxdb chronograf kapacitor telegraf
 
 systemctl unmask influxdb
