@@ -9,6 +9,6 @@ Comment=Windy
 Exec=gnome-www-browser https://www.windy.com/
 Terminal=false
 Icon=weather-windy-symbolic
-Categories=Internet
+Categories=WWW;
 EOF'
 

@@ -9,5 +9,5 @@ Comment=Marine Traffic
 Exec=gnome-www-browser https://www.marinetraffic.com/
 Terminal=false
 Icon=gnome-globe
-Categories=Internet
+Categories=WWW;
 EOF'
