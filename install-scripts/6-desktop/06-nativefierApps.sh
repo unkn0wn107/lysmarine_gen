@@ -6,16 +6,9 @@ apt-get -y -q install nodejs libnss3 gnome-icon-theme unzip
 
 npm install nativefier electron -g --unsafe-perm --production
 
-install -d '/usr/local/share/bbn-checklist'
-install -v -m 0644 "$FILE_FOLDER"/bbn-checklist/asciidoctor.css "/usr/local/share/bbn-checklist/"
-install -v -m 0644 "$FILE_FOLDER"/bbn-checklist/bbn-checklist.html "/usr/local/share/bbn-checklist/"
-install -v -m 0644 "$FILE_FOLDER"/bbn-checklist/bareboat-necessities-logo.svg "/usr/local/share/bbn-checklist/"
-
 ## Install icons and .desktop files
 install -d -o 1000 -g 1000 /home/user/.local/share/icons
-install -v -o 1000 -g 1000 -m 644 "$FILE_FOLDER"/icons/freeboard-sk.png /home/user/.local/share/icons/
 install -v -o 1000 -g 1000 -m 644 "$FILE_FOLDER"/icons/signalk.png /home/user/.local/share/icons/
-install -v -o 1000 -g 1000 -m 644 "$FILE_FOLDER"/icons/dockwa.png /home/user/.local/share/icons/
 install -d /usr/local/share/applications
 
 ## arch name translation
@@ -31,41 +24,15 @@ fi
 
 ########################################################################################################################
 
-nativefier -a "$arch" --inject "$FILE_FOLDER"/pypilot_darktheme.js --disable-context-menu --disable-dev-tools --single-instance \
-  --disable-old-build-warning-yesiknowitisinsecure \
-  --name "Pypilot_webapp" --icon /usr/share/icons/gnome/256x256/actions/go-jump.png \
-  "http://localhost:8080" /opt/
-
-nativefier -a "$arch" --disable-context-menu --disable-dev-tools --single-instance \
-  --disable-old-build-warning-yesiknowitisinsecure \
-  --name "AvNav" --icon /usr/share/icons/gnome/256x256/actions/go-jump.png \
-  "http://localhost:8099/viewer/avnav_viewer.html?noCloseDialog=true" /opt/
-
 nativefier -a "$arch" --disable-context-menu --disable-dev-tools --single-instance \
   --disable-old-build-warning-yesiknowitisinsecure \
   --name "bbn-launcher" --icon /usr/share/icons/gnome/256x256/apps/utilities-system-monitor.png \
   "http://localhost:4997" /opt/
 
-install -v -m 0644 "$FILE_FOLDER"/pypilot_webapp.desktop "/usr/local/share/applications/"
-install -v -m 0644 "$FILE_FOLDER"/avnav.desktop "/usr/local/share/applications/"
-
-## Make folder name arch independent.
-mv /opt/AvNav-linux-"$arch" /opt/AvNav
-mv /opt/Pypilot_webapp-linux-"$arch" /opt/Pypilot_webapp
-mv /opt/bbn-launcher-linux-"$arch" /opt/bbn-launcher
-
-## On debian, the sandbox environment fail without GUID/SUID
-if [ "$LMOS" == Debian ]; then
-  chmod 4755 /opt/AvNav/chrome-sandbox
-  chmod 4755 /opt/Pypilot_webapp/chrome-sandbox
-  chmod 4755 /opt/bbn-launcher/chrome-sandbox
-fi
-
-# Minimize space by linking identical files
-hardlink -v -t /opt/* /usr/lib/node_modules/electron/*
-npm cache clean --force
-
-########################################################################################################################
+nativefier -a "$arch" --inject "$FILE_FOLDER"/pypilot_darktheme.js --disable-context-menu --disable-dev-tools --single-instance \
+  --disable-old-build-warning-yesiknowitisinsecure \
+  --name "Pypilot_webapp" --icon /usr/share/icons/gnome/256x256/actions/go-jump.png \
+  "http://localhost:8080" /opt/
 
 nativefier -a "$arch" --disable-context-menu --disable-dev-tools --single-instance \
   --disable-old-build-warning-yesiknowitisinsecure \
@@ -74,13 +41,59 @@ nativefier -a "$arch" --disable-context-menu --disable-dev-tools --single-instan
 
 nativefier -a "$arch" --disable-context-menu --disable-dev-tools --single-instance \
   --disable-old-build-warning-yesiknowitisinsecure \
-  --name "Freeboard-sk" --icon /home/user/.local/share/icons/freeboard-sk.png \
-  "http://localhost:3000/@signalk/freeboard-sk/" /opt/
+  --name "kip-dash" --icon /home/user/.local/share/icons/signalk.png \
+  "http://localhost:3000/@mxtommy/kip/" /opt/
+
+install -v -m 0644 "$FILE_FOLDER"/pypilot_webapp.desktop "/usr/local/share/applications/"
+install -v -m 0644 "$FILE_FOLDER"/signalk.desktop "/usr/local/share/applications/"
+install -v -m 0644 "$FILE_FOLDER"/kip-dash.desktop "/usr/local/share/applications/"
+
+mv /opt/bbn-launcher-linux-"$arch" /opt/bbn-launcher
+mv /opt/Pypilot_webapp-linux-"$arch" /opt/Pypilot_webapp
+mv /opt/SignalK-linux-"$arch" /opt/SignalK
+mv /opt/kip-dash-linux-"$arch" /opt/kip-dash
+
+## On debian, the sandbox environment fail without GUID/SUID
+if [ "$LMOS" == Debian ]; then
+  chmod 4755 /opt/bbn-launcher/chrome-sandbox
+  chmod 4755 /opt/Pypilot_webapp/chrome-sandbox
+  chmod 4755 /opt/SignalK/chrome-sandbox
+  chmod 4755 /opt/kip-dash/chrome-sandbox
+fi
+
+# Minimize space by linking identical files
+hardlink -v -t /opt/* /usr/lib/node_modules/electron/*
+npm cache clean --force
+
+apt-get clean
+
+if [ "$BBN_KIND" == "LIGHT" ] ; then
+  exit 0
+fi
+
+########################################################################################################################
 
 nativefier -a "$arch" --disable-context-menu --disable-dev-tools --single-instance \
   --disable-old-build-warning-yesiknowitisinsecure \
-  --name "kip-dash" --icon /home/user/.local/share/icons/signalk.png \
-  "http://localhost:3000/@mxtommy/kip/" /opt/
+  --name "AvNav" --icon /usr/share/icons/gnome/256x256/actions/go-jump.png \
+  "http://localhost:8099/viewer/avnav_viewer.html?noCloseDialog=true" /opt/
+
+install -v -m 0644 "$FILE_FOLDER"/avnav.desktop "/usr/local/share/applications/"
+
+## Make folder name arch independent.
+mv /opt/AvNav-linux-"$arch" /opt/AvNav
+
+## On debian, the sandbox environment fail without GUID/SUID
+if [ "$LMOS" == Debian ]; then
+  chmod 4755 /opt/AvNav/chrome-sandbox
+fi
+
+########################################################################################################################
+
+nativefier -a "$arch" --disable-context-menu --disable-dev-tools --single-instance \
+  --disable-old-build-warning-yesiknowitisinsecure \
+  --name "Freeboard-sk" --icon /home/user/.local/share/icons/freeboard-sk.png \
+  "http://localhost:3000/@signalk/freeboard-sk/" /opt/
 
 nativefier -a "$arch" --disable-context-menu --disable-dev-tools --single-instance \
   --disable-old-build-warning-yesiknowitisinsecure \
@@ -92,24 +105,18 @@ nativefier -a "$arch" --disable-context-menu --disable-dev-tools --single-instan
   --name "sailgauge" --icon /home/user/.local/share/icons/signalk.png \
   "http://localhost:3000/@signalk/sailgauge/" /opt/
 
-install -v "$FILE_FOLDER"/signalk.desktop /usr/local/share/applications/
 install -v "$FILE_FOLDER"/Freeboard-sk.desktop /usr/local/share/applications/
-install -v "$FILE_FOLDER"/kip-dash.desktop /usr/local/share/applications/
 install -v "$FILE_FOLDER"/instrumentpanel.desktop /usr/local/share/applications/
 install -v "$FILE_FOLDER"/sailgauge.desktop /usr/local/share/applications/
 
 ## Make folder name arch independent.
-mv /opt/SignalK-linux-"$arch" /opt/SignalK
 mv /opt/Freeboard-sk-linux-"$arch" /opt/Freeboard-sk
-mv /opt/kip-dash-linux-"$arch" /opt/kip-dash
 mv /opt/instrumentpanel-linux-"$arch" /opt/instrumentpanel
 mv /opt/sailgauge-linux-"$arch" /opt/sailgauge
 
 ## On debian, the sandbox environment fail without GUID/SUID
 if [ "$LMOS" == Debian ]; then
-  chmod 4755 /opt/SignalK/chrome-sandbox
   chmod 4755 /opt/Freeboard-sk/chrome-sandbox
-  chmod 4755 /opt/kip-dash/chrome-sandbox
   chmod 4755 /opt/instrumentpanel/chrome-sandbox
   chmod 4755 /opt/sailgauge/chrome-sandbox
 fi
@@ -244,3 +251,11 @@ hardlink -v -t /opt/* /usr/lib/node_modules/electron/*
 npm cache clean --force
 
 apt-get clean
+
+install -v -o 1000 -g 1000 -m 644 "$FILE_FOLDER"/icons/freeboard-sk.png /home/user/.local/share/icons/
+install -v -o 1000 -g 1000 -m 644 "$FILE_FOLDER"/icons/dockwa.png /home/user/.local/share/icons/
+
+install -d '/usr/local/share/bbn-checklist'
+install -v -m 0644 "$FILE_FOLDER"/bbn-checklist/asciidoctor.css "/usr/local/share/bbn-checklist/"
+install -v -m 0644 "$FILE_FOLDER"/bbn-checklist/bbn-checklist.html "/usr/local/share/bbn-checklist/"
+install -v -m 0644 "$FILE_FOLDER"/bbn-checklist/bareboat-necessities-logo.svg "/usr/local/share/bbn-checklist/"
