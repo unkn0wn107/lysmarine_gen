@@ -85,6 +85,7 @@ install -v -m0644 "$FILE_FOLDER"/firstrun.sh "/boot/"
 
 rm -f /usr/share/applications/xgpsspeed.desktop
 rm -f /usr/share/applications/xgps.desktop
+rm -f /usr/share/applications/yad-icon-browser.desktop
 
 # Fill free space with zeros
 cat /dev/zero > /zer0s || true
