@@ -83,6 +83,9 @@ rm -rf /boot/issue.txt
 #install -v -m0644 "$FILE_FOLDER"/issue.txt "/boot/"
 install -v -m0644 "$FILE_FOLDER"/firstrun.sh "/boot/"
 
+rm -f /usr/share/applications/xgpsspeed.desktop
+rm -f /usr/share/applications/xgps.desktop
+
 # Fill free space with zeros
 cat /dev/zero > /zer0s || true
 rm -f /zer0s
