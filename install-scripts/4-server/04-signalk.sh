@@ -218,7 +218,10 @@ echo 'user ALL=(ALL) NOPASSWD: /usr/local/sbin/signalk-restart' >>/etc/sudoers
 
 systemctl enable signalk
 
-bash -c 'cat << EOF > /usr/local/share/applications/signalk-node-red.desktop
+if [ "$BBN_KIND" == "LIGHT" ] ; then
+  true
+else
+  bash -c 'cat << EOF > /usr/local/share/applications/signalk-node-red.desktop
 [Desktop Entry]
 Type=Application
 Name=SignalK-Node-Red
@@ -229,8 +232,7 @@ Terminal=false
 Icon=gtk-no
 Categories=Utility;
 EOF'
-
-bash -c 'cat << EOF > /usr/local/share/applications/signalk-polar.desktop
+  bash -c 'cat << EOF > /usr/local/share/applications/signalk-polar.desktop
 [Desktop Entry]
 Type=Application
 Name=SignalK-Polar
@@ -241,6 +243,7 @@ Terminal=false
 Icon=gtk-about
 Categories=Utility;
 EOF'
+fi
 
 rm -rf /home/signalk/.cache
 rm -rf /home/signalk/.npm
