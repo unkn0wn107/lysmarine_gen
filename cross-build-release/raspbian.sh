@@ -74,7 +74,12 @@ EOF
   ls -l ./work/$thisArch/"$imageName"
 
   # Renaming the OS and moving it to the release folder.
-  cp -v ./work/$thisArch/"$imageName" ./release/$thisArch/test-bbn-bookworm_"${LYSMARINE_VER}"-${thisArch}-${cpuArch}.img
+  if [ "$BBN_KIND" == "LIGHT" ] ; then
+    BBN_IMG=test-bbn-bookworm-light_"${LYSMARINE_VER}"-${thisArch}-${cpuArch}.img
+  else
+    BBN_IMG=test-bbn-bookworm_"${LYSMARINE_VER}"-${thisArch}-${cpuArch}.img
+  fi
+  cp -v ./work/$thisArch/"$imageName" ./release/$thisArch/"$BBN_IMG"
 
   exit 0
 }
