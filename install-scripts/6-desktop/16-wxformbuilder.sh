@@ -2,6 +2,10 @@
 
 exit 0 # TODO: disabled
 
+if [ "$BBN_KIND" == "LIGHT" ] ; then
+  exit 0
+fi
+
 apt-get -y install libwxgtk3.2-dev libwxgtk-media3.2-dev libboost-dev meson cmake make git
 
 git clone https://github.com/wxFormBuilder/wxFormBuilder

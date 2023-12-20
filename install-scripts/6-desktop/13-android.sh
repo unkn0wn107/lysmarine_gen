@@ -1,5 +1,9 @@
 #!/bin/bash -e
 
+if [ "$BBN_KIND" == "LIGHT" ] ; then
+  exit 0
+fi
+
 apt-get install -y ffmpeg libsdl2-2.0-0 adb \
   pkg-config meson ninja-build # TODO: scrcpy
 
