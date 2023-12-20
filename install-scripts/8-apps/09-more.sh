@@ -4,9 +4,9 @@ apt-get clean
 npm cache clean --force
 
 if [ "$BBN_KIND" == "LIGHT" ] ; then
-  apt-get -q -y install i2c-tools python3-smbus dos2unix traceroute telnet socat gdal-bin openvpn \
-    gedit sysstat jq uhubctl libusb-1.0-0-dev \
-    rpi-imager piclone fontconfig gnome-disk-utility xfce4-screenshooter baobab
+  apt-get -q -y install i2c-tools python3-smbus dos2unix traceroute telnet socat gdal-bin openvpn seahorse \
+    gedit sysstat jq xmlstarlet uhubctl iotop libusb-1.0-0-dev \
+    rpi-imager piclone fontconfig gnome-disk-utility xfce4-screenshooter hardinfo baobab
 else
   apt-get -q -y install i2c-tools python3-smbus dos2unix traceroute telnet whois socat gdal-bin openvpn seahorse inxi \
     dconf-editor gedit gnome-calculator \
