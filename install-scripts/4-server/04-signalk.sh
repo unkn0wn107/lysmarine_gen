@@ -82,9 +82,13 @@ if [ "$BBN_KIND" == "LIGHT" ] ; then
                  signalk-derived-data  \
                  signalk-anchoralarm-plugin  \
                  signalk-alarm-silencer  \
+                 signalk-simple-notifications  \
                  signalk-to-nmea2000  \
+                 signalk-sonoff-ewelink  \
+                 signalk-shelly \
                  @mxtommy/kip  \
                  nmea0183-to-nmea0183 \
+                 xdr-parser-plugin \
                  signalk-path-filter \
                  signalk-datetime \
                  @meri-imperiumi/signalk-autostate --unsafe-perm --loglevel error"
