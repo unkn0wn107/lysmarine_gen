@@ -9,5 +9,5 @@ Comment=BoatSetter
 Exec=gnome-www-browser https://www.boatsetter.com/
 Terminal=false
 Icon=gnome-globe
-Categories=WWW;
+Categories=Network;
 EOF'
