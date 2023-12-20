@@ -20,6 +20,7 @@ module.exports = {
   ],
 
   commands2 : [
+    {name: 'guide', title: 'Guide', img: 'ship', bg: 'RoyalBlue',  cmd: 'gtk-launch', args: ['os-guide']},
   ],
 
   commands3 : [
