@@ -67,8 +67,6 @@ wget --no-check-certificate https://download.tuxfamily.org/xinutop/rastow/readme
 mkdir /usr/local/share/rastow
 mv readme.txt /usr/local/share/rastow/
 
-#install -v "$FILE_FOLDER"/opencpn.desktop "/usr/share/applications/"
-
 # TODO: temp fix
 wget https://github.com/bareboat-necessities/lysmarine_gen/releases/download/vTest/opencpn_5.8.4+8089+1637c28fb.ubuntu22.04.1_arm64.deb
 dpkg -i opencpn_5.8.4+8089+1637c28fb.ubuntu22.04.1_arm64.deb
@@ -86,3 +84,5 @@ rm -rf imgkap
 
 # for OpenCPN
 #ln -s /usr/share/opencpn/tcdata/harmonics-dwf-20220109/harmonics-dwf-20220109-free.tcd /usr/share/opencpn/tcdata/harmonics-dwf-20210110-free.tcd
+
+install -v "$FILE_FOLDER"/opencpn.desktop "/usr/share/applications/"
