@@ -20,6 +20,23 @@ wget -q -O - https://github.com/bareboat-necessities/lysmarine_gen/releases/down
 unzip AIS-catcher.zip && rm AIS-catcher.zip
 mv AIS-catcher /usr/local/bin/ && chmod +x /usr/local/bin/AIS-catcher
 
+#################################
+
+apt-get -y install libaudiofile-dev
+
+mdir=$(pwd)
+
+cd /usr/local/share
+git clone --depth=1 https://github.com/cropinghigh/inmarsatc
+git clone --depth=1 https://github.com/cropinghigh/stdcdec
+
+rm -rf inmarsatc/.git
+rm -rf stdcdec/.git
+
+cd "$mdir"
+
+#################################
+
 if [ "$BBN_KIND" == "LIGHT" ] ; then
   exit 0
 fi
@@ -97,21 +114,6 @@ wget -q -O - https://arachnoid.com/JWX/resources/JWX.jar > /usr/local/share/jwx/
 wget -q -O - https://arachnoid.com/JWX/resources/JWX_source.tar.bz2 > /usr/local/share/jwx/JWX_source.tar.bz2
 
 apt-get -y -q install fontconfig
-
-#################################
-
-apt-get -y install libaudiofile-dev
-
-mdir=$(pwd)
-
-cd /usr/local/share
-git clone --depth=1 https://github.com/cropinghigh/inmarsatc
-git clone --depth=1 https://github.com/cropinghigh/stdcdec
-
-rm -rf inmarsatc/.git
-rm -rf stdcdec/.git
-
-cd "$mdir"
 
 #################################
 
