@@ -4,7 +4,7 @@
 
   MY_CPU_ARCH=$1
   LYSMARINE_VER=$2
-  BBN_KIND=LITE
+  BBN_KIND=$3
 
   thisArch="raspios"
   cpuArch="arm64"

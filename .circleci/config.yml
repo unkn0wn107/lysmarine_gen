@@ -54,6 +54,19 @@ jobs:
       - PKG_RELEASE=raspbian
       - PKG_DISTRO=bookworm
       - PKG_ARCH=arm64
+      - BBN_KIND=FULL
+      - EMU=off
+    steps:
+      - do-all
+  build-lite-raspbian-bookworm-arm64:
+    executor: boot-linux-arm
+    environment:
+      - DOCKER_IMAGE=arm64v8/debian:bookworm
+      - CONTAINER_DISTRO=debian:bookworm
+      - PKG_RELEASE=raspbian
+      - PKG_DISTRO=bookworm
+      - PKG_ARCH=arm64
+      - BBN_KIND=LITE
       - EMU=off
     steps:
       - do-all
@@ -62,4 +75,5 @@ workflows:
   build_all:
     jobs:
       - build-raspbian-bookworm-arm64
+      - build-lite-raspbian-bookworm-arm64
 #      - build-raspbian-bookworm-arm32
