@@ -75,6 +75,14 @@ fi
 
 ########################################################################################################################
 
+install -v -o 1000 -g 1000 -m 644 "$FILE_FOLDER"/icons/freeboard-sk.png /home/user/.local/share/icons/
+install -v -o 1000 -g 1000 -m 644 "$FILE_FOLDER"/icons/dockwa.png /home/user/.local/share/icons/
+
+install -d '/usr/local/share/bbn-checklist'
+install -v -m 0644 "$FILE_FOLDER"/bbn-checklist/asciidoctor.css "/usr/local/share/bbn-checklist/"
+install -v -m 0644 "$FILE_FOLDER"/bbn-checklist/bbn-checklist.html "/usr/local/share/bbn-checklist/"
+install -v -m 0644 "$FILE_FOLDER"/bbn-checklist/bareboat-necessities-logo.svg "/usr/local/share/bbn-checklist/"
+
 nativefier -a "$arch" --disable-context-menu --disable-dev-tools --single-instance \
   --disable-old-build-warning-yesiknowitisinsecure \
   --name "AvNav" --icon /usr/share/icons/gnome/256x256/actions/go-jump.png \
@@ -254,10 +262,3 @@ chmod 755 /opt/*
 
 apt-get clean
 
-install -v -o 1000 -g 1000 -m 644 "$FILE_FOLDER"/icons/freeboard-sk.png /home/user/.local/share/icons/
-install -v -o 1000 -g 1000 -m 644 "$FILE_FOLDER"/icons/dockwa.png /home/user/.local/share/icons/
-
-install -d '/usr/local/share/bbn-checklist'
-install -v -m 0644 "$FILE_FOLDER"/bbn-checklist/asciidoctor.css "/usr/local/share/bbn-checklist/"
-install -v -m 0644 "$FILE_FOLDER"/bbn-checklist/bbn-checklist.html "/usr/local/share/bbn-checklist/"
-install -v -m 0644 "$FILE_FOLDER"/bbn-checklist/bareboat-necessities-logo.svg "/usr/local/share/bbn-checklist/"
