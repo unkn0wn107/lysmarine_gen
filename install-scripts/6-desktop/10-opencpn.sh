@@ -28,9 +28,9 @@ mkdir tmp-o-bundle-"$LMARCH" || exit 2
 cd tmp-o-bundle-"$LMARCH"
 
 if [ "$BBN_KIND" == "LITE" ] ; then
-  wget -O opencpn-plugins-bundle-"$LMARCH".tar.gz https://github.com/bareboat-necessities/lysmarine_gen/releases/download/vTest/opencpn-plugins-bundle-o_5_8_x-bookworm-5-light-"$LMARCH".tar.gz
+  wget -O opencpn-plugins-bundle-"$LMARCH".tar.gz https://github.com/bareboat-necessities/lysmarine_gen/releases/download/vTest/opencpn-plugins-bundle-o_5_8_x-bookworm-lite-"$LMARCH".tar.gz
 else
-  wget -O opencpn-plugins-bundle-"$LMARCH".tar.gz https://github.com/bareboat-necessities/lysmarine_gen/releases/download/vTest/opencpn-plugins-bundle-o_5_8_x-bookworm-5-"$LMARCH".tar.gz
+  wget -O opencpn-plugins-bundle-"$LMARCH".tar.gz https://github.com/bareboat-necessities/lysmarine_gen/releases/download/vTest/opencpn-plugins-bundle-o_5_8_x-bookworm-full-"$LMARCH".tar.gz
 fi
 gzip -cd opencpn-plugins-bundle-"$LMARCH".tar.gz | tar xvf -
 
