@@ -125,6 +125,10 @@ sed -i 's/_http._tcp.local./_signalk-http._tcp.local./' "$(find /usr/local/lib -
 #sed -i 's/ttyAMA0/serial1/' "$(find /usr/local/lib -name serialprobe.py)" || true
 #sed -i "s/'ttyAMA'//" "$(find /usr/local/lib -name serialprobe.py)" || true
 
+sed -i 's/from OpenGL.GLUT import */#from OpenGL.GLUT import */' "$(find /usr/local/lib -name autopilot_calibration.py)" || true
+sed -i 's/glutInit(sys.argv)/#glutInit(sys.argv)/' "$(find /usr/local/lib -name autopilot_calibration.py)" || true
+sed -i 's/BoatPlot = wx.glcanvas.GLCanvas(self.m_panel3/BoatPlot = wx.glcanvas.GLCanvas(self.m_panel4/' "$(find /usr/local/lib -name autopilot_control_ui.py)" || true
+
 #cp "$FILE_FOLDER"/wind.py "$(find /usr/local/lib -name wind.py)" || true
 
 systemctl disable pypilot_boatimu.service
