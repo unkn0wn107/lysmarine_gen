@@ -69,12 +69,8 @@ install -m 644 -v "$FILE_FOLDER"/panel.ini /etc/budgie-desktop/
 # Make some room for the rest of the build script
 apt-get clean
 
-## Install base desktop apps.
-if [ "$LMOS" == Raspbian ]; then
-	apt-get install -y -q firefox #chromium-browser
-else
-	apt-get install -y -q firefox #chromium
-fi
+## Install www apps.
+apt-get install -y -q chromium-browser rpi-chromium-mods
 
 # Adobe Flash Player. Copyright 1996-2015. Adobe Systems Incorporated. All Rights Reserved.
 #DEBIAN_FRONTEND=noniterractive apt-get -o Dpkg::Options:=="--force-confnew" -q -y install rpi-chromium-mods
