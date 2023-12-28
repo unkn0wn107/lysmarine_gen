@@ -74,6 +74,5 @@ workflows:
   version: 2
   build_all:
     jobs:
-      - build-raspbian-bookworm-arm64
       - build-lite-raspbian-bookworm-arm64
-#      - build-raspbian-bookworm-arm32
+#      - build-raspbian-bookworm-arm64
