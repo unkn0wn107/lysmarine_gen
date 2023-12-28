@@ -51,6 +51,9 @@ echo "sed -i 's/^sed\ /#&/'   /home/user/.config/openbox/autostart" >> /home/use
 
 usermod -a -G geoclue user
 
+install -o geoclue -g geoclue -d /var/lib/geoclue/.cache
+install -o geoclue -g geoclue -d /var/lib/geoclue/.cache/dconf
+
 cat << EOF >> /etc/geoclue/geoclue.conf
 
 [org.gnome.Weather]
