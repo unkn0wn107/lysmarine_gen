@@ -53,6 +53,7 @@ usermod -a -G geoclue user
 
 install -o geoclue -g geoclue -d /var/lib/geoclue/.cache
 install -o geoclue -g geoclue -d /var/lib/geoclue/.cache/dconf
+chmod 775 /var/lib/geoclue/.cache/dconf
 
 cat << EOF >> /etc/geoclue/geoclue.conf
 
