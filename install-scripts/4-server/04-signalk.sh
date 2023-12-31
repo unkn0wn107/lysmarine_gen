@@ -103,6 +103,7 @@ else
                  sk-resources-fs  \
                  freeboard-sk-helper  \
                  skwiz  \
+                 better-sqlite3@9.2.2 \
                  signalk-raspberry-pi-bme280  \
                  signalk-raspberry-pi-bmp180  \
                  signalk-raspberry-pi-ina219  \
