@@ -19,7 +19,7 @@ cd _install
 
 mv bin/* /usr/local/bin/
 mv share/* /usr/local/share/
-mv lib/a*-linux-*/* /usr/local/lib/
+mv lib/*/* /usr/local/lib/
 
 cd ..
 
