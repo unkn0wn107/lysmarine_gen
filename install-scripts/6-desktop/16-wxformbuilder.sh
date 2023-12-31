@@ -4,7 +4,7 @@ if [ "$BBN_KIND" == "LITE" ] ; then
   exit 0
 fi
 
-apt-get -y install libwxgtk3.2-dev libwxgtk-media3.2-dev libboost-dev meson cmake make git
+apt-get -y install libwxgtk3.2-dev libwxgtk-media3.2-dev libboost-dev cmake make git
 
 git clone --recursive https://github.com/wxFormBuilder/wxFormBuilder
 cd wxFormBuilder
