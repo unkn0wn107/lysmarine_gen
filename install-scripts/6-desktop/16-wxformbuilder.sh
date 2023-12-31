@@ -13,7 +13,7 @@ cd wxFormBuilder
 
 cmake -S . -B _build -G "Unix Makefiles" --install-prefix "$PWD/_install" -DCMAKE_BUILD_TYPE=Release
 cmake --build _build --config Release -j 4
-cmake --install _build --config Release
+#cmake --install _build --config Release
 
 cd _install
 
