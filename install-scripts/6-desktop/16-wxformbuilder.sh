@@ -1,7 +1,5 @@
 #!/bin/bash -e
 
-exit 0 # TODO: disabled
-
 if [ "$BBN_KIND" == "LITE" ] ; then
   exit 0
 fi

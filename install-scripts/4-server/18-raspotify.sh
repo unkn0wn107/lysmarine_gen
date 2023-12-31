@@ -21,7 +21,6 @@ install -v -m 644 -o 1000 -g 1000 "$FILE_FOLDER"/raspotify.service "/home/user/.
 
 apt-get clean
 
-# TODO: disabled temporarily
-#pip3 install --upgrade spotify-cli
+pip3 install --upgrade spotify-cli
 
 #apt-mark hold raspotify
