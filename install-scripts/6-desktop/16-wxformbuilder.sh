@@ -11,9 +11,9 @@ cd wxFormBuilder
 #git checkout 0efcecf0214321ce94469a47d0e0ceef131de602  # 4.0.0
 #git submodule update --recursive
 
-cmake -S . -B _build -G "Unix Makefiles" --install-prefix "$PWD/_install" -DCMAKE_BUILD_TYPE=Release
+cmake -S . -B _build -G "Unix Makefiles" --install-prefix "$(pwd)/_install" -DCMAKE_BUILD_TYPE=Release
 cmake --build _build --config Release -j 4
-#cmake --install _build --config Release
+cmake --install _build --config Release
 
 cd _install
 
