@@ -5,5 +5,10 @@
   "repository": {
     "@signalk/charts-plugin": "^2.2.0"
   },
+  "pnpm": {
+    "overrides": {
+      "better-sqlite3": "^9.2.2"
+    }
+  },
   "license": "Apache-2.0"
 }
