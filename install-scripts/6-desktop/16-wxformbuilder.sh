@@ -17,9 +17,7 @@ cmake --install _build --config Release
 
 cd _install
 
-mv bin/* /usr/local/bin/
-mv share/* /usr/local/share/
-mv lib/*/* /usr/local/lib/
+cp -r ./* /usr/local
 
 cd ..
 
