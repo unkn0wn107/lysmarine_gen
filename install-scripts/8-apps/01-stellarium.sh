@@ -8,8 +8,8 @@ apt-get clean
 
 apt-get -y -q install geographiclib-tools libqt6charts6 libqt6multimediawidgets6 libqt6webenginewidgets6 libqt6serialport6 # libqt6script6 stellarium stellarium-data
 
-wget http://ppa.launchpad.net/stellarium/stellarium-releases/ubuntu/pool/main/s/stellarium/stellarium_23.3.0-upstream1.0~ubuntu22.04.1_arm64.deb
-wget http://ppa.launchpad.net/stellarium/stellarium-releases/ubuntu/pool/main/s/stellarium/stellarium-data_23.3.0-upstream1.0~ubuntu22.04.1_all.deb
+wget http://ppa.launchpad.net/stellarium/stellarium-releases/ubuntu/pool/main/s/stellarium/stellarium_23.4.0-upstream1.0~ubuntu22.04.1_arm64.deb
+wget http://ppa.launchpad.net/stellarium/stellarium-releases/ubuntu/pool/main/s/stellarium/stellarium-data_23.4.0-upstream1.0~ubuntu22.04.1_all.deb
 
 dpkg-deb -xv stellarium_*.deb /
 dpkg-deb -xv stellarium-data*.deb /
