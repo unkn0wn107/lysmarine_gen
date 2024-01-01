@@ -31,6 +31,9 @@ sed -i "s/8080/8480/g" /etc/motion/motion.conf
 systemctl enable motioneye
 #systemctl start motioneye
 
+# TODO: temp fix
+pip3 install requests==2.29.0
+
 apt-get clean
 
 # http://localhost:8765/
