@@ -1,5 +1,7 @@
 #!/bin/bash -e
 
+rm -rf /usr/lib/python3.11/EXTERNALLY-MANAGED
+
 if [ "$BBN_KIND" == "LITE" ] ; then
   exit 0
 fi
@@ -15,8 +17,6 @@ apt-get -y --no-install-recommends install mopidy mopidy-mpd mopidy-tunein xdoto
 
 adduser mopidy video
 adduser mopidy audio
-
-rm -rf /usr/lib/python3.11/EXTERNALLY-MANAGED
 
 # Install some needed packages
 pip3 install install systems
