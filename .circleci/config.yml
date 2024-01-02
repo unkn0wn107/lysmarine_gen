@@ -46,7 +46,7 @@ jobs:
       - EMU=off
     steps:
       - do-all
-  build-raspbian-bookworm-arm64:
+  build-full-raspbian-bookworm-arm64:
     executor: boot-linux-arm
     environment:
       - DOCKER_IMAGE=arm64v8/debian:bookworm
@@ -74,5 +74,5 @@ workflows:
   version: 2
   build_all:
     jobs:
-      - build-raspbian-bookworm-arm64
-#      - build-lite-raspbian-bookworm-arm64
+      - build-full-raspbian-bookworm-arm64
+      - build-lite-raspbian-bookworm-arm64
