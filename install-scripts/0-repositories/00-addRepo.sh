@@ -27,7 +27,7 @@ install -m 0644 -v "$FILE_FOLDER"/stellarium.list "/etc/apt/sources.list.d/"
 #install -m 0644 -v "$FILE_FOLDER"/piaware-bookworm.list "/etc/apt/sources.list.d/"
 install -m 0644 -v "$FILE_FOLDER"/box86.list "/etc/apt/sources.list.d/"
 
-wget -O /etc/apt/sources.list.d/piaware-bookworm.list https://abcd567a.github.io/rpi/abcd567a.list
+#wget -O /etc/apt/sources.list.d/piaware.list https://abcd567a.github.io/rpi/abcd567a.list
 #wget -O /etc/apt/sources.list.d/box86.list https://ryanfortner.github.io/box86-debs/box86.list
 
 
@@ -72,6 +72,10 @@ wget -q https://repos.influxdata.com/influxdata-archive_compat.key
 echo '393e8779c89ac8d958f81f942f9ad7fb82a25e133faddaf92e15b16e6ac9ce4c influxdata-archive_compat.key' | sha256sum -c && cat influxdata-archive_compat.key | gpg --dearmor | tee /etc/apt/trusted.gpg.d/influxdata-archive_compat.gpg > /dev/null
 echo 'deb [signed-by=/etc/apt/trusted.gpg.d/influxdata-archive_compat.gpg] https://repos.influxdata.com/debian stable main' | tee /etc/apt/sources.list.d/influxdata.list
 rm influxdata-archive_compat.key
+
+wget https://www.flightaware.com/adsb/piaware/files/packages/pool/piaware/f/flightaware-apt-repository/flightaware-apt-repository_1.2_all.deb
+dpkg -i flightaware-apt-repository_1.2_all.deb
+rm -f flightaware-apt-repository_1.2_all.deb
 
 ## Update && Upgrade
 apt-get update  -y -q
