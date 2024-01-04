@@ -18,11 +18,7 @@ export MOZ_USE_XINPUT2=1
 (rm -rf ~/.opencpn/startcheck.dat ~/.opencpn/_OpenCPN_SILock || true) &
 
 (openbox --replace) &
-
-# Disabled evdev-rce due to https://github.com/bareboat-necessities/lysmarine_gen/issues/139
-# OpenCPN works with long touch on bookworm (mostly). In cases it doesn't you can use twofing to emulate long touch
-#(evdev-rce || true) &
-
+(evdev-rce || true) &
 (twofing --click=first --grab-by-disabling /dev/twofingtouch || true) &
 
 # see: https://github.com/bareboat-necessities/lysmarine_gen/issues/316
