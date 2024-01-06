@@ -34,6 +34,11 @@ You do not have to build it on your own ARM hardware. The process described belo
 can make it to build it directly from your source code on GitHib via CircleCi and distribute it on CloudSmith
 or other place. It doesn't take that much effort or coding, some dedication required (surely).
 
+# Awards
+
+<img src="https://www.realvnc.com/wp-content/uploads/2023/07/RealVNC-RPi-Prize-logo.png" alt="RealVNC RPi Prize logo" width="50%"/>
+
+Third place in RealVNC Raspberry Pi Prize 2023.
 
 # Download
 

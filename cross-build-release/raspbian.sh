@@ -75,7 +75,7 @@ EOF
 
   # Renaming the OS and moving it to the release folder.
   if [ "$BBN_KIND" == "LITE" ] ; then
-    BBN_IMG=lysmarine-bbn-lite-bookworm_"${LYSMARINE_VER}"-${thisArch}-${cpuArch}.img
+    BBN_IMG=test-bbn-lite-bookworm_"${LYSMARINE_VER}"-${thisArch}-${cpuArch}.img
   else
     BBN_IMG=test-bbn-full-bookworm_"${LYSMARINE_VER}"-${thisArch}-${cpuArch}.img
   fi
