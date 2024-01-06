@@ -693,23 +693,7 @@
             <decor>yes</decor>
         </application>
 
-        <application class="opencpn">
-            <maximized>no</maximized>
-            <decor>yes</decor>
-        </application>
-        <application title="Engine-Dashboard">
-            <maximized>no</maximized>
-            <decor>yes</decor>
-        </application>
-        <application title="Dashboard">
-            <maximized>no</maximized>
-            <decor>yes</decor>
-        </application>
-        <application title="Emulator">
-            <maximized>no</maximized>
-            <decor>yes</decor>
-        </application>
-        <application title="">
+        <application class="OpenCPN">
             <maximized>no</maximized>
             <decor>yes</decor>
         </application>
