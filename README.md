@@ -36,7 +36,7 @@ or other place. It doesn't take that much effort or coding, some dedication requ
 
 # Awards
 
-<img src="https://www.realvnc.com/wp-content/uploads/2023/07/RealVNC-RPi-Prize-logo.png" alt="RealVNC RPi Prize logo" width="50%"/>
+<img src="https://www.realvnc.com/wp-content/uploads/2023/07/RealVNC-RPi-Prize-logo.png" alt="RealVNC RPi Prize logo" width="75%"/>
 
 Third place in RealVNC Raspberry Pi Prize 2023.
 
