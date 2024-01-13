@@ -237,8 +237,6 @@ Windlass, Bow Thruster, Lights)
 - Calculator
 - Calendar
 - Weather App
-- Chess
-- [Card Game (Preferans)](http://openpref.sourceforge.net/)
 - [OnBoard](https://launchpad.net/onboard) touch screen keyboard
 - [Right click support on touchscreens](https://github.com/bareboat-necessities/evdev-right-click-emulation)
 - [Arduino IDE](https://www.arduino.cc/en/software)
