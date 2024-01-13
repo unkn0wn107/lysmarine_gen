@@ -2,6 +2,11 @@
 rm -rf  /tmp/empty-cache46
 rm -rvf /home/user/Public /home/user/Templates 
 
+# For systems with pipewire-pulse to make Mopidy sound work
+if [ -f /usr/share/pipewire/pipewire-pulse.conf ]; then
+  sed -i 's/#"tcp:4713"/"tcp:4713"/' /usr/share/pipewire/pipewire-pulse.conf
+fi
+
 apt-get clean
 
 apt-get remove -y --purge greybird-gtk-theme murrine-themes rpd-icons userconf-pi
