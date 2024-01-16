@@ -25,17 +25,17 @@ cd ..
 rm -rf wxFormBuilder
 
 
-bash -c 'cat << EOF > /usr/local/share/applications/wxformbuilder.desktop
-[Desktop Entry]
-Type=Application
-Name=WxFormBuilder
-GenericName=WxFormBuilder
-Comment=WxFormBuilder
-Exec=onlyone wxformbuilder
-Terminal=false
-Icon=document
-Categories=Utility;
-EOF'
+#bash -c 'cat << EOF > /usr/local/share/applications/wxformbuilder.desktop
+#[Desktop Entry]
+#Type=Application
+#Name=WxFormBuilder
+#GenericName=WxFormBuilder
+#Comment=WxFormBuilder
+#Exec=onlyone wxformbuilder
+#Terminal=false
+#Icon=document
+#Categories=Utility;
+#EOF'
 
 
 apt-get -y remove --purge libboost-dev
