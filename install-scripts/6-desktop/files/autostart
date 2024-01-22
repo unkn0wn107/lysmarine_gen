@@ -29,7 +29,7 @@ export MOZ_USE_XINPUT2=1
 
 (sleep 3 && /opt/bbn-launcher/bbn-launcher) &
 (sleep 3 && onboard) &
-(sleep 3 && nm-applet) &
+(sleep 3 && nm-applet --indicator) &
 (sleep 4 && \
  xset s off && \
  xset -dpms && \
