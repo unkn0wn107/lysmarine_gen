@@ -30,7 +30,7 @@ export MOZ_USE_XINPUT2=1
 (sleep 3 && /opt/bbn-launcher/bbn-launcher) &
 (sleep 3 && onboard) &
 
-#(sleep 3 && nm-applet --indicator) &
+#(sleep 3 && nm-applet --indicator) & # --indicator option gives more extended menu
 (sleep 3 && nm-applet) &
 
 (sleep 4 && \
