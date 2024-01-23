@@ -7,5 +7,4 @@ export QT_IM_MODULE=ibus
 export CHROMIUM_FLAGS=--password-store=basic
 
 exec budgie-desktop $*
-#exec budgie-desktop --builtin --session=budgie-desktop $*
-#exec gnome-session --builtin --session=budgie-desktop $*
+
