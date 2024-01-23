@@ -696,6 +696,10 @@
         <application class="OpenCPN">
             <maximized>no</maximized>
             <decor>yes</decor>
+            <position force="no">
+                <x>center</x>
+                <y>center</y>
+            </position>
         </application>
         <application title="OpenCPN*">
             <maximized>yes</maximized>
@@ -711,10 +715,6 @@
         </application>
 
         <application name="evdev-rce">
-            <skip_taskbar>yes</skip_taskbar>
-        </application>
-
-        <application class="tint2">
             <skip_taskbar>yes</skip_taskbar>
         </application>
 
