@@ -77,9 +77,6 @@ apt-get install -y -q lxterminal gpsbabel file-roller lxtask thunar
 
 #apt-get install -y -q pcmanfm mousepad
 
-# force polkit agent to start with openbox (this is needed for nm-applet hotspot)
-sed -i '/^OnlyShowIn=/ s/$/GNOME;Budgie;/' /etc/xdg/autostart/polkit-gnome-authentication-agent-1.desktop
-
 install -v "$FILE_FOLDER"/scale-up.desktop /usr/local/share/applications/
 install -v "$FILE_FOLDER"/scale-down.desktop /usr/local/share/applications/
 
@@ -87,3 +84,9 @@ install -v -m 755 "$FILE_FOLDER"/scale-up /usr/local/bin/
 install -v -m 755 "$FILE_FOLDER"/scale-down /usr/local/bin/
 
 install -v -m 755 "$FILE_FOLDER"/twofing-detect.sh /usr/local/sbin/twofing-detect
+
+# force polkit agent to start with openbox (this is needed for nm-applet hotspot)
+#sed -i '/^OnlyShowIn=/ s/$/GNOME;Budgie;/' /etc/xdg/autostart/polkit-gnome-authentication-agent-1.desktop
+
+# replace budgie-wm with openbox
+sed -i 's/org.buddiesofbudgie.BudgieWm/openbox/' /usr/share/gnome-session/sessions/org.buddiesofbudgie.BudgieDesktop.session

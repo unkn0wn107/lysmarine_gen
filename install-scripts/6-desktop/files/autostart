@@ -17,7 +17,9 @@ export MOZ_USE_XINPUT2=1
 (cp .config/signalk-nativefier-*/Cookies .config/sk-autopilot-nativefier-*/ || true) &
 (rm -rf ~/.opencpn/startcheck.dat ~/.opencpn/_OpenCPN_SILock || true) &
 
-(openbox --replace) &
+# Started via /usr/share/gnome-session/sessions/org.buddiesofbudgie.BudgieDesktop.session
+#(openbox --replace) &
+
 (evdev-rce || true) &
 (twofing --click=first --grab-by-disabling /dev/twofingtouch || true) &
 
@@ -31,7 +33,7 @@ export MOZ_USE_XINPUT2=1
 (sleep 3 && onboard) &
 
 #(sleep 3 && nm-applet --indicator) & # --indicator option gives more extended menu
-(sleep 3 && nm-applet) &
+#(sleep 3 && nm-applet) &
 
 (sleep 4 && \
  xset s off && \
