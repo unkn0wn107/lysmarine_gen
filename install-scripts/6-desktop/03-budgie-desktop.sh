@@ -1,7 +1,8 @@
 #!/bin/bash -e
 
 apt-get install -y -q \
-  gvfs-fuse gvfs-backends gnome-bluetooth gnome-weather geoclue-2-demo ibus
+  gvfs-fuse gvfs-backends gnome-bluetooth gnome-weather geoclue-2-demo ibus \
+  lightdm # added lightdm due to https://github.com/BuddiesOfBudgie/budgie-desktop/issues/508
 
 #  libatk-adaptor libgtk-4-1 libatk1.0-0 libcairo2 libfontconfig1 libfreetype6 \
 #  libgdk-pixbuf2.0-0 libglib2.0-0  \
@@ -22,7 +23,7 @@ chmod 4775 /usr/bin/nm-connection-editor
 ## Autostart openbox from budgie-desktop.
 install -o 1000 -g 1000 -d /home/user/.config/autostart
 #install -o 1000 -g 1000 -m 644 -v "$FILE_FOLDER"/openbox.desktop    "/home/user/.config/autostart/"
-install -o 1000 -g 1000 -m 644 -v "$FILE_FOLDER"/autostart.desktop  "/home/user/.config/autostart/"
+#install -o 1000 -g 1000 -m 644 -v "$FILE_FOLDER"/autostart.desktop  "/home/user/.config/autostart/"
 
 # Budgie settings
 
@@ -45,10 +46,17 @@ install -o 1000 -g 1000 -m 644 -v "$FILE_FOLDER"/autostart.desktop  "/home/user/
   echo "dconf write /org/gnome/desktop/session/idle-delay 'uint32 0'"
 } >> /home/user/.config/openbox/autostart
 
-
 echo "sed -i 's/^dconf\ /#&/' /home/user/.config/openbox/autostart" >> /home/user/.config/openbox/autostart
 echo "sed -i 's/^sed\ /#&/'   /home/user/.config/openbox/autostart" >> /home/user/.config/openbox/autostart
 
+
+# LightDM autologin
+groupadd -r autologin
+gpasswd -a user autologin
+sed -i 's/^#user-session=/user-session=default/'  /etc/lightdm/lightdm.conf
+sed -i 's/^#autologin-user=/autologin-user=user/' /etc/lightdm/lightdm.conf
+
+# GeoClue
 usermod -a -G geoclue user
 
 install -o geoclue -g geoclue -d /var/lib/geoclue/.cache
