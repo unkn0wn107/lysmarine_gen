@@ -3,6 +3,9 @@
 PATH="/sbin:/usr/sbin:$PATH"
 export PATH
 
+# This is with lightdm:
+(budgie-desktop) &
+
 # Allow mopidy user to access X server
 (xhost +SI:localuser:mopidy || true) &
 
@@ -19,9 +22,6 @@ export MOZ_USE_XINPUT2=1
 (rm -rf ~/.config/*nativefier*/Cache/ || true) &
 (cp .config/signalk-nativefier-*/Cookies .config/sk-autopilot-nativefier-*/ || true) &
 (rm -rf ~/.opencpn/startcheck.dat ~/.opencpn/_OpenCPN_SILock || true) &
-
-# This is with lightdm:
-(budgie-desktop) &
 
 # Started via /usr/share/gnome-session/sessions/org.buddiesofbudgie.BudgieDesktop.session
 #(openbox --replace) &
