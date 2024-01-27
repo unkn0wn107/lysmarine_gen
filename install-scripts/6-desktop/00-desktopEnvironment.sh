@@ -89,4 +89,4 @@ install -v -m 755 "$FILE_FOLDER"/twofing-detect.sh /usr/local/sbin/twofing-detec
 #sed -i '/^OnlyShowIn=/ s/$/GNOME;Budgie;/' /etc/xdg/autostart/polkit-gnome-authentication-agent-1.desktop
 
 # replace budgie-wm with openbox
-sed -i 's/org.buddiesofbudgie.BudgieWm/openbox/' /usr/share/gnome-session/sessions/org.buddiesofbudgie.BudgieDesktop.session
+sed -i 's/org.buddiesofbudgie.BudgieWm;//' /usr/share/gnome-session/sessions/org.buddiesofbudgie.BudgieDesktop.session
