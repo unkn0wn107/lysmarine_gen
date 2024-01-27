@@ -687,6 +687,10 @@
         <application type="normal">
             <maximized>yes</maximized>
             <decor>yes</decor>
+            <position force="no">
+                <x>center</x>
+                <y>center</y>
+            </position>
         </application>
 
         <application name="XyGrib">
