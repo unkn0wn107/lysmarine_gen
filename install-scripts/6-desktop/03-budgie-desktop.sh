@@ -55,6 +55,7 @@ groupadd -r autologin
 gpasswd -a user autologin
 sed -i 's/^#user-session=default/user-session=default/'  /etc/lightdm/lightdm.conf
 sed -i 's/^#autologin-user=/autologin-user=user/' /etc/lightdm/lightdm.conf
+sed -i 's/^#autologin-session=/autologin-session=openbox/' /etc/lightdm/lightdm.conf
 
 # GeoClue
 usermod -a -G geoclue user
