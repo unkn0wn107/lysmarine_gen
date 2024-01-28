@@ -693,9 +693,15 @@
             <decor>yes</decor>
         </application>
 
-        <application class="OpenCPN">
+        <application class="OpenCPN" type="normal">
+            <maximized>no</maximized>
+            <decor>yes</decor>
         </application>
-        <application title="OpenCPN*">
+        <application class="OpenCPN" title="OpenCPN*" type="normal">
+            <maximized>yes</maximized>
+            <decor>yes</decor>
+        </application>
+        <application class="OpenCPN" title="About*" type="normal">
             <maximized>yes</maximized>
             <decor>yes</decor>
         </application>
