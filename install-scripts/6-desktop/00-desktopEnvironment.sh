@@ -55,7 +55,11 @@ install -o 1000 -g 1000 -v "$FILE_FOLDER"/lysmarine-applications.menu /home/user
 install -o 1000 -g 1000 -v "$FILE_FOLDER"/navigation.directory /home/user/.local/share/desktop-directories/
 install -o 1000 -g 1000 -v "$FILE_FOLDER"/openplotter.directory /home/user/.local/share/desktop-directories/
 
-install -m 755 -v "$FILE_FOLDER"/bbn-commands.sh /usr/local/bin/bbn-commands
+if [ "$BBN_KIND" == "LITE" ] ; then
+  install -m 755 -v "$FILE_FOLDER"/bbn-commands-lite.sh /usr/local/bin/bbn-commands
+else
+  install -m 755 -v "$FILE_FOLDER"/bbn-commands.sh /usr/local/bin/bbn-commands
+fi
 
 install -d /usr/local/share/applications
 install -v "$FILE_FOLDER"/commands.desktop /usr/local/share/applications/
