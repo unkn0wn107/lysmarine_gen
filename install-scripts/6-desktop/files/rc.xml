@@ -694,8 +694,6 @@
         </application>
 
         <application class="OpenCPN">
-            <maximized>no</maximized>
-            <decor>yes</decor>
         </application>
         <application title="OpenCPN*">
             <maximized>yes</maximized>
