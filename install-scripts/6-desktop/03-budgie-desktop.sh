@@ -53,7 +53,7 @@ echo "sed -i 's/^sed\ /#&/'   /home/user/.config/openbox/autostart" >> /home/use
 # LightDM autologin
 groupadd -r autologin
 gpasswd -a user autologin
-sed -i 's/^#user-session=/user-session=default/'  /etc/lightdm/lightdm.conf
+sed -i 's/^#user-session=default/user-session=default/'  /etc/lightdm/lightdm.conf
 sed -i 's/^#autologin-user=/autologin-user=user/' /etc/lightdm/lightdm.conf
 
 # GeoClue
