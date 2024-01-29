@@ -86,3 +86,4 @@ rm -rf imgkap
 #ln -s /usr/share/opencpn/tcdata/harmonics-dwf-20220109/harmonics-dwf-20220109-free.tcd /usr/share/opencpn/tcdata/harmonics-dwf-20210110-free.tcd
 
 install -v "$FILE_FOLDER"/opencpn.desktop "/usr/share/applications/"
+install -o 1000 -g 1000 -v "$FILE_FOLDER"/opencpn.desktop "/home/user/.config/autostart/"
