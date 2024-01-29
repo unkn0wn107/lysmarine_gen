@@ -29,5 +29,7 @@ systemctl disable wifi_powersave@on.service
 systemctl mask wifi_powersave@on.service
 systemctl enable wifi_powersave@off.service
 
+sed -i 's/\[main\]$/[main]\ndns=dnsmasq/' /etc/NetworkManager/NetworkManager.conf
+
 echo 'country=US' >> /etc/wpa_supplicant/wpa_supplicant.conf
 echo 'options cfg80211 ieee80211_regdom=US' > /etc/modprobe.d/cfg80211.conf
