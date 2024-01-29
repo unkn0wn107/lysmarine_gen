@@ -41,9 +41,9 @@ else
    fi
 fi
 if [ -f /usr/lib/raspberrypi-sys-mods/imager_custom ]; then
-   /usr/lib/raspberrypi-sys-mods/imager_custom set_wlan 'lysmarine-hotspot' '9edadd0c8b779a33b4f336efa49535aa9a5a1c7809a457abb71fd68a1925d91f' 'US'
+  /usr/lib/raspberrypi-sys-mods/imager_custom set_wlan 'lysmarine-hotspot' '9edadd0c8b779a33b4f336efa49535aa9a5a1c7809a457abb71fd68a1925d91f' 'US'
 else
-cat >/etc/wpa_supplicant/wpa_supplicant.conf <<'WPAEOF'
+  cat >/etc/wpa_supplicant/wpa_supplicant.conf <<'WPAEOF'
 country=US
 ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
 ap_scan=1
@@ -61,6 +61,7 @@ WPAEOF
        echo 0 > "$filename"
    done
 fi
+
 if [ -f /usr/lib/raspberrypi-sys-mods/imager_custom ]; then
    /usr/lib/raspberrypi-sys-mods/imager_custom set_keymap 'us'
    /usr/lib/raspberrypi-sys-mods/imager_custom set_timezone 'Etc/UTC'
