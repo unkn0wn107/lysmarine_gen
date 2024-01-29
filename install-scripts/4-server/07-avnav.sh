@@ -17,7 +17,7 @@ wget -O avnav-ocharts.deb https://www.free-x.de/debpreview/pool/main/a/avnav-och
 dpkg -i avnav-ocharts-plugin.deb avnav-ocharts.deb
 rm -f avnav-ocharts-plugin.deb avnav-ocharts.deb
 
-wget -O avnav-sailinstrument-plugin.deb https://www.free-x.de/debpreview/pool/main/a/avnav-sailinstrument-plugin/avnav-sailinstrument-plugin_20230723_all.deb
+wget -O avnav-sailinstrument-plugin.deb https://www.free-x.de/debian/pool/main/a/avnav-sailinstrument-plugin/avnav-sailinstrument-plugin_20230728_all.deb
 dpkg -i avnav-sailinstrument-plugin.deb
 rm -f avnav-sailinstrument-plugin.deb
 
