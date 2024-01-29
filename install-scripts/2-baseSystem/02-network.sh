@@ -30,4 +30,4 @@ systemctl mask wifi_powersave@on.service
 systemctl enable wifi_powersave@off.service
 
 echo 'country=US' >> /etc/wpa_supplicant/wpa_supplicant.conf
-
+echo 'options cfg80211 ieee80211_regdom=US' > /etc/modprobe.d/cfg80211.conf
