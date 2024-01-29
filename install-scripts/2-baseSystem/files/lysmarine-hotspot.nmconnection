@@ -6,7 +6,7 @@ interface-name=wlan0
 permissions=user:user:;
 
 [wifi]
-band=a
+band=bg
 mac-address-blacklist=
 mode=ap
 ssid=lysmarine-hotspot
@@ -14,6 +14,10 @@ ssid=lysmarine-hotspot
 [wifi-security]
 key-mgmt=wpa-psk
 psk=changeme
+#group=ccmp;
+#pairwise=ccmp;
+#pmf=1
+#proto=rsn;
 
 [ipv4]
 dns-search=
