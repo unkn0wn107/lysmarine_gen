@@ -105,7 +105,7 @@ pushd ./stageCache
     cd build
     cmake ..
     make -j 4
-    rm -f ./*.o
+    rm -f "$(find . -name \*.o)"
     cd ..
   popd
   ## Build and install pypilot
