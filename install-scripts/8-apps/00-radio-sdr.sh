@@ -119,7 +119,8 @@ apt-get -y -q install fontconfig
 
 #################################
 
-apt-get install -y cmake libasound-dev libpulse-dev
+apt-get install -y --no-install-recommends --no-install-suggests \
+  cmake libasound-dev libpulse-dev automake autoconf m4
 
 pushd /usr/local/share
   git clone --depth=1 https://github.com/bareboat-necessities/aisdecoder
