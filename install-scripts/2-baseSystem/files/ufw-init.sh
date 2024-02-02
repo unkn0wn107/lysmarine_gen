@@ -35,4 +35,4 @@ ufw allow in on wlan0 from any port 68 to any port 67 proto udp
 # DNS for AP
 ufw allow in on wlan0 from 10.0.0.0/8 to any port 53
 
-ufw enable
+ufw --force enable
