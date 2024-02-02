@@ -12,7 +12,7 @@ apt-get clean
 apt-get remove -y --purge greybird-gtk-theme murrine-themes rpd-icons userconf-pi gdb
 
 if [ "$BBN_KIND" == "LITE" ] ; then
-  apt-get remove -y --purge system-config-printer gnome-power-manager
+  apt-get remove -y --purge system-config-printer gnome-power-manager endeavour
 fi
 
 apt-get -y autoremove
