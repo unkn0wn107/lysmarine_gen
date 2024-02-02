@@ -8,7 +8,7 @@ apt-get clean
 
 # See: https://github.com/motioneye-project/motioneye/tree/dev
 
-apt-get -y -q --no-install-recommends install ca-certificates curl python3 \
+apt-get -y -q  --no-install-recommends --no-install-suggests install ca-certificates curl python3 \
   python3-dev python3-pip libcurl4-openssl-dev gcc libssl-dev
 
 pip3 install 'https://github.com/motioneye-project/motioneye/archive/dev.tar.gz'

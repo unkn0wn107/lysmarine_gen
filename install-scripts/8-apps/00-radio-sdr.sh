@@ -53,7 +53,7 @@ wget -q -O - https://github.com/bareboat-necessities/lysmarine_gen/releases/down
 unzip AIS-catcher.zip && rm AIS-catcher.zip
 mv AIS-catcher /usr/local/bin/ && chmod +x /usr/local/bin/AIS-catcher
 
-apt-get -y -q --no-install-recommends install \
+apt-get -y -q --no-install-recommends --no-install-suggests install \
   cubicsdr                              \
   cutesdr                               \
   fldigi                                \
