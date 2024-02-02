@@ -13,6 +13,7 @@ ssid=lysmarine-hotspot
 
 [wifi-security]
 key-mgmt=wpa-psk
+pairwise=ccmp
 psk=changeme
 
 [ipv4]
