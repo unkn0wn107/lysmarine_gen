@@ -12,7 +12,7 @@ apt-get -q -y install xserver-xorg-input-libinput xinput libinput-tools xinput-c
  gstreamer1.0-plugins-good gstreamer1.0-plugins-bad gstreamer1.0-alsa \
  gstreamer1.0-libav alsa-utils libavahi-compat-libdnssd-dev git \
  xsettingsd xserver-xorg \
- xinit cpanminus perl-base wmctrl openbox python3-xdg arandr gnome-clocks gnome-todo \
+ xinit cpanminus perl-base wmctrl openbox python3-xdg arandr gnome-clocks \
  dialog lxterminal network-manager-gnome system-config-printer \
  lxterminal gpsbabel file-roller lxtask thunar git \
  libqt5quickwidgets5 libqt5widgets5 libqt5gui5 libqt5webkit5 \
