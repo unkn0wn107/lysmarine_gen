@@ -9,7 +9,7 @@ fi
 
 apt-get clean
 
-apt-get remove -y --purge greybird-gtk-theme murrine-themes rpd-icons userconf-pi
+apt-get remove -y --purge greybird-gtk-theme murrine-themes rpd-icons userconf-pi gdb
 
 apt-get -y autoremove
 apt-get clean
