@@ -16,4 +16,5 @@ Categories=Utility;
 Keywords=HamRadio;Radio
 EOF'
 
-rm -rf /home/user/maina/.git
+rm -rf /home/user/maiana/.git
+rm -rf /home/user/maiana/images
