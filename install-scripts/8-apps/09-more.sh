@@ -4,12 +4,14 @@ apt-get clean
 npm cache clean --force
 
 if [ "$BBN_KIND" == "LITE" ] ; then
-  apt-get -q -y install i2c-tools python3-smbus dos2unix traceroute telnet socat gdal-bin openvpn \
+  apt-get -q -y --no-install-recommends --no-install-suggests install i2c-tools python3-smbus dos2unix \
+    traceroute telnet socat gdal-bin openvpn \
     gedit sysstat jq xmlstarlet uhubctl iotop libusb-1.0-0-dev \
     rpi-imager piclone fontconfig gnome-disk-utility xfce4-screenshooter \
     libcanberra-gtk-module hardinfo baobab
 else
-  apt-get -q -y install i2c-tools python3-smbus dos2unix traceroute telnet whois socat gdal-bin openvpn seahorse inxi \
+  apt-get -q -y --no-install-recommends --no-install-suggests install i2c-tools python3-smbus dos2unix \
+    traceroute telnet whois socat gdal-bin openvpn seahorse inxi \
     dconf-editor gedit gnome-calculator menulibre \
     python3-gpiozero libusb-1.0-0-dev \
     sysstat jq xmlstarlet uhubctl iotop rsync timeshift at \
