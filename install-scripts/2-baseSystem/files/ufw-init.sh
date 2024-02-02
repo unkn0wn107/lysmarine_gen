@@ -5,6 +5,7 @@
 ufw default deny incoming
 ufw default allow outgoing
 
+ufw allow from 127.0.0.1
 ufw allow from 192.168.0.0/16
 ufw allow from 169.254.0.0/16
 ufw allow from 10.0.0.0/8
