@@ -15,3 +15,5 @@ Icon=radio
 Categories=Utility;
 Keywords=HamRadio;Radio
 EOF'
+
+rm -rf /home/user/maina/.git
