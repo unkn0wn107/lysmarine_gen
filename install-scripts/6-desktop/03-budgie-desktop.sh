@@ -49,13 +49,14 @@ install -o 1000 -g 1000 -d /home/user/.config/autostart
 echo "sed -i 's/^dconf\ /#&/' /home/user/.config/openbox/autostart" >> /home/user/.config/openbox/autostart
 echo "sed -i 's/^sed\ /#&/'   /home/user/.config/openbox/autostart" >> /home/user/.config/openbox/autostart
 
-
 # LightDM autologin
 groupadd -r autologin
 gpasswd -a user autologin
 sed -i 's/^#user-session=default/user-session=default/'  /etc/lightdm/lightdm.conf
 sed -i 's/^#autologin-user=/autologin-user=user/' /etc/lightdm/lightdm.conf
 sed -i 's/^#autologin-session=/autologin-session=openbox/' /etc/lightdm/lightdm.conf
+
+install -v -m644 "$FILE_FOLDER"/lightdm.service "/etc/systemd/system/lightdm.service"
 
 # GeoClue
 usermod -a -G geoclue user
