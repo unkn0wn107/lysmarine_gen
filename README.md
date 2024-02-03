@@ -73,9 +73,8 @@ https://bareboat-necessities.github.io/my-bareboat/bareboat-os.html
 
 * Raspberry Pi 4 or higher (or CM4 module 4Gb with Wi-Fi, or raspberry pi 400)
 * 4 GB memory or higher (2 GB works too but not for many concurrent programs)
-* Touchscreen with resolution 1024x600 or higher (800x480 works too but few of the programs will open too big dialog boxes)
-* Suitable (unless you find something better) waterproof touchscreen display for your cockpit (Model: SL07W, 
-Brand Sihovision, Capacitive Touch Screen 7 inch, (1000 nits), IP65, 1024x600, Cost under $300): https://www.sihovision.com/industrial-touch-monitor/7-inch-industrial-wide-temperaturer-lcd-monitor-with-remote-control-1.html
+* Touchscreen with resolution 1024x600 or higher and size 10" or more (800x480 and 7" works too but few of the programs will open too big dialog boxes)
+* Suitable (unless you find something better) waterproof touchscreen display for your cockpit (TouchThink TPC-CD-M101, 10.1", 1280x800, IP65): https://www.touchtecs.com/
 * WiFi and LTE/4G router (not a requirement, gl-x750 Spitz OpenWrt router): https://www.gl-inet.com/products/gl-x750/
 * Quark-elec Marine multiplexers seems has a good product line (or you can just use this BBN OS image but
 considering all waterproof connectors and hardware customization these commercial multiplexers be nicer choice):
