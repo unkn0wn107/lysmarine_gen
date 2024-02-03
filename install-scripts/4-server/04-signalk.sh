@@ -218,6 +218,8 @@ echo 'user ALL=(ALL) NOPASSWD: /usr/local/sbin/signalk-restart' >>/etc/sudoers
 
 systemctl enable signalk
 
+install -d /usr/local/share/applications
+
 if [ "$BBN_KIND" == "LITE" ] ; then
   true
 else
