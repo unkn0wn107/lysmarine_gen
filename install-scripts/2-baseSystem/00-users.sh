@@ -63,7 +63,7 @@ if [[ -f /etc/sudoers.d/010_pi-nopasswd ]]; then # Remove no-pwd sudo to user pi
 	rm /etc/sudoers.d/010_pi-nopasswd
 fi
 
-echo 'PATH="/sbin:/usr/sbin:$PATH"' >> /home/user/.profile # Give user capability to halt and reboot.
+echo 'PATH="/usr/local/sbin:/usr/sbin:/sbin:$PATH"' >> /home/user/.profile # Give user capability to halt and reboot.
 
 if [ -f /root/.not_logged_in_yet ]; then # Disable first login script.
 	rm /root/.not_logged_in_yet
