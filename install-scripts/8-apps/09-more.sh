@@ -12,7 +12,7 @@ if [ "$BBN_KIND" == "LITE" ] ; then
 else
   apt-get -q -y --no-install-recommends --no-install-suggests install i2c-tools python3-smbus dos2unix \
     traceroute telnet whois socat gdal-bin openvpn seahorse inxi \
-    dconf-editor gedit gnome-calculator menulibre \
+    dconf-editor gedit gnome-calculator \
     python3-gpiozero libusb-1.0-0-dev \
     sysstat jq xmlstarlet uhubctl iotop rsync timeshift at \
     rpi-imager piclone fontconfig gnome-disk-utility catfish xfce4-screenshooter \
