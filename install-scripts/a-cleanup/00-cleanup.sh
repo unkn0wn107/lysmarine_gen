@@ -28,7 +28,7 @@ overrideMenu Office /usr/share/applications/org.gnome.Todo.desktop
 overrideMenu Office /usr/share/applications/org.gnome.clocks.desktop
 overrideMenu Office /usr/share/applications/org.gnome.gedit.desktop
 overrideMenu Office /usr/share/applications/org.gnome.Evince-previewer.desktop
-overrideMenu /usr/share/applications/org.gnome.eog.desktop
+overrideMenu Office /usr/share/applications/org.gnome.eog.desktop
 overrideMenu Utility /usr/local/share/applications/arduino-arduinoide.desktop
 overrideMenu Utility /usr/local/share/applications/org.wxformbuilder.wxFormBuilder.desktop
 overrideMenu Utility /usr/share/applications/sailcut.desktop
