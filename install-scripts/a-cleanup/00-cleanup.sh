@@ -30,6 +30,7 @@ overrideMenu Office /usr/share/applications/org.gnome.gedit.desktop
 overrideMenu X-GNOME-Utilities /usr/share/applications/org.gnome.Evince-previewer.desktop
 overrideMenu X-GNOME-Utilities /usr/share/applications/org.gnome.Evince.desktop
 overrideMenu Office /usr/share/applications/org.gnome.eog.desktop
+overrideMenu Office /usr/share/applications/system-config-printer.desktop
 overrideMenu Utility /usr/local/share/applications/arduino-arduinoide.desktop
 overrideMenu Utility /usr/local/share/applications/org.wxformbuilder.wxFormBuilder.desktop
 overrideMenu X-GNOME-Utilities /usr/share/applications/sailcut.desktop
