@@ -12,6 +12,15 @@ overrideMenu() {
   fi
 }
 
+cat << EOF > /home/user/.local/share/desktop-directories/radio.directory
+[Desktop Entry]
+Name=Radio
+Comment=Radio
+Icon=arrow
+Type=Directory
+EOF
+chown user:user /home/user/.local/share/desktop-directories/radio.directory
+
 overrideMenu Office /usr/share/applications/org.kiwix.desktop.desktop
 overrideMenu Utility /usr/local/share/applications/arduino-arduinoide.desktop
 overrideMenu Utility /usr/local/share/applications/org.wxformbuilder.wxFormBuilder.desktop
