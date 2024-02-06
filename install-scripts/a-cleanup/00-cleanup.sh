@@ -34,7 +34,7 @@ overrideMenu Utility /usr/local/share/applications/arduino-arduinoide.desktop
 overrideMenu Utility /usr/local/share/applications/org.wxformbuilder.wxFormBuilder.desktop
 overrideMenu Utility /usr/share/applications/sailcut.desktop
 overrideMenu Utility /usr/share/applications/boats.desktop
-overrideMenu Utility /usr/share/applications/org.gnome.seahorse.Application.desktop
+overrideMenu System /usr/share/applications/org.gnome.seahorse.Application.desktop
 overrideMenu System /usr/share/applications/onboard.desktop
 overrideMenu System /usr/share/applications/onboard-settings.desktop
 overrideMenu System /usr/share/applications/org.gnome.baobab.desktop
@@ -46,6 +46,7 @@ overrideMenu Radio /usr/share/applications/flarq.desktop
 overrideMenu Radio /usr/share/applications/fldigi.desktop
 overrideMenu Radio /usr/share/applications/dk.gqrx.gqrx.desktop
 overrideMenu Radio /usr/local/share/applications/previsat.desktop
+overrideMenu Navigation /usr/share/applications/xygrib.desktop
 
 
 rm -rf  /tmp/empty-cache46
