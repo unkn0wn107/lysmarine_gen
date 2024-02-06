@@ -22,6 +22,9 @@ EOF
 chown user:user /home/user/.local/share/desktop-directories/radio.directory
 
 overrideMenu Office /usr/share/applications/org.kiwix.desktop.desktop
+overrideMenu Office /usr/share/applications/thunderbird.desktop
+overrideMenu Office /usr/share/applications/org.gnome.Calculator.desktop
+overrideMenu Office /usr/share/applications/org.gnome.Todo.desktop
 overrideMenu Utility /usr/local/share/applications/arduino-arduinoide.desktop
 overrideMenu Utility /usr/local/share/applications/org.wxformbuilder.wxFormBuilder.desktop
 overrideMenu System /usr/share/applications/onboard.desktop
@@ -30,6 +33,7 @@ overrideMenu System /usr/share/applications/org.gnome.baobab.desktop
 overrideMenu Radio /usr/share/applications/cutesdr.desktop
 overrideMenu Radio /usr/share/applications/CubicSDR.desktop
 overrideMenu Radio /usr/share/applications/gpredict.desktop
+overrideMenu Radio /usr/share/applications/ar.com.mbernardi.noaa-apt.desktop
 
 rm -rf  /tmp/empty-cache46
 rm -rvf /home/user/Public /home/user/Templates 
