@@ -6,5 +6,5 @@ Comment=Vessel Data
 Exec=vessel-data
 Terminal=false
 Icon=document
-Categories=Settings
-Keywords=X-GNOME-Utilities;
+Categories=X-GNOME-Utilities
+Keywords=Utilities;
