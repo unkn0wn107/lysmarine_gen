@@ -6,5 +6,5 @@ Comment=Commands
 Exec=bbn-commands
 Terminal=false
 Icon=dialog-password
-Categories=System
+Categories=X-GNOME-Utilities
 Keywords=System
