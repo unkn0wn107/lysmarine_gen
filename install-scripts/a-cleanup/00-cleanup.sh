@@ -37,6 +37,7 @@ overrideMenu Radio /usr/share/applications/gpredict.desktop
 overrideMenu Radio /usr/share/applications/ar.com.mbernardi.noaa-apt.desktop
 overrideMenu Radio /usr/share/applications/flarq.desktop
 overrideMenu Radio /usr/share/applications/fldigi.desktop
+overrideMenu Radio /usr/share/applications/dk.gqrx.gqrx.desktop
 
 rm -rf  /tmp/empty-cache46
 rm -rvf /home/user/Public /home/user/Templates 
