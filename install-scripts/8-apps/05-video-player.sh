@@ -6,5 +6,7 @@ fi
 
 apt-get clean
 
-apt-get -y -q install vlc cheese vokoscreen # totem
+apt-get -y -q install vlc webcamoid vokoscreen # totem
+
+install -o 1000 -g 1000 -v "$FILE_FOLDER"/Webcamoid.conf /home/user/.config/Webcamoid/
 

@@ -34,7 +34,7 @@ module.exports = {
 
     {name: 'power', title: 'Power', img: 'solar', bg: 'Tan', cmd: 'gtk-launch', args: ['victron']},
     {name: 'drone', title: 'Drones', img: 'drone', bg: 'SaddleBrown', cmd: 'onlyone', args: ['apmplanner2']},
-    {name: 'webcam', title: 'Web Cam', img: 'camera', bg: 'SeaGreen', cmd: 'onlyone', args: ['cheese']},
+    {name: 'webcam', title: 'Web Cam', img: 'camera', bg: 'SeaGreen', cmd: 'onlyone', args: ['webcamoid']},
     {name: 'messenger', title: 'Messenger', img: 'email', bg: 'RoyalBlue', cmd: '/opt/WA-Web-Msg/WA-Web-Msg', args: []},
     {name: 'social', title: 'Social', img: 'facebook', bg: 'DarkSeaGreen', cmd: '/opt/facebook/facebook', args: []},
   ],
