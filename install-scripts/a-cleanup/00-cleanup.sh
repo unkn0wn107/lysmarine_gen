@@ -28,6 +28,7 @@ overrideMenu Office /usr/share/applications/org.gnome.Todo.desktop
 overrideMenu Office /usr/share/applications/org.gnome.clocks.desktop
 overrideMenu Utility /usr/local/share/applications/arduino-arduinoide.desktop
 overrideMenu Utility /usr/local/share/applications/org.wxformbuilder.wxFormBuilder.desktop
+overrideMenu Utility /usr/share/applications/sailcut.desktop
 overrideMenu System /usr/share/applications/onboard.desktop
 overrideMenu System /usr/share/applications/onboard-settings.desktop
 overrideMenu System /usr/share/applications/org.gnome.baobab.desktop
