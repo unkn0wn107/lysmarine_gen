@@ -27,6 +27,8 @@ overrideMenu Utility /usr/local/share/applications/org.wxformbuilder.wxFormBuild
 overrideMenu System /usr/share/applications/onboard.desktop
 overrideMenu System /usr/share/applications/onboard-settings.desktop
 overrideMenu System /usr/share/applications/org.gnome.baobab.desktop
+overrideMenu Radio /usr/share/applications/cutesdr.desktop
+overrideMenu Radio /usr/share/applications/CubicSDR.desktop
 
 rm -rf  /tmp/empty-cache46
 rm -rvf /home/user/Public /home/user/Templates 
