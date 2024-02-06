@@ -13,6 +13,6 @@ StartupNotify=true
 Terminal=false
 Type=Application
 Icon=tv-symbolic
-Categories=HamRadio;SDR
+Categories=Radio;SDR
 Keywords=HamRadio;SDR
 EOF'

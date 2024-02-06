@@ -40,7 +40,7 @@ Comment=jpskmail for WinLink
 Exec=sh -c "cd /home/user/jpskmail; java -jar JavaPskmailServer-0.9.4.a24-20210815.jar"
 Terminal=false
 Icon=radio
-Categories=HamRadio;Radio
+Categories=Radio
 Keywords=HamRadio;Radio
 EOF'
 
