@@ -15,6 +15,8 @@ overrideMenu() {
 overrideMenu Office /usr/share/applications/org.kiwix.desktop.desktop
 overrideMenu Utility /usr/local/share/applications/arduino-arduinoide.desktop
 overrideMenu Utility /usr/local/share/applications/org.wxformbuilder.wxFormBuilder.desktop
+overrideMenu Utility /usr/share/applications/onboard.desktop
+overrideMenu Utility /usr/share/applications/onboard-settings.desktop
 
 rm -rf  /tmp/empty-cache46
 rm -rvf /home/user/Public /home/user/Templates 
