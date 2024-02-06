@@ -9,7 +9,7 @@ Comment=Jellyfin
 Exec=gnome-www-browser http://localhost:8096/
 Terminal=false
 Icon=video
-Categories=Internet
+Categories=AudioVideo
 EOF'
 
 sudo systemctl enable jellyfin
