@@ -36,7 +36,7 @@ overrideMenu Utility /usr/share/applications/sailcut.desktop
 overrideMenu Utility /usr/share/applications/boats.desktop
 overrideMenu Utility /usr/share/applications/org.gnome.seahorse.Application.desktop
 overrideMenu System /usr/share/applications/onboard.desktop
-overrideMenu System /usr/share/applications/onboard-settings.desktop
+overrideMenu Settings /usr/share/applications/onboard-settings.desktop
 overrideMenu System /usr/share/applications/org.gnome.baobab.desktop
 overrideMenu Radio /usr/share/applications/cutesdr.desktop
 overrideMenu Radio /usr/share/applications/CubicSDR.desktop

@@ -12,7 +12,7 @@ Comment=Maiana AIS Util
 Exec=python3 /home/user/maiana/latest/Apps/maiana-update/maiana.py
 Terminal=false
 Icon=radio
-Categories=Utility;
+Categories=Settings
 Keywords=HamRadio;Radio
 EOF'
 
