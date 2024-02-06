@@ -1,4 +1,21 @@
 #!/bin/bash -e
+
+# Clean up applications menu for budgie
+overrideMenu() {
+  category=$1
+  desktopFile=$2
+  if [ -f "$desktopFile" ]; then
+    baseDesktopFile=$(basename "${desktopFile}")
+    cp "$desktopFile" /home/user/.local/share/applications/"$baseDesktopFile"
+    chown user:user /home/user/.local/share/applications/"$baseDesktopFile"
+    sed -i "s/Categories=.*/Categories=$category/" /home/user/.local/share/applications/"$baseDesktopFile"
+  fi
+}
+
+overrideMenu Office /usr/share/applications/org.kiwix.desktop.desktop
+overrideMenu Utility /usr/local/share/applications/arduino-arduinoide.desktop
+overrideMenu Utility /usr/local/share/applications/org.wxformbuilder.wxFormBuilder.desktop
+
 rm -rf  /tmp/empty-cache46
 rm -rvf /home/user/Public /home/user/Templates 
 
