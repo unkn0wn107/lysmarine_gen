@@ -61,7 +61,8 @@ fi
 
 apt-get clean
 
-apt-get remove -y --purge greybird-gtk-theme murrine-themes rpd-icons userconf-pi gdb libsdl2-dev libicu-dev libnorm-dev
+apt-get remove -y --purge greybird-gtk-theme murrine-themes rpd-icons userconf-pi gdb libsdl2-dev libicu-dev \
+  libnorm-dev libavcodec-dev libfftw3-dev
 
 if [ "$BBN_KIND" == "LITE" ] ; then
   apt-get remove -y --purge system-config-printer gnome-power-manager
