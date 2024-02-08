@@ -87,3 +87,5 @@ rm -rf imgkap
 
 install -v "$FILE_FOLDER"/opencpn.desktop "/usr/share/applications/"
 install -o 1000 -g 1000 -v "$FILE_FOLDER"/opencpn.desktop "/home/user/.config/autostart/"
+
+apt-mark hold opencpn
