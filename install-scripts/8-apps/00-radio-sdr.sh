@@ -2,19 +2,20 @@
 
 apt-get clean
 
-install -d -m 755 "/usr/local/share/noaa-apt"
-install -d -m 755 "/usr/local/share/noaa-apt/res"
-install -d -m 755 "/usr/local/share/noaa-apt/res/shapefiles"
-install -v "$FILE_FOLDER"/noaa-apt.desktop -o 1000 -g 1000 "/home/user/.local/share/applications/ar.com.mbernardi.noaa-apt.desktop"
-wget -q -O - https://github.com/martinber/noaa-apt/raw/master/res/icon.png > "/usr/local/share/noaa-apt/res/icon.png"
-wget -q -O - https://github.com/martinber/noaa-apt/raw/master/res/shapefiles/countries.shp > "/usr/local/share/noaa-apt/res/shapefiles/countries.shp"
-wget -q -O - https://github.com/martinber/noaa-apt/raw/master/res/shapefiles/lakes.shp > "/usr/local/share/noaa-apt/res/shapefiles/lakes.shp"
-wget -q -O - https://github.com/martinber/noaa-apt/raw/master/res/shapefiles/states.shp > "/usr/local/share/noaa-apt/res/shapefiles/states.shp"
 if [ "$LMARCH" == 'arm64' ]; then
   wget https://github.com/bareboat-necessities/lysmarine_gen/releases/download/vTest/noaa-apt_1.4.0-2_arm64.deb -O noaa-apt.deb
 fi
 dpkg -i noaa-apt.deb && rm -f noaa-apt.deb
 rm -f /usr/local/share/noaa-apt/test/test*.wav
+
+install -d -m 755 "/usr/local/share/noaa-apt"
+install -d -m 755 "/usr/local/share/noaa-apt/res"
+install -d -m 755 "/usr/local/share/noaa-apt/res/shapefiles"
+install -v "$FILE_FOLDER"/noaa-apt.desktop -o 1000 -g 1000 "/usr/share/applications/ar.com.mbernardi.noaa-apt.desktop"
+wget -q -O - https://github.com/martinber/noaa-apt/raw/master/res/icon.png > "/usr/local/share/noaa-apt/res/icon.png"
+wget -q -O - https://github.com/martinber/noaa-apt/raw/master/res/shapefiles/countries.shp > "/usr/local/share/noaa-apt/res/shapefiles/countries.shp"
+wget -q -O - https://github.com/martinber/noaa-apt/raw/master/res/shapefiles/lakes.shp > "/usr/local/share/noaa-apt/res/shapefiles/lakes.shp"
+wget -q -O - https://github.com/martinber/noaa-apt/raw/master/res/shapefiles/states.shp > "/usr/local/share/noaa-apt/res/shapefiles/states.shp"
 
 #################################
 
