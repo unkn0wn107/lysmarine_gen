@@ -7,5 +7,5 @@ GenericName=hamfax RadioFax
 Icon=phone
 Comment=Send and receive radio facsimiles
 Comment[de]=Senden und Empfangen von Radio-Faksimile-Sendungen
-Exec=hamfax
+Exec=/usr/local/bin/hamfax
 Categories=Radio
