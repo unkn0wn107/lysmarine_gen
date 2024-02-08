@@ -42,7 +42,6 @@ overrideMenu X-GNOME-Utilities /usr/share/applications/org.gnome.baobab.desktop
 overrideMenu Radio /usr/share/applications/cutesdr.desktop
 overrideMenu Radio /usr/share/applications/CubicSDR.desktop
 overrideMenu Radio /usr/share/applications/gpredict.desktop
-overrideMenu Radio /usr/share/applications/ar.com.mbernardi.noaa-apt.desktop
 overrideMenu Radio /usr/share/applications/flarq.desktop
 overrideMenu Radio /usr/share/applications/fldigi.desktop
 overrideMenu Radio /usr/share/applications/dk.gqrx.gqrx.desktop
