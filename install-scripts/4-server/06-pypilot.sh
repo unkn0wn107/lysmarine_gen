@@ -132,6 +132,8 @@ sed -i 's/BoatPlot = wx.glcanvas.GLCanvas(self.m_panel3/BoatPlot = wx.glcanvas.G
 
 #cp "$FILE_FOLDER"/wind.py "$(find /usr/local/lib -name wind.py)" || true
 
+patch "$(find /usr/local/lib -name autopilot_calibration.py)" "$FILE_FOLDER"/autopilot_calibration.patch || true
+
 systemctl disable pypilot_boatimu.service
 systemctl disable pypilot_hat.service
 systemctl enable pypilot@pypilot.service                               # listens on tcp 20220 and 23322
