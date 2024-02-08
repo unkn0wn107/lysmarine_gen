@@ -145,7 +145,7 @@ if [ "$LMARCH" == 'arm64' ]; then
   rm rclone-v1.65.0-linux-arm64.deb
 fi
 
-install -v "$FILE_FOLDER"/term-weather.desktop "/usr/local/share/applications/"
+#install -v "$FILE_FOLDER"/term-weather.desktop "/usr/local/share/applications/"
 
 git clone --depth=1 https://github.com/formatc1702/WireViz
 cd WireViz/
