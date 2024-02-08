@@ -85,6 +85,8 @@ rm -rf ~/.wget*
 rm -rf $(find /var/log/ -type f)
 rm -f /opt/vc/src/hello_pi/hello_video/test.h264
 
+rm -f /usr/share/applications/org.buddiesofbudgie.BudgieScreenshot.desktop
+
 # speed up boot without ethernet plugged
 rm -rf /etc/systemd/system/dhcpcd.service.d/wait.conf
 systemctl disable systemd-networkd-wait-online.service
