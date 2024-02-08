@@ -135,6 +135,8 @@ rm -rf /usr/share/doc/python3*/HISTORY.*
 rm -rf /usr/share/doc/python3*/NEWS.*
 rm -rf /usr/share/backgrounds/budgie/*
 rm -rf /var/lib/apt/lists/*
+rm -rf /usr/share/applications/*ts_calibrate*.desktop
+rm -rf /usr/share/applications/*ts_test*.desktop
 rm -f /2
 find /usr/share/doc -name changelog\*.gz -exec rm -f {} \;
 find /usr/share/doc -name NEWS\*.gz -exec rm -f {} \;
