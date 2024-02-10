@@ -44,7 +44,7 @@ export MOZ_USE_XINPUT2=1
 (sleep 60 && sh -c 'while ! ping -c 1 -n -w 1 spotify.com; do sleep 20; done;' && \
   systemctl --user reenable raspotify && systemctl --user start raspotify) &
 
-(sleep 2 && shairport-sync) &
+(sleep 10 && shairport-sync) &
 
 (sleep 3 && /opt/bbn-launcher/bbn-launcher) &
 (sleep 3 && onboard) &
