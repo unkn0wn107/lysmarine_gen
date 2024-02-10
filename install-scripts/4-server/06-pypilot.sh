@@ -23,7 +23,7 @@ apt-get install -y -q --no-install-recommends --no-install-suggests \
   python3-opengl python3-wxgtk4.0 libwxgtk3.2-1=3.2.2+dfsg-2 \
   libffi-dev python3-gevent python3-zeroconf watchdog lirc gpiod pigpio-tools lm-sensors ir-keytable \
   python3-opengl libgles1 \
-  pigpio python3-pigpio python3-rpi.gpio \
+  pigpio python3-pigpio \
   libelf1 libftdi1-2 libhidapi-libusb0 libusb-0.1-4 libusb-1.0-0 \
   meson cmake make acl avrdude # https://kingtidesailing.blogspot.com/2016/02/how-to-setup-mpu-9250-on-raspberry-pi_25.html
   # octave
@@ -45,7 +45,7 @@ if [ "$LMARCH" == 'arm64' ]; then
   apt-get install -y -q python3-pywavefront python3-pyglet python3-gps python3-gevent-websocket \
     python3-websocket python3-importlib-metadata \
     python3-socketio python3-flask-socketio
-  pip3 install --break-system-packages wmm2020
+  pip3 install --break-system-packages wmm2020 rpi-lgpio
 else
   apt-get install -y -q python3-flask-socketio
   pip3 install pywavefront pyglet gps gevent-websocket importlib_metadata "python-socketio<5" wmm2020
