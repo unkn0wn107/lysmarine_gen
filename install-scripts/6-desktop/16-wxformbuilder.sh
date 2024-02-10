@@ -38,4 +38,4 @@ rm -rf wxFormBuilder
 #EOF'
 
 
-apt-get -y remove --purge libboost-dev
+apt-get -y remove --purge libboost-dev libwxgtk3.2-dev libwxgtk-media3.2-dev
