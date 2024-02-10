@@ -1,5 +1,8 @@
 #!/bin/bash -e
 
+apt-get -y update
+apt-get -y upgrade
+
 # Clean up applications menu for budgie
 overrideMenu() {
   category=$1
