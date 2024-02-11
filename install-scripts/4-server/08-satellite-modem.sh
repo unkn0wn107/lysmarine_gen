@@ -1,6 +1,6 @@
 #!/bin/bash -e
 
-apt-get -y -q install wvdial ppp picocom slurm
+apt-get -y -q install wvdial ppp picocom slurm python3-pip
 
 if [ "$LMARCH" == 'armhf' ]; then
   apt-get -y -q install pppstatus
@@ -10,4 +10,4 @@ fi
 install -v -m 0644 "$FILE_FOLDER"/wvdial-iridium.conf "/etc/"
 
 # See https://github.com/tdolby/python-iridium-modem/
-python3 -m pip python-iridium-modem
+pip3 python-iridium-modem

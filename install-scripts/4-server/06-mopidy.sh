@@ -45,7 +45,5 @@ install -m 755 "$FILE_FOLDER"/mopidy-restart "/usr/local/sbin/mopidy-restart"
 echo "" >>/etc/sudoers
 echo 'user ALL=(ALL) NOPASSWD: /usr/local/sbin/mopidy-restart' >>/etc/sudoers
 
-rm -rf ~/.cache/pip
-
 # Enable mopidy service
 systemctl enable mopidy
