@@ -7,7 +7,7 @@ fi
 apt-get -q -y --no-install-recommends --no-install-suggests install libusb-0.1-4 libusb-1.0-0 \
   avnav mpg123 xvfb wx3.2-i18n python3-psutil
 
-apt-get -q -y install libjpeg8 libtiff5 libwxgtk3.2-1 libwxbase3.2-1 libglu1-mesa libarchive13 \
+apt-get -q -y install libwxgtk3.2-1=3.2.2+dfsg-2 libglu1-mesa libarchive13 \
   avnav-history-plugin  avnav-more-nmea-plugin avnav-mapproxy-plugin # TODO: ???  avnav-raspi
 
 #apt-get -q -y -o Dpkg::Options::="--force-overwrite" install avnav-oesenc
