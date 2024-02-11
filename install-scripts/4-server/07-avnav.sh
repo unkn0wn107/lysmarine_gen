@@ -1,7 +1,5 @@
 #!/bin/bash -e
 
-apt-get clean
-
 if [ "$BBN_KIND" == "LITE" ] ; then
   exit 0
 fi
