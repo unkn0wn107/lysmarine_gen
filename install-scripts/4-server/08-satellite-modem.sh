@@ -1,6 +1,6 @@
 #!/bin/bash -e
 
-apt-get -y -q install wvdial ppp picocom slurm
+apt-get -y -q install wvdial ppp picocom slurm python3-pip
 
 if [ "$LMARCH" == 'armhf' ]; then
   apt-get -y -q install pppstatus
