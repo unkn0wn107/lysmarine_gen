@@ -6,7 +6,9 @@ if [ "$BBN_KIND" == "LITE" ] ; then
   exit 0
 fi
 
-apt-get -q -y --no-install-recommends --no-install-suggests install libusb-0.1-4 libusb-1.0-0 avnav mpg123 xvfb wx3.2-i18n python3-psutil
+apt-get -q -y --no-install-recommends --no-install-suggests install libusb-0.1-4 libusb-1.0-0 \
+  libwxgtk3.2-1 libglu1-mesa libarchive13 \
+  avnav mpg123 xvfb wx3.2-i18n python3-psutil
 
 apt-get -q -y install avnav-history-plugin  avnav-more-nmea-plugin avnav-mapproxy-plugin # TODO: ???  avnav-raspi
 
