@@ -75,4 +75,4 @@ workflows:
   build_all:
     jobs:
       - build-lite-raspbian-bookworm-arm64
-      - build-full-raspbian-bookworm-arm64
+#      - build-full-raspbian-bookworm-arm64
