@@ -28,7 +28,6 @@ install -o 0 -g 0 -m 0644 "$FILE_FOLDER"/avnav_server_lysmarine.xml "/usr/lib/av
 
 install -m 755 "$FILE_FOLDER"/avnav-restart "/usr/local/sbin/avnav-restart"
 
-apt-get clean
 npm cache clean --force
 
 echo "" >>/etc/sudoers
