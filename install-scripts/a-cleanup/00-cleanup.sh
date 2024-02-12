@@ -3,6 +3,9 @@
 apt-get -y update
 apt-get -y upgrade
 
+# https://github.com/bareboat-necessities/lysmarine_gen/issues/375
+pip3 install scipy
+
 # Clean up applications menu for budgie
 overrideMenu() {
   category=$1
