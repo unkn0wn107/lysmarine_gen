@@ -12,3 +12,7 @@
 <         self.UpdateControl(dspin, lambda : dspin.SetValue(value))
 ---
 >         self.UpdateControl(dspin, lambda : dspin.SetValue(round(value)))
+208c208
+<                 self.gAlignment.SetValue(100 - value)
+---
+>                 self.gAlignment.SetValue(round(100 - value))
