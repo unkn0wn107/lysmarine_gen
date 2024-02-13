@@ -305,6 +305,10 @@ raspberry pi.
 * You can burn this image using RaspberryPi imager to SD card and use that SD card to boot your raspberry Pi
 * You can edit files inside install-scripts directory push them into github and customize your image.
 
+# About Name
+
+Yes. It's a play of words inspired by the name of the song from "The Jungle Book" 
+performed by Louis Prima.
 
 # License
 
