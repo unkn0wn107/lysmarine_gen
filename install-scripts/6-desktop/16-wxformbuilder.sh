@@ -39,3 +39,5 @@ rm -rf wxFormBuilder
 
 
 apt-get -y remove --purge libboost-dev libwxgtk3.2-dev libwxgtk-media3.2-dev
+
+apt-get -y install libwxgtk3.2-1 libwxgtk-media3.2-1
