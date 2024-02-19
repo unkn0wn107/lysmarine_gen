@@ -27,7 +27,6 @@ rm -rf wxFormBuilder
 
 bash -c 'cat << EOF > /usr/local/share/applications/org.wxformbuilder.wxFormBuilder.desktop
 [Desktop Entry]
-[Desktop Entry]
 Version=1.0
 Type=Application
 Name=wxFormBuilder
