@@ -25,17 +25,21 @@ cd ..
 rm -rf wxFormBuilder
 
 
-#bash -c 'cat << EOF > /usr/local/share/applications/wxformbuilder.desktop
-#[Desktop Entry]
-#Type=Application
-#Name=WxFormBuilder
-#GenericName=WxFormBuilder
-#Comment=WxFormBuilder
-#Exec=onlyone wxformbuilder
-#Terminal=false
-#Icon=document
-#Categories=Utility;
-#EOF'
+bash -c 'cat << EOF > /usr/local/share/applications/org.wxformbuilder.wxFormBuilder.desktop
+[Desktop Entry]
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=wxFormBuilder
+Comment=GUI builder for wxWidgets
+TryExec=wxformbuilder
+Exec=onlyone wxformbuilder %f
+Terminal=false
+Icon=org.wxformbuilder.wxFormBuilder
+MimeType=application/x-wxformbuilder;
+Categories=Utility
+Keywords=wxWidgets;XRC;GUI;builder;designer;
+EOF'
 
 
 apt-get -y remove --purge libboost-dev libwxgtk3.2-dev libwxgtk-media3.2-dev
