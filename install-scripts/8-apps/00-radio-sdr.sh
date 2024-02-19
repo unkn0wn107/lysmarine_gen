@@ -111,11 +111,11 @@ install -v "$FILE_FOLDER"/jwx.desktop /usr/local/share/applications/
 install -d -m 755 "/usr/local/share/jnx"
 install -d -m 755 "/usr/local/share/jwx"
 
-wget -q -O - https://arachnoid.com/JNX/JNX.jar > /usr/local/share/jnx/JNX.jar
-wget -q -O - https://arachnoid.com/JNX/JNX_source.tar.gz > /usr/local/share/jnx/JNX_source.tar.gz
+wget -q -O - https://github.com/bareboat-necessities/jnx-alt/releases/download/v2011.03.25/jnx-2011.03.25-jar-with-dependencies.jar > /usr/local/share/jnx/JNX.jar
+#wget -q -O - https://arachnoid.com/JNX/JNX_source.tar.gz > /usr/local/share/jnx/JNX_source.tar.gz
 
-wget -q -O - https://arachnoid.com/JWX/resources/JWX.jar > /usr/local/share/jwx/JWX.jar
-wget -q -O - https://arachnoid.com/JWX/resources/JWX_source.tar.bz2 > /usr/local/share/jwx/JWX_source.tar.bz2
+wget -q -O - https://github.com/bareboat-necessities/jwx-alt/releases/download/v2017.11.20/jwx-2017.11.20-jar-with-dependencies.jar > /usr/local/share/jwx/JWX.jar
+#wget -q -O - https://arachnoid.com/JWX/resources/JWX_source.tar.bz2 > /usr/local/share/jwx/JWX_source.tar.bz2
 
 apt-get -y -q install fontconfig
 
