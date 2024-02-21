@@ -51,7 +51,7 @@ export MOZ_USE_XINPUT2=1
 (sleep 3 && /opt/bbn-launcher/bbn-launcher) &
 (sleep 3 && onboard) &
 
-(sleep 15 && /usr/libexec/geoclue-2.0/demos/agent) &
+#(sleep 15 && /usr/libexec/geoclue-2.0/demos/agent) &
 
 #(sleep 3 && nm-applet --indicator) & # --indicator option gives more extended menu
 #(sleep 3 && nm-applet) &
