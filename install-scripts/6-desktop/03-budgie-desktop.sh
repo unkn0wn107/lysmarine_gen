@@ -1,7 +1,7 @@
 #!/bin/bash -e
 
 apt-get install -y -q --no-install-recommends --no-install-suggests \
-  gvfs-fuse gvfs-backends gnome-bluetooth gnome-weather geoclue-2-demo ibus ibus-gtk \
+  gvfs-fuse gvfs-backends gnome-bluetooth gnome-weather geoclue-2-demo ibus ibus-gtk3 ibus-gtk4 \
   lightdm lightdm-autologin-greeter # added lightdm due to https://github.com/BuddiesOfBudgie/budgie-desktop/issues/508
 
 #  libatk-adaptor libgtk-4-1 libatk1.0-0 libcairo2 libfontconfig1 libfreetype6 \
