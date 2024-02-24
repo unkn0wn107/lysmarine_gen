@@ -57,6 +57,7 @@ mv AIS-catcher /usr/local/bin/ && chmod +x /usr/local/bin/AIS-catcher
 
 apt-get -y -q --no-install-recommends --no-install-suggests install \
   cubicsdr                              \
+  soapysdr-module-rtlsdr                \
   cutesdr                               \
   fldigi                                \
   gpredict                              \
