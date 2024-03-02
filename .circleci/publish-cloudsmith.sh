@@ -18,7 +18,11 @@ for pkg_file in cross-build-release/release/*/*."$EXT"; do
   chmod 755 ./tmp
   cd "$zipDir" || exit 255
   export XZ_DEFAULTS='--threads=5'
-  xz -z -c -v -6e --threads=5 "${zipName}" > ../../../tmp/"${zipName}".xz
+  if [[ "${zipName}" =~ "full" ]]; then
+    xz -z -c -v -6e --threads=5 "${zipName}" > ../../../tmp/"${zipName}".xz
+  else
+    xz -z -c -v -8e --threads=5 "${zipName}" > ../../../tmp/"${zipName}".xz
+  fi
   cd ../../..
   cloudsmith push raw "$REPO" ./tmp/"${zipName}".xz --summary "BBN OS built by CircleCi on $(date)" --description "BBN OS build"
   RESULT=$?
