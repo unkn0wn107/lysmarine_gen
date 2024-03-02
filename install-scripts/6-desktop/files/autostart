@@ -35,8 +35,6 @@ export MOZ_USE_XINPUT2=1
 # Started via /usr/share/gnome-session/sessions/org.buddiesofbudgie.BudgieDesktop.session
 #(openbox --replace) &
 
-(ibus-daemon -r) &
-
 (evdev-rce || true) &
 (twofing --click=first --grab-by-disabling /dev/twofingtouch || true) &
 
@@ -50,6 +48,8 @@ export MOZ_USE_XINPUT2=1
 
 (sleep 3 && /opt/bbn-launcher/bbn-launcher) &
 (sleep 3 && onboard) &
+
+(sleep 10 && ibus-daemon -r) &
 
 #(sleep 15 && /usr/libexec/geoclue-2.0/demos/agent) &
 
