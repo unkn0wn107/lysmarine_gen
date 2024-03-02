@@ -49,7 +49,8 @@ export MOZ_USE_XINPUT2=1
 (sleep 3 && /opt/bbn-launcher/bbn-launcher) &
 (sleep 3 && onboard) &
 
-(sleep 10 && ibus-daemon -r) &
+# started differently now
+#(sleep 10 && ibus-daemon -r) &
 
 #(sleep 15 && /usr/libexec/geoclue-2.0/demos/agent) &
 
