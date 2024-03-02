@@ -19,7 +19,7 @@ for pkg_file in cross-build-release/release/*/*."$EXT"; do
   cd "$zipDir" || exit 255
   export XZ_DEFAULTS='--threads=5'
   if [[ "${zipName}" =~ "full" ]]; then
-    xz -z -c -v -6e --threads=5 --memory=80% "${zipName}" > ../../../tmp/"${zipName}".xz
+    xz -z -c -v -2e --threads=5 --memory=80% "${zipName}" > ../../../tmp/"${zipName}".xz
   else
     xz -z -c -v -9e --threads=5 --memory=80% "${zipName}" > ../../../tmp/"${zipName}".xz
   fi
