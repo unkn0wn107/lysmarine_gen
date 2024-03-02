@@ -35,7 +35,7 @@ export MOZ_USE_XINPUT2=1
 # Started via /usr/share/gnome-session/sessions/org.buddiesofbudgie.BudgieDesktop.session
 #(openbox --replace) &
 
-(ibus-daemon -r) &
+(ibus-daemon -rd) &
 
 (evdev-rce || true) &
 (twofing --click=first --grab-by-disabling /dev/twofingtouch || true) &
