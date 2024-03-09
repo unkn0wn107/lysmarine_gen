@@ -52,6 +52,13 @@ EOF'
 
 systemctl disable home-assistant@homeassistant
 
+######################## HomeAssistant Integrations
+
+git clone --depth 1 https://github.com/SmartBoatInnovations/ha-smart0183tcp
+cp -r ha-smart0183tcp/custom_components/smart0183tcp/ /home/homeassistant/.homeassistant/
+chown -R homeassistant:homeassistant /home/homeassistant/.homeassistant/smart0183tcp/
+rm -rf ha-smart0183tcp
+
 ######################## ESPHome
 
 mkdir -p /home/homeassistant/.homeassistant/esphome
