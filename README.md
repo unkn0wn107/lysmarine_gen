@@ -128,7 +128,6 @@ Default user name in login screens is 'user'.
 - [Sailing Trip and Provisioning Checklist](https://bareboat-necessities.github.io/my-bareboat/bareboat-equipment-checklist)
 - Knots
 - [JTides](https://arachnoid.com/JTides/)
-- [TukTuk chartplotter](https://github.com/vokkim/tuktuk-chart-plotter)
 - [PC-NavTex](https://github.com/juerec/pc-navtex)
 
 
