@@ -31,7 +31,7 @@ su homeassistant --shell=/bin/bash -c "
   python3.11 -m venv . ;
   source bin/activate;
   python3.11 -m pip install wheel;
-  pip3.11 install homeassistant sqlalchemy fnvhash setuptools;
+  pip3.11 install homeassistant sqlalchemy fnvhash setuptools PyQRCode;
   mkdir -p /home/homeassistant/.homeassistant;
   rm -rf /home/homeassistant/.cache"
 
