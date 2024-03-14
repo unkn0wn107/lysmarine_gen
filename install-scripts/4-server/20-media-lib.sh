@@ -6,7 +6,7 @@ fi
 
 #apt-get install -y jellyfin
 
-wget -i - << EOF
+xargs -n 1 -P 4 wget -q << EOF
 https://repo.jellyfin.org/files/server/debian/latest-stable/arm64/jellyfin-server_10.8.13-1_arm64.deb
 https://repo.jellyfin.org/files/server/debian/latest-stable/arm64/jellyfin-web_10.8.13-1_all.deb
 https://repo.jellyfin.org/files/server/debian/latest-stable/arm64/jellyfin_10.8.13-1_all.deb
