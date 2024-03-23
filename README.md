@@ -60,7 +60,7 @@ confidence.
 
 If Cloudsmith download link does not work for you, check 
 [Getting Started Guide](https://bareboat-necessities.github.io/my-bareboat/bareboat-os.html). It contains 
-an alternative download location.
+an alternative download location from releases are on GitHub https://github.com/bareboat-necessities/lysmarine_gen/releases
 
 
 # BBN Marine OS Documentation
