@@ -100,9 +100,7 @@ else
                  export NODE_ENV=production; \
                  pnpm install \
                  @signalk/charts-plugin  \
-                 sk-resources-fs  \
                  freeboard-sk-helper  \
-                 skwiz  \
                  signalk-raspberry-pi-bme280  \
                  signalk-raspberry-pi-bmp180  \
                  signalk-raspberry-pi-ina219  \
