@@ -18,8 +18,8 @@ EOF
 #dpkg-deb -xv stellarium-data*.deb /
 dpkg -i stellarium*.deb
 
-chown root:root /
-chmod 755 /
+#chown root:root /
+#chmod 755 /
 rm -f stellarium*.deb
 
 install -d -o 1000 -g 1000 -m 0755 "/home/user/.stellarium"
