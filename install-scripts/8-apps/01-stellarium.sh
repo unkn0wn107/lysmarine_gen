@@ -14,8 +14,10 @@ http://ppa.launchpad.net/stellarium/stellarium-releases/ubuntu/pool/main/s/stell
 http://ppa.launchpad.net/stellarium/stellarium-releases/ubuntu/pool/main/s/stellarium/stellarium-data_23.4.0-upstream1.0~ubuntu22.04.1_all.deb
 EOF
 
-dpkg-deb -xv stellarium_*.deb /
-dpkg-deb -xv stellarium-data*.deb /
+#dpkg-deb -xv stellarium_*.deb /
+#dpkg-deb -xv stellarium-data*.deb /
+dpkg -i stellarium*.deb
+
 chown root:root /
 chmod 755 /
 rm -f stellarium*.deb
