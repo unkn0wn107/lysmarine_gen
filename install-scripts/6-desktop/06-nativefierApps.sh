@@ -226,11 +226,6 @@ npm cache clean --force
 
 nativefier -a "$arch" --disable-context-menu --disable-dev-tools --single-instance \
   --disable-old-build-warning-yesiknowitisinsecure \
-  --name "skwiz" --icon /home/user/.local/share/icons/signalk.png \
-  "http://localhost:3000/skwiz/" /opt/
-
-nativefier -a "$arch" --disable-context-menu --disable-dev-tools --single-instance \
-  --disable-old-build-warning-yesiknowitisinsecure \
   --name "motioneye" --icon /usr/share/icons/gnome/48x48/devices/camera-web.png \
   "http://localhost:8765/" /opt/
 
@@ -239,17 +234,14 @@ nativefier -a "$arch" --disable-context-menu --disable-dev-tools --single-instan
   --name "sk-autopilot" --icon /home/user/.local/share/icons/signalk.png \
   "http://localhost:3000/@signalk/signalk-autopilot/" /opt/
 
-install -v -m 0644 "$FILE_FOLDER"/skwiz.desktop "/usr/local/share/applications/"
 install -v -m 0644 "$FILE_FOLDER"/motioneye.desktop "/usr/local/share/applications/"
 install -v -m 0644 "$FILE_FOLDER"/sk-autopilot.desktop "/usr/local/share/applications/"
 
-mv /opt/skwiz-linux-"$arch" /opt/skwiz
 mv /opt/motioneye-linux-"$arch" /opt/motioneye
 mv /opt/sk-autopilot-linux-"$arch" /opt/sk-autopilot
 
 ## On debian, the sandbox environment fail without GUID/SUID
 if [ "$LMOS" == Debian ]; then
-  chmod 4755 /opt/skwiz/chrome-sandbox
   chmod 4755 /opt/motioneye/chrome-sandbox
   chmod 4755 /opt/sk-autopilot/chrome-sandbox
 fi

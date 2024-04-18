@@ -114,7 +114,6 @@ Default user name in login screens is 'user'.
 - [Freeboard-SK](https://github.com/SignalK/freeboard-sk)
 - [SK Instrument Panel](https://github.com/SignalK/instrumentpanel)
 - [KIP Dashboard](https://github.com/mxtommy/Kip)
-- [SKWiz Instrument Panel](https://www.npmjs.com/package/skwiz)
 - [PyPilot](https://pypilot.org/)
 - [BBN Launcher](https://github.com/bareboat-necessities/lysmarine_gen/tree/master/install-scripts/4-server/files/bbn-launcher)
 - [SK Sail Gauge](https://github.com/SignalK/sailgauge)
