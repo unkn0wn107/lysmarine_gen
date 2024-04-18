@@ -59,6 +59,16 @@ cp -r ha-smart0183tcp/custom_components/smart0183tcp/ /home/homeassistant/.homea
 chown -R homeassistant:homeassistant /home/homeassistant/.homeassistant/smart0183tcp/
 rm -rf ha-smart0183tcp
 
+git clone --depth 1 https://github.com/SmartBoatInnovations/ha-smart2000esp
+cp -r ha-smart2000esp/custom_components/smart2000esp/ /home/homeassistant/.homeassistant/
+chown -R homeassistant:homeassistant /home/homeassistant/.homeassistant/smart2000esp/
+rm -rf ha-smart2000esp
+
+git clone --depth 1 https://github.com/SmartBoatInnovations/ha-smart2000usb
+cp -r ha-smart2000usb/custom_components/smart2000usb/ /home/homeassistant/.homeassistant/
+chown -R homeassistant:homeassistant /home/homeassistant/.homeassistant/smart2000usb/
+rm -rf ha-smart2000usb
+
 ######################## ESPHome
 
 mkdir -p /home/homeassistant/.homeassistant/esphome
