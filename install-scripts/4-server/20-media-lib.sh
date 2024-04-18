@@ -16,4 +16,6 @@ EOF
 dpkg -i jellyfin*.deb
 rm -rf jellyfin*.deb
 
+adduser jellyfin audio
+
 systemctl disable jellyfin
