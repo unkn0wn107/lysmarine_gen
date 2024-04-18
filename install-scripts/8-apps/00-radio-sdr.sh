@@ -51,9 +51,17 @@ fi
 
 #################################
 
-wget -q -O - https://github.com/bareboat-necessities/lysmarine_gen/releases/download/vTest/AIS-catcher-20231216-bookworm-arm64.zip > AIS-catcher.zip
-unzip AIS-catcher.zip && rm AIS-catcher.zip
-mv AIS-catcher /usr/local/bin/ && chmod +x /usr/local/bin/AIS-catcher
+#wget -q -O - https://github.com/bareboat-necessities/lysmarine_gen/releases/download/vTest/AIS-catcher-20231216-bookworm-arm64.zip > AIS-catcher.zip
+#unzip AIS-catcher.zip && rm AIS-catcher.zip
+#mv AIS-catcher /usr/local/bin/ && chmod +x /usr/local/bin/AIS-catcher
+
+xargs -n 1 -P 2 wget -q << EOF
+https://www.free-x.de/deb4op/pool/main/a/ais-catcher-webassets/ais-catcher-webassets_20240208_all.deb
+https://www.free-x.de/deb4op/pool/main/a/ais-catcher/ais-catcher_0.5.7-deb12u2_arm64.deb
+EOF
+dpkg -i ais-catcher*.deb
+rm -rf ais-catcher*.deb
+
 
 apt-get -y -q --no-install-recommends --no-install-suggests install \
   cubicsdr                              \
