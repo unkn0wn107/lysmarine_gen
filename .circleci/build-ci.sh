@@ -12,7 +12,7 @@ DOCKER_SOCK="unix:///var/run/docker.sock"
 
 echo "DOCKER_OPTS=\"-H tcp://127.0.0.1:2375 -H $DOCKER_SOCK -s overlay2\"" | sudo tee /etc/default/docker >/dev/null
 sudo service docker restart
-sleep 5
+sleep 3
 
 if [ "$EMU" = "on" ]; then
   if [ "$CONTAINER_DISTRO" = "raspbian" ]; then
