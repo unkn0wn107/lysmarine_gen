@@ -90,7 +90,7 @@ inflateImage() {
   imageLocationInflated=${imageLocation}-inflated
 
   if [ ! -f "$imageLocationInflated" ]; then
-    log "Inflating OS image to have enough space to build lysmarine. "
+    log "Inflating OS image to have enough space to build BBN OS. "
     cp -fv "${imageLocation}" "$imageLocationInflated"
 
     if [ "$BBN_KIND" == "LITE" ] ; then
