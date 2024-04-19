@@ -79,7 +79,7 @@ EOF
   else
     BBN_IMG=lysmarine-bbn-full-bookworm_"${LYSMARINE_VER}"-${thisArch}-${cpuArch}.img
   fi
-  cp -v ./work/$thisArch/"$imageName" ./release/$thisArch/"$BBN_IMG"
+  cp -v -l ./work/$thisArch/"$imageName" ./release/$thisArch/"$BBN_IMG"
 
   exit 0
 }
