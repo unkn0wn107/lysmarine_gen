@@ -6,7 +6,7 @@ fi
 
 apt-get clean
 
-apt-get -y -q install geographiclib-tools libexiv2-27 libnlopt0 \
+apt-get -y -q install geographiclib-tools libexiv2-27 libnlopt0 libnlopt-cxx0 \
  libqt6charts6 libqt6multimediawidgets6 libqt6webenginewidgets6 libqt6serialport6 # libqt6script6 stellarium stellarium-data
 
 xargs -n 1 -P 2 wget -q << EOF
