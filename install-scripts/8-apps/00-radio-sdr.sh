@@ -165,7 +165,7 @@ apt-get install -y librtlsdr0 libairspy0 libairspyhf1 \
 
 xargs -n 1 -P 2 wget -q << EOF
 https://www.free-x.de/deb4op/pool/main/a/ais-catcher-webassets/ais-catcher-webassets_20240208_all.deb
-https://www.free-x.de/deb4op/pool/main/a/ais-catcher/ais-catcher_0.5.7-deb12u2_arm64.deb
+https://www.free-x.de/deb4op/pool/main/a/ais-catcher/ais-catcher_0.5.7-deb12u3_arm64.deb
 EOF
 dpkg -i ais-catcher_*.deb ais-catcher-webassets_*.deb
 rm -rf ais-catcher*.deb
