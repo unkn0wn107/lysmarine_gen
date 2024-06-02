@@ -59,7 +59,8 @@ mv /home/user/.local/share/opencpn/plugins/tactics_pi/data/Tactics_rollover.svg 
 mv /home/user/.local/share/opencpn/plugins/tactics_pi/data/Tactics_toggled.svg /home/user/.local/share/opencpn/plugins/tactics_pi/data/tactics_toggled.svg
 #mv /home/user/.local/share/opencpn/plugins/CanadianTides_pi/data/canadiantides_panel_icon.png /home/user/.local/share/opencpn/plugins/CanadianTides_pi/data/CanadianTides_panel_icon.png
 
-wget --no-check-certificate https://download.tuxfamily.org/xinutop/rastow/rastow-0.4.tgz
+#wget --no-check-certificate https://download.tuxfamily.org/xinutop/rastow/rastow-0.4.tgz
+wget --no-check-certificate https://absinthe.tuxfamily.org/xinutop/rastow/rastow-0.4.tgz
 gzip -cd rastow-0.4.tgz | tar xvf -
 mv rastow.sh /usr/local/bin
 rm rastow-0.4.tgz
