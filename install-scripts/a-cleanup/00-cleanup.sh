@@ -84,6 +84,7 @@ apt-get --purge -y remove \
  linux-headers-6.6.20+rpt-common-rpi \
  linux-headers-6.6.20+rpt-rpi-2712 \
  linux-headers-6.6.20+rpt-rpi-v8 \
+ linux-kbuild-6.6.20+rpt \
  linux-image-6.6.20+rpt-rpi-2712 \
  linux-image-6.6.20+rpt-rpi-v8
 
