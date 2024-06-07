@@ -8,6 +8,8 @@ apt-get --purge -y remove \
  linux-kbuild-6.6.20+rpt \
  linux-image-6.6.20+rpt-rpi-2712 \
  linux-image-6.6.20+rpt-rpi-v8
+rm -rf /boot/*6.6.20*
+mv /boot/firmware/*6.6.31* /boot/
 
 apt-get -y update
 apt-get -y upgrade
