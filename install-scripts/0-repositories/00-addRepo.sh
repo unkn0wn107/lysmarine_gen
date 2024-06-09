@@ -80,6 +80,10 @@ rm -f flightaware-apt-repository_1.2_all.deb
 ## Update && Upgrade
 apt-get update  -y -q
 apt-get upgrade -y -q
+# Mark all "manually installed" kernel packages as "automatically installed"
+for f in $(apt-mark showmanual | grep linux-); do
+    apt-mark auto $f
+done
 apt-get autoremove -y purge
 
 systemctl preset-all

@@ -13,6 +13,10 @@
 
 apt-get -y update
 apt-get -y upgrade
+# Mark all "manually installed" kernel packages as "automatically installed"
+for f in $(apt-mark showmanual | grep linux-); do
+    apt-mark auto $f
+done
 apt-get autoremove -y purge
 
 # https://github.com/bareboat-necessities/lysmarine_gen/issues/375
