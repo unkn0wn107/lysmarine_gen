@@ -1,18 +1,19 @@
 #!/bin/bash -e
 
 # remove older kernels
-apt-get --purge -y remove \
- linux-headers-6.6.20+rpt-common-rpi \
- linux-headers-6.6.20+rpt-rpi-2712 \
- linux-headers-6.6.20+rpt-rpi-v8 \
- linux-kbuild-6.6.20+rpt \
- linux-image-6.6.20+rpt-rpi-2712 \
- linux-image-6.6.20+rpt-rpi-v8
-rm -rf /boot/*6.6.20*
-mv /boot/firmware/*6.6.31* /boot/
+#apt-get --purge -y remove \
+# linux-headers-6.6.20+rpt-common-rpi \
+# linux-headers-6.6.20+rpt-rpi-2712 \
+# linux-headers-6.6.20+rpt-rpi-v8 \
+# linux-kbuild-6.6.20+rpt \
+# linux-image-6.6.20+rpt-rpi-2712 \
+# linux-image-6.6.20+rpt-rpi-v8
+#rm -rf /boot/*6.6.20*
+#mv /boot/firmware/*6.6.31* /boot/
 
 apt-get -y update
 apt-get -y upgrade
+apt-get autoremove -y purge
 
 # https://github.com/bareboat-necessities/lysmarine_gen/issues/375
 pip3 install scipy

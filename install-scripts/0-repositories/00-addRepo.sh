@@ -80,5 +80,6 @@ rm -f flightaware-apt-repository_1.2_all.deb
 ## Update && Upgrade
 apt-get update  -y -q
 apt-get upgrade -y -q
+apt-get autoremove -y purge
 
 systemctl preset-all
