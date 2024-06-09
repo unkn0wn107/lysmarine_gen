@@ -86,4 +86,15 @@ for f in $(apt-mark showmanual | grep linux-); do
 done
 apt-get autoremove -y --purge
 
+# remove older kernels
+apt-get --purge -y remove \
+ linux-headers-6.6.20+rpt-common-rpi \
+ linux-headers-6.6.20+rpt-rpi-2712 \
+ linux-headers-6.6.20+rpt-rpi-v8 \
+ linux-kbuild-6.6.20+rpt \
+ linux-image-6.6.20+rpt-rpi-2712 \
+ linux-image-6.6.20+rpt-rpi-v8
+#rm -rf /boot/*6.6.20*
+#mv /boot/firmware/*6.6.31* /boot/
+
 systemctl preset-all
