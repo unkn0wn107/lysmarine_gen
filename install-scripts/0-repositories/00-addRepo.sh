@@ -84,6 +84,6 @@ apt-get upgrade -y -q
 for f in $(apt-mark showmanual | grep linux-); do
     apt-mark auto $f
 done
-apt-get autoremove -y purge
+apt-get autoremove -y --purge
 
 systemctl preset-all
