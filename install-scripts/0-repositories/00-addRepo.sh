@@ -79,7 +79,7 @@ rm -f flightaware-apt-repository_1.2_all.deb
 
 ## Update && Upgrade
 apt-get update  -y -q
-apt-mark hold linux-image-rpi-2712 linux-image-rpi-v8
+apt-mark hold linux-image-rpi-2712 linux-image-rpi-v8 linux-headers-rpi-2712 linux-headers-rpi-v8
 apt-get upgrade -y -q
 apt-get autoremove -y --purge
 
