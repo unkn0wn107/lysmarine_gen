@@ -1,12 +1,10 @@
 #!/bin/bash -e
 
 apt-get -y update
+apt-mark hold linux-image-rpi-2712 linux-image-rpi-v8
 apt-get -y upgrade
-# Mark all "manually installed" kernel packages as "automatically installed"
-for f in $(apt-mark showmanual | grep linux-); do
-    apt-mark auto $f
-done
 apt-get autoremove -y --purge
+apt-mark unhold linux-image-rpi-2712 linux-image-rpi-v8
 
 # https://github.com/bareboat-necessities/lysmarine_gen/issues/375
 pip3 install scipy
