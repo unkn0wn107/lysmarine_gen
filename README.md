@@ -27,7 +27,7 @@ We would think our distribution can serve as a basis for others interested to bu
 * Music/Media player Linux distribution
 * Generic Linux touch tablet on ARM raspberry OS
 * Car specialized Linux distribution
-* WiFi router
+* Wi-Fi router
 
 The code for building this distribution is easily customizable following instructions below.
 You do not have to build it on your own ARM hardware. The process described below explains how you
@@ -46,7 +46,7 @@ To get start it's easier to download pre-built image using the links below (or y
 following instructions in the next chapter). 
 CircleCI is the tool which is used to create the OS image.
 
-NOTE: Do not forget to set WiFi country after the installation.
+NOTE: Do not forget to set Wi-Fi country after the installation.
 
 Binaries are downloadable from: 
  <https://cloudsmith.io/~bbn-projects/repos/bbn-repo/packages/?q=lysmarine>
@@ -75,7 +75,7 @@ https://bareboat-necessities.github.io/my-bareboat/bareboat-os.html
 * 4 GB memory or higher (2 GB works too but not for many concurrent programs)
 * Touchscreen with resolution 1024x600 or higher and size 10" or more (800x480 and 7" works too but few of the programs will open too big dialog boxes)
 * Suitable (unless you find something better) waterproof touchscreen display for your cockpit (TouchThink TPC-CD-M101, 10.1", 1280x800, IP65): https://www.touchtecs.com/
-* WiFi and LTE/4G router (not a requirement, gl-x750 Spitz OpenWrt router): https://www.gl-inet.com/products/gl-x750/
+* Wi-Fi and LTE/4G router (not a requirement, gl-x750 Spitz OpenWrt router): https://www.gl-inet.com/products/gl-x750/
 * Quark-elec Marine multiplexers seems has a good product line (or you can just use this BBN OS image but
 considering all waterproof connectors and hardware customization these commercial multiplexers be nicer choice):
 https://www.quark-elec.com/product-category/marine/multiplexers/ Another (even cheaper) option: http://www.yakbitz.com/
@@ -85,7 +85,7 @@ https://www.quark-elec.com/product-category/marine/multiplexers/ Another (even c
 # Passwords
 
 Default passwords are set to 'changeme', which you are supposed to change.
-Default user name in login screens is 'user'.
+Default username in login screens is 'user'.
 
 
 # Screenshots
@@ -134,9 +134,8 @@ Default user name in login screens is 'user'.
 
 - Chromium Web Browser
 - Email Client
-- Internet Messaging Client [Empathy](https://github.com/GNOME/empathy)
 - FB Messenger [Caprine](https://github.com/sindresorhus/caprine)
-- Youtube App
+- YouTube App
 - Facebook App
 - Internet Weather
 - Dockwa (Mooring and Marina Booking App)
@@ -148,7 +147,7 @@ Default user name in login screens is 'user'.
 
 ## Multimedia
 
-- [Mopidy](https://mopidy.com/) Media Player with Web UI (Youtube, Local List, Internet Radio, MPD support)
+- [Mopidy](https://mopidy.com/) Media Player with Web UI (YouTube, Local List, Internet Radio, MPD support)
 - [MusicBox](https://mopidy.com/ext/musicbox-webclient/) (Music Player)
 - [Iris](https://github.com/jaedb/Iris) (Music Player)
 - [VLC](https://www.videolan.org/vlc/) (with IP camera support)
@@ -204,10 +203,10 @@ Default user name in login screens is 'user'.
 - [OpenVPN (Virtual Private Networking)](https://openvpn.net/)
 - MQTT [Mosquitto](https://mosquitto.org/) for IoT (to talk to Sonoff smart switches to switch on several devices like Radar,
 Windlass, Bow Thruster, Lights)
-- WiFi (Access Point and Client)
+- Wi-Fi (Access Point and Client)
 - [SignalK](https://signalk.org/)
 - Seatalk 1, GPIO
-- ModBus (to talk to Victron Venus OS, etc)
+- ModBus (to talk to Victron Venus OS, etc.)
 - [Timeshift](https://github.com/teejee2008/timeshift) (backups), [rsync](https://rsync.samba.org/)
 - PPP, wvdial, picocom for satellite modem support
 - I2C tools
@@ -298,10 +297,10 @@ raspberry pi.
 * Register .circleci/config.yml in CircleCi
 * Create CloudSmith account (Use logging in with GitHub)
 * Import CloudSmith key into circleci project settings (via env variable)
-* Edit publish-cloudsmith.sh options in .circleci/config.yml to put location of your cloudsmith repository and push the changes into github
+* Edit publish-cloudsmith.sh options in .circleci/config.yml to put location of your cloudsmith repository and push the changes into GitHub
 * After circleci build completes it will create and upload image to cloudsmith
 * You can burn this image using RaspberryPi imager to SD card and use that SD card to boot your raspberry Pi
-* You can edit files inside install-scripts directory push them into github and customize your image.
+* You can edit files inside install-scripts directory push them into GitHub and customize your image.
 
 # About Name
 
