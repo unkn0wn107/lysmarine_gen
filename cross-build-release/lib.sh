@@ -97,8 +97,8 @@ inflateImage() {
       log "truncate image to 9G"
       truncate -s "9G" "$imageLocationInflated"
     else
-      log "truncate image to 13G"
-      truncate -s "13G" "$imageLocationInflated"
+      log "truncate image to 14G"
+      truncate -s "14G" "$imageLocationInflated"
     fi
 
     log "resize last partition to 100%"
