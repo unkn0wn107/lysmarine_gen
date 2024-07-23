@@ -73,6 +73,10 @@ https://bareboat-necessities.github.io/my-bareboat/bareboat-os.html
 Bareboat Necessities Marine OS Forum:
 https://github.com/bareboat-necessities/lysmarine_gen/discussions
 
+## BBN OS Issues
+
+https://github.com/bareboat-necessities/lysmarine_gen/issues
+
 # System Requirements
 
 * Raspberry Pi 4 or higher (or CM4 module 4Gb with Wi-Fi, or raspberry pi 400)
