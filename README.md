@@ -68,6 +68,10 @@ an alternative download location from releases are on GitHub https://github.com/
 Getting Started:
 https://bareboat-necessities.github.io/my-bareboat/bareboat-os.html
 
+# Bareboat Necessities (BBN) Marine OS Forum
+
+Bareboat Necessities Marine OS Forum:
+https://github.com/bareboat-necessities/lysmarine_gen/discussions
 
 # System Requirements
 
