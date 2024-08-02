@@ -46,7 +46,7 @@ apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 6EA1BC913BC5163F       
 apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 1932F485C68D72A5           # Stellarium
 
 wget -q -O - https://deb.nodesource.com/gpgkey/nodesource.gpg.key | apt-key add -    # NodeJs
-wget -q -O - https://apt.mopidy.com/mopidy.gpg | apt-key add -
+#wget -q -O - https://apt.mopidy.com/mopidy.gpg | apt-key add -
 wget -q -O - https://repos.influxdata.com/influxdb.key | apt-key add -
 wget -q -O - https://repo.jellyfin.org/jellyfin_team.gpg.key | apt-key add -
 curl -sSL https://dtcooper.github.io/raspotify/key.asc | apt-key add -
