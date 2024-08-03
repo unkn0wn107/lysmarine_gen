@@ -163,7 +163,7 @@ apt-get install -y librtlsdr0 libairspy0 libairspyhf1 \
 #unzip AIS-catcher.zip && rm AIS-catcher.zip
 #mv AIS-catcher /usr/local/bin/ && chmod +x /usr/local/bin/AIS-catcher
 
-AGENT="Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.103 Safari/537.36"
+AGENT="Debian APT-HTTP/1.3 (2.6.1)"
 xargs -n 1 -P 2 wget --user-agent="$AGENT" -q << EOF
 https://www.free-x.de/deb4op/pool/main/a/ais-catcher-webassets/ais-catcher-webassets_20240208_all.deb
 https://www.free-x.de/deb4op/pool/main/a/ais-catcher/ais-catcher_0.5.9-deb12u1_arm64.deb
