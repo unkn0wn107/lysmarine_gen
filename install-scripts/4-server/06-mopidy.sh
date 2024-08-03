@@ -17,7 +17,7 @@ adduser mopidy video
 adduser mopidy audio
 
 # Install some needed packages
-pip3 install install systems
+pip3 install systems
 
 #pip3 install --pre Mopidy-YouTube
 
