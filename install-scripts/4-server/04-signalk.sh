@@ -1,6 +1,6 @@
 #!/bin/bash -e
 
-## Create signalk user to run the server.
+## Create signalK user to run the server.
 if [ ! -d /home/signalk ]; then
 	echo "Creating signalk user"
 	adduser --home /home/signalk --gecos --system --disabled-password --disabled-login signalk
@@ -30,7 +30,7 @@ if [ ! -f /home/user/charts ] ; then
 	su user -c "ln -s /srv/charts /home/user/charts"
 fi
 
-## Dependencies of signalk.
+## Dependencies of signalK.
 apt-get install -y -q python3-dev git nodejs \
  libnss-mdns avahi-utils \
  node-abstract-leveldown node-nan libzmq3-dev libkrb5-dev libavahi-compat-libdnssd-dev jq
@@ -59,19 +59,19 @@ install -m 644 -o 1000 -g 1000 "$FILE_FOLDER"/icons/signalk.png "/home/user/.loc
 install -d /etc/systemd/system
 install -m 644 "$FILE_FOLDER"/signalk.service "/etc/systemd/system/signalk.service"
 
-## Install signalk
+## Install signalK
 npm cache clean --force
 npm install -g npm pnpm patch-package
 npm install -g --unsafe-perm --production signalk-server
 
 if [ "$BBN_KIND" == "LITE" ] ; then
-  ## Install signalk published plugins
+  ## Install signalK published plugins
   pushd /home/signalk/.signalk
     su signalk --shell=/bin/bash -c "export MAKEFLAGS='-j 8'; \
                  export NODE_ENV=production; \
                  pnpm install \
                  @signalk/charts-plugin  \
-                 sk-resources-fs  \
+                 @signalk/course-provider \
                  freeboard-sk-helper  \
                  signalk-raspberry-pi-bme280  \
                  signalk-raspberry-pi-bmp180  \
@@ -93,15 +93,19 @@ if [ "$BBN_KIND" == "LITE" ] ; then
                  signalk-path-filter \
                  signalk-datetime \
                  @meri-imperiumi/signalk-autostate --unsafe-perm --loglevel error"
+
+    #            sk-resources-fs  \
   popd
 else
-  ## Install signalk published plugins
+  ## Install signalK published plugins
   pushd /home/signalk/.signalk
     su signalk --shell=/bin/bash -c "export MAKEFLAGS='-j 8'; \
                  export NODE_ENV=production; \
                  pnpm install \
                  @signalk/charts-plugin  \
+                 @signalk/course-provider \
                  freeboard-sk-helper  \
+                 signalk-pmtiles-plugin \
                  signalk-raspberry-pi-bme280  \
                  signalk-raspberry-pi-bmp180  \
                  signalk-raspberry-pi-ina219  \
@@ -183,6 +187,7 @@ else
                  @meri-imperiumi/signalk-autostate \
                  @meri-imperiumi/signalk-alternator-engine-on \
                  signalk-saillogger --unsafe-perm --loglevel error"
+
   popd
 fi
 
