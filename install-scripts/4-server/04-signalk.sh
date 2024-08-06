@@ -70,6 +70,7 @@ if [ "$BBN_KIND" == "LITE" ] ; then
     su signalk --shell=/bin/bash -c "export MAKEFLAGS='-j 8'; \
                  export NODE_ENV=production; \
                  pnpm install \
+                 @signalk/resources-provider \
                  @signalk/charts-plugin  \
                  @signalk/course-provider \
                  freeboard-sk-helper  \
@@ -93,8 +94,6 @@ if [ "$BBN_KIND" == "LITE" ] ; then
                  signalk-path-filter \
                  signalk-datetime \
                  @meri-imperiumi/signalk-autostate --unsafe-perm --loglevel error"
-
-    #            sk-resources-fs  \
   popd
 else
   ## Install signalK published plugins
@@ -102,6 +101,7 @@ else
     su signalk --shell=/bin/bash -c "export MAKEFLAGS='-j 8'; \
                  export NODE_ENV=production; \
                  pnpm install \
+                 @signalk/resources-provider \
                  @signalk/charts-plugin  \
                  @signalk/course-provider \
                  freeboard-sk-helper  \
@@ -187,7 +187,6 @@ else
                  @meri-imperiumi/signalk-autostate \
                  @meri-imperiumi/signalk-alternator-engine-on \
                  signalk-saillogger --unsafe-perm --loglevel error"
-
   popd
 fi
 
