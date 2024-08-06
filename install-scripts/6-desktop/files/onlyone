@@ -7,7 +7,7 @@ export DESKTOP_SESSION
 PATH=.:$PATH
 export PATH
 
-if pidof $(command -v "${application}") > /dev/null ; then
+if pidof $(command -v "$1") > /dev/null ; then
     echo "${application} is already running"
     wmctrl -x -R "$application"
 else
