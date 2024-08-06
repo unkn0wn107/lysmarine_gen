@@ -45,6 +45,7 @@ install -m 644 -o signalk -g signalk "$FILE_FOLDER"/signalk-path-filter.json "/h
 install -m 644 -o signalk -g signalk "$FILE_FOLDER"/derived-data.json "/home/signalk/.signalk/plugin-config-data/"
 install -m 644 -o signalk -g signalk "$FILE_FOLDER"/charts.json "/home/signalk/.signalk/plugin-config-data/"
 install -m 644 -o signalk -g signalk "$FILE_FOLDER"/signalk-navtex-plugin.json "/home/signalk/.signalk/plugin-config-data/"
+install -m 644 -o signalk -g signalk "$FILE_FOLDER"/freeboard-sk-helper.json "/home/signalk/.signalk/plugin-config-data/"
 
 install -m 644 -o signalk -g signalk "$FILE_FOLDER"/defaults.json "/home/signalk/.signalk/defaults.json"
 install -m 644 -o signalk -g signalk "$FILE_FOLDER"/package.json "/home/signalk/.signalk/package.json"
