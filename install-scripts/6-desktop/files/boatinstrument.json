@@ -1,0 +1,180 @@
+{
+  "version": 0,
+  "valueSmoothing": 1,
+  "discoverServer": false,
+  "signalkServer": "127.0.0.1:3000",
+  "signalkMinPeriod": 500,
+  "signalkConnectionTimeout": 20000,
+  "dataTimeout": 10000,
+  "darkMode": true,
+  "wrapPages": true,
+  "brightnessControl": false,
+  "keepAwake": true,
+  "autoConfirmActions": false,
+  "pageTimerOnStart": false,
+  "pageChangeSeconds": 20,
+  "distanceUnits": "nm",
+  "m2nmThreshold": 500,
+  "speedUnits": "kts",
+  "windSpeedUnits": "kts",
+  "depthUnits": "ft",
+  "temperatureUnits": "c",
+  "portStarboardColors": "redGreen",
+  "pages": [
+    {
+      "name": "one",
+      "pageRows": [
+        {
+          "percentage": 1.0,
+          "columns": [
+            {
+              "percentage": 0.3735430029374135,
+              "rows": [
+                {
+                  "percentage": 0.6770418027239269,
+                  "boxes": [
+                    {
+                      "percentage": 1.0,
+                      "id": "wind-rose",
+                      "settings": {
+                        "type": "normal",
+                        "showLabels": true,
+                        "showButton": false,
+                        "autoSwitchingDelay": 15
+                      }
+                    }
+                  ]
+                },
+                {
+                  "percentage": 0.1782679638668152,
+                  "boxes": [
+                    {
+                      "percentage": 0.5,
+                      "id": "wind-apparent-angle",
+                      "settings": {}
+                    },
+                    {
+                      "percentage": 0.5,
+                      "id": "wind-speed-apparent",
+                      "settings": {}
+                    }
+                  ]
+                },
+                {
+                  "percentage": 0.1446902334092579,
+                  "boxes": [
+                    {
+                      "percentage": 0.5,
+                      "id": "wind-direction-true",
+                      "settings": {}
+                    },
+                    {
+                      "percentage": 0.5,
+                      "id": "wind-speed-true",
+                      "settings": {}
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "percentage": 0.6264569970625865,
+              "rows": [
+                {
+                  "percentage": 0.12561177250990554,
+                  "boxes": [
+                    {
+                      "percentage": 1.0,
+                      "id": "date-time",
+                      "settings": {
+                        "showDate": false,
+                        "showTime": true,
+                        "utc": false,
+                        "timeFormat": "yyyy-MM-dd HH:mm:ss"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "percentage": 0.19765127012586184,
+                  "boxes": [
+                    {
+                      "percentage": 1.0,
+                      "id": "navigation-position",
+                      "settings": {}
+                    }
+                  ]
+                },
+                {
+                  "percentage": 0.21210505094774126,
+                  "boxes": [
+                    {
+                      "percentage": 0.5,
+                      "id": "navigation-speed-over-ground",
+                      "settings": {}
+                    },
+                    {
+                      "percentage": 0.5,
+                      "id": "navigation-course-over-ground",
+                      "settings": {}
+                    }
+                  ]
+                },
+                {
+                  "percentage": 0.1665857379888947,
+                  "boxes": [
+                    {
+                      "percentage": 0.5,
+                      "id": "navigation-heading-true",
+                      "settings": {}
+                    },
+                    {
+                      "percentage": 0.5,
+                      "id": "environment-depth-belowSurface",
+                      "settings": {}
+                    }
+                  ]
+                },
+                {
+                  "percentage": 0.15434826074625024,
+                  "boxes": [
+                    {
+                      "percentage": 0.5,
+                      "id": "navigation-next-point-distance",
+                      "settings": {}
+                    },
+                    {
+                      "percentage": 0.5,
+                      "id": "navigation-next-point-time-to-go",
+                      "settings": {}
+                    }
+                  ]
+                },
+                {
+                  "percentage": 0.14369790768134627,
+                  "boxes": [
+                    {
+                      "percentage": 0.5,
+                      "id": "navigation-next-point-velocity-made-good",
+                      "settings": {}
+                    },
+                    {
+                      "percentage": 0.5,
+                      "id": "navigation-xte",
+                      "settings": {}
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "boxSettings": {
+    "date-time": {
+      "dateFormat": "yyyy-MM-dd"
+    }
+  }
+}

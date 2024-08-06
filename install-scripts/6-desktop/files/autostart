@@ -65,4 +65,8 @@ export MOZ_USE_XINPUT2=1
  xset -dpms && \
  xset s noblank) &
 
+(sleep 5 && gtk-launch boatinstrument) &
+
+
+
 
