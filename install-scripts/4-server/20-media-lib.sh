@@ -7,8 +7,7 @@ fi
 #apt-get install -y jellyfin
 
 apt-get clean
-npm cache clean --force || true
-rm -rf ~/.local/share/pnpm
+rm -rf /var/cache/apt/archives/*
 
 xargs -n 1 -P 4 wget -q << EOF
 https://repo.jellyfin.org/files/server/debian/latest-stable/arm64/jellyfin-server_10.9.9%2Bdeb12_arm64.deb
