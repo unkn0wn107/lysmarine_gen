@@ -1,13 +1,13 @@
 module.exports = {
   commands1 : [
     {name: 'chart', title: 'Chart', img: 'chart', bg: 'Peru', cmd: 'onlyone', args: ['/usr/bin/opencpn', '-l=error']},
-    {name: 'dash', title: 'Dashboard', img: 'dashboard', bg: 'Olive', cmd: '/opt/kip-dash/kip-dash', args: []},
+    {name: 'instruments', title: 'Instruments', img: 'dashboard', bg: 'SeaGreen',  cmd: 'gtk-launch', args: ['boatinstrument']},
     {name: 'autopilot', title: 'Autopilot', img: 'autopilot', bg: 'IndianRed', cmd: '/opt/sk-autopilot/sk-autopilot', args: []},
     {name: 'weather', title: 'Weather', img: 'weather', bg: 'RoyalBlue', cmd: 'onlyone', args: ['XyGrib']},
     {name: 'cam', title: 'Camera', img: 'camera', bg: 'SeaGreen', cmd: '/opt/motioneye/motioneye', args: []},
 
     {name: 'avnav', title: 'AvNav', img: 'chart', bg: 'Olive', cmd: '/opt/AvNav/AvNav', args: []},
-    {name: 'freeboard', title: 'Freeboard', img: 'chart', bg: 'SteelBlue', cmd: '/opt/Freeboard-sk/Freeboard-sk', args: []},
+    {name: 'dash', title: 'Dashboard', img: 'dashboard', bg: 'Olive', cmd: '/opt/kip-dash/kip-dash', args: []},
     {name: 'pypilot', title: 'PyPilot', img: 'autopilot', bg: 'ForestGreen', cmd: '/opt/Pypilot_webapp/Pypilot_webapp', args: []},
     {name: 'winds', title: 'Winds', img: 'race', bg: 'DarkSeaGreen', cmd: 'gtk-launch', args: ['windy']},
     {name: 't-storms', title: 'T-Storms', img: 'weather', bg: 'Tan', cmd: 'gtk-launch', args: ['lightningmaps']},
@@ -21,9 +21,9 @@ module.exports = {
 
   commands2 : [
     {name: 'radio', title: 'Radio', img: 'radio', bg: 'IndianRed', cmd: 'onlyone', args: ['fldigi']},
+    {name: 'freeboard', title: 'Freeboard', img: 'chart', bg: 'SteelBlue', cmd: '/opt/Freeboard-sk/Freeboard-sk', args: []},
     {name: 'sky', title: 'Sky', img: 'sky', bg: 'Olive', cmd: 'onlyone', args: ['stellarium-augmented']},
     {name: 'marinas', title: 'Moorings', img: 'buoy', bg: 'SaddleBrown', cmd: '/opt/Moorings/Moorings', args: []},
-    {name: 'web-weather', title: 'Forecast', img: 'weather', bg: 'SeaGreen',  cmd: 'onlyone', args: ['gnome-weather']},
     {name: 'provisioning', title: 'Provisioning', img: 'provisioning', bg: 'Peru',  cmd: 'onlyone', args: ['gnome-www-browser', '/usr/local/share/bbn-checklist/bbn-checklist.html']},
 
     {name: 'vessel', title: 'Vessel', img: 'ship', bg: 'RoyalBlue',  cmd: 'vessel-data', args: ['']},
@@ -42,7 +42,7 @@ module.exports = {
   commands3 : [
     {name: 'race', title: 'Race', img: 'race', bg: 'SteelBlue',  cmd: 'onlyone', args: ['boats']},
     {name: 'sail', title: 'Sails', img: 'vessel', bg: 'IndianRed',  cmd: 'onlyone', args: ['sailcut']},
-    {name: 'instruments', title: 'Instruments', img: 'dashboard', bg: 'SaddleBrown', cmd: '/opt/skwiz/skwiz', args: []},
+    {name: 'data', title: 'Monitoring', img: 'dashboard', bg: 'SaddleBrown', cmd: '/opt/skwiz/skwiz', args: []},
     {name: 'knots', title: 'Knots', img: 'knot', bg: 'ForestGreen',  cmd: 'onlyone', args: ['gnome-www-browser', '/usr/local/share/knots/knots.html']},
     {name: 'colreg', title: 'ColReg', img: 'colreg', bg: 'Olive',  cmd: 'onlyone', args: ['gnome-www-browser', '/usr/local/share/colreg/colreg.pdf']},
 
