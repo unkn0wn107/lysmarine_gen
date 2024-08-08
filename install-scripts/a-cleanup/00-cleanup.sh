@@ -1,5 +1,10 @@
 #!/bin/bash -e
 
+rm -rf ~/.local/share/pnpm
+rm -rf ~/.cache/pip
+rm -rf ~/.npm
+rm -rf ~/.wget*
+
 apt-get -y update
 apt-mark hold linux-image-rpi-2712 linux-image-rpi-v8 linux-headers-rpi-2712 linux-headers-rpi-v8 linux-libc-dev
 apt-get -y upgrade
