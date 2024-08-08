@@ -8,6 +8,7 @@ fi
 
 apt-get clean
 rm -rf /var/cache/apt/archives/*
+rm -rf ~/.cache/pip
 
 xargs -n 1 -P 4 wget -q << EOF
 https://repo.jellyfin.org/files/server/debian/latest-stable/arm64/jellyfin-server_10.9.9%2Bdeb12_arm64.deb
