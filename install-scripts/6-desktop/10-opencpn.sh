@@ -1,6 +1,7 @@
 #!/bin/bash -e
 
-apt-get install -y -q libglew2.2 gettext libwxsvg3 libtinyxml2.6.2v5 libunarr1 libwxgtk-webview3.2-1 wx3.2-i18n
+apt-get install -y -q libglew2.2 gettext libwxsvg3 libtinyxml2.6.2v5 libunarr1 libwxgtk-webview3.2-1 wx3.2-i18n \
+  libjs-mathjax libjs-highlight.js libcxx-serial1 fonts-mathjax
 
 install -o 1000 -g 1000 -d "/home/user/.opencpn"
 install -o 1000 -g 1000 -d "/home/user/.opencpn/plugins"
@@ -70,9 +71,10 @@ mkdir /usr/local/share/rastow
 mv readme.txt /usr/local/share/rastow/
 
 # TODO: temp fix
-wget https://github.com/bareboat-necessities/lysmarine_gen/releases/download/vTest/opencpn_5.8.4+8089+1637c28fb.ubuntu22.04.1_arm64.deb
-dpkg -i opencpn_5.8.4+8089+1637c28fb.ubuntu22.04.1_arm64.deb
-rm opencpn_5.8*_arm64.deb
+wget https://github.com/bareboat-necessities/lysmarine_gen/releases/download/vTest/opencpn_5.10.0+dfsg-1ubuntu1.bpo22.04+1_arm64.deb
+wget https://github.com/bareboat-necessities/lysmarine_gen/releases/download/vTest/opencpn-data_5.10.0+dfsg-1ubuntu1.bpo22.04+1_all.deb
+dpkg -i opencpn_5.10.*.deb
+rm opencpn_5.10.*_arm64.deb
 rm /etc/apt/sources.list.d/opencpn.list
 
 # ImgKap https://github.com/nohal
