@@ -73,8 +73,8 @@ mv readme.txt /usr/local/share/rastow/
 # TODO: temp fix
 wget https://github.com/bareboat-necessities/lysmarine_gen/releases/download/vTest/opencpn_5.10.0+dfsg-1ubuntu1.bpo22.04+1_arm64.deb
 wget https://github.com/bareboat-necessities/lysmarine_gen/releases/download/vTest/opencpn-data_5.10.0+dfsg-1ubuntu1.bpo22.04+1_all.deb
-dpkg -i opencpn_5.10.*.deb
-rm opencpn_5.10.*_arm64.deb
+dpkg -i opencpn*5.10.*.deb
+rm opencpn*5.10.*.deb
 rm /etc/apt/sources.list.d/opencpn.list
 
 # ImgKap https://github.com/nohal
