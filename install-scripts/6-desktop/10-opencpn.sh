@@ -71,8 +71,8 @@ mkdir /usr/local/share/rastow
 mv readme.txt /usr/local/share/rastow/
 
 # TODO: temp fix
-wget https://github.com/bareboat-necessities/lysmarine_gen/releases/download/vTest/opencpn_5.10.0+dfsg-1ubuntu1.bpo22.04+1_arm64.deb
-wget https://github.com/bareboat-necessities/lysmarine_gen/releases/download/vTest/opencpn-data_5.10.0+dfsg-1ubuntu1.bpo22.04+1_all.deb
+wget https://github.com/bareboat-necessities/lysmarine_gen/releases/download/vTest/opencpn_5.10.0+dfsg-1.bpo12+2_arm64.deb
+wget https://github.com/bareboat-necessities/lysmarine_gen/releases/download/vTest/opencpn-data_5.10.0+dfsg-1.bpo12+2_all.deb
 dpkg -i opencpn*5.10.*.deb
 rm opencpn*5.10.*.deb
 rm /etc/apt/sources.list.d/opencpn.list
@@ -91,5 +91,9 @@ rm -rf imgkap
 
 install -v "$FILE_FOLDER"/opencpn.desktop "/usr/share/applications/"
 install -o 1000 -g 1000 -m 644 -v "$FILE_FOLDER"/opencpn.desktop "/home/user/.config/autostart/"
+
+wget https://raw.githubusercontent.com/OpenCPN/plugins/master/ocpn-plugins.xml
+mv -f ocpn-plugins.xml /home/user/.opencpn/
+chown user:user /home/user/.opencpn/ocpn-plugins.xml
 
 apt-mark hold opencpn
