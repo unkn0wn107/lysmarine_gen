@@ -26,7 +26,7 @@ rm All_polar_files.zip
 cd "$BK_DIR"
 
 mkdir tmp-o-bundle-"$LMARCH" || exit 2
-cd tmp-o-bundle-"$LMARCH"s
+cd tmp-o-bundle-"$LMARCH"
 
 if [ "$BBN_KIND" == "LITE" ] ; then
   wget -O opencpn-plugins-bundle-"$LMARCH".tar.gz https://github.com/bareboat-necessities/lysmarine_gen/releases/download/vTest/opencpn-plugins-bundle-o_5_10_x-bookworm-lite-"$LMARCH".tar.gz
