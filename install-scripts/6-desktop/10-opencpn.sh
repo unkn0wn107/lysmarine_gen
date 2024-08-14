@@ -29,9 +29,9 @@ mkdir tmp-o-bundle-"$LMARCH" || exit 2
 cd tmp-o-bundle-"$LMARCH"
 
 if [ "$BBN_KIND" == "LITE" ] ; then
-  wget -O opencpn-plugins-bundle-"$LMARCH".tar.gz https://github.com/bareboat-necessities/lysmarine_gen/releases/download/vTest/opencpn-plugins-bundle-o_5_10_x-bookworm-lite-"$LMARCH".tar.gz
+  wget -O opencpn-plugins-bundle-"$LMARCH".tar.gz https://github.com/bareboat-necessities/lysmarine_gen/releases/download/vTest/opencpn-plugins-bundle-o_5_10_x-bookworm-lite-2-"$LMARCH".tar.gz
 else
-  wget -O opencpn-plugins-bundle-"$LMARCH".tar.gz https://github.com/bareboat-necessities/lysmarine_gen/releases/download/vTest/opencpn-plugins-bundle-o_5_10_x-bookworm-full-"$LMARCH".tar.gz
+  wget -O opencpn-plugins-bundle-"$LMARCH".tar.gz https://github.com/bareboat-necessities/lysmarine_gen/releases/download/vTest/opencpn-plugins-bundle-o_5_10_x-bookworm-full-2-"$LMARCH".tar.gz
 fi
 gzip -cd opencpn-plugins-bundle-"$LMARCH".tar.gz | tar xvf -
 
@@ -71,8 +71,14 @@ mkdir /usr/local/share/rastow
 mv readme.txt /usr/local/share/rastow/
 
 # TODO: temp fix
-wget https://github.com/bareboat-necessities/lysmarine_gen/releases/download/vTest/opencpn_5.10.0+dfsg-1.bpo12+2_arm64.deb
-wget https://github.com/bareboat-necessities/lysmarine_gen/releases/download/vTest/opencpn-data_5.10.0+dfsg-1.bpo12+2_all.deb
+AGENT="Debian APT-HTTP/1.3 (2.6.1)"
+xargs -n 1 -P 3 wget --user-agent="$AGENT" -q << EOF
+https://github.com/bareboat-necessities/lysmarine_gen/releases/download/vTest/opencpn_5.10.0+dfsg-1.bpo12+2_arm64.deb
+https://github.com/bareboat-necessities/lysmarine_gen/releases/download/vTest/opencpn-data_5.10.0+dfsg-1.bpo12+2_all.deb
+https://raw.githubusercontent.com/OpenCPN/plugins/master/ocpn-plugins.xml
+EOF
+mv -f ocpn-plugins.xml /home/user/.opencpn/
+chown user:user /home/user/.opencpn/ocpn-plugins.xml
 dpkg -i opencpn*5.10.*.deb
 rm opencpn*5.10.*.deb
 rm /etc/apt/sources.list.d/opencpn.list
