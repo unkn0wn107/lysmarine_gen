@@ -516,7 +516,7 @@
       "dateFormat": "yyyy-MM-dd"
     },
     "autopilot-control": {
-      "clientID": "boatinstrument-autopilot-1",
+      "clientID": "boatinstrument-autopilot-1"
     },
     "anchor-alarm": {
       "clientID": "boatinstrument-anchor-alarm-1",
