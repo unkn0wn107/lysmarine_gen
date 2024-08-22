@@ -47,6 +47,7 @@ install -m 644 -o signalk -g signalk "$FILE_FOLDER"/charts.json "/home/signalk/.
 install -m 644 -o signalk -g signalk "$FILE_FOLDER"/anchoralarm.json "/home/signalk/.signalk/plugin-config-data/"
 install -m 644 -o signalk -g signalk "$FILE_FOLDER"/autopilot.json "/home/signalk/.signalk/plugin-config-data/"
 install -m 644 -o signalk -g signalk "$FILE_FOLDER"/signalk-navtex-plugin.json "/home/signalk/.signalk/plugin-config-data/"
+install -m 644 -o signalk -g signalk "$FILE_FOLDER"/simple-notifications.json "/home/signalk/.signalk/plugin-config-data/"
 install -m 644 -o signalk -g signalk "$FILE_FOLDER"/freeboard-sk-helper.json "/home/signalk/.signalk/plugin-config-data/"
 install -m 644 -o signalk -g signalk "$FILE_FOLDER"/resources-provider.json "/home/signalk/.signalk/plugin-config-data/"
 install -m 644 -o signalk -g signalk "$FILE_FOLDER"/xdrParser-plugin.json "/home/signalk/.signalk/plugin-config-data/"
