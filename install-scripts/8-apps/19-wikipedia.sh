@@ -14,5 +14,6 @@ rm -rf ~/.cache
 rm -rf ~/.config
 rm -rf ~/.npm
 rm -rf ~/.wget*
+rm -rf /var/cache/apt/archives
 
 apt-get -y install libqt5webenginecore5 libqt5webenginewidgets5 zim-tools kiwix
