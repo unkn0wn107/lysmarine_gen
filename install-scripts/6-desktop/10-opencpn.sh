@@ -73,8 +73,8 @@ mv readme.txt /usr/local/share/rastow/
 # TODO: temp fix
 AGENT="Debian APT-HTTP/1.3 (2.6.1)"
 xargs -n 1 -P 3 wget --user-agent="$AGENT" -q << EOF
-https://github.com/bareboat-necessities/lysmarine_gen/releases/download/vTest/opencpn_5.10.0+dfsg-1.bpo12+3_arm64.deb
-https://github.com/bareboat-necessities/lysmarine_gen/releases/download/vTest/opencpn-data_5.10.0+dfsg-1.bpo12+3_all.deb
+https://github.com/bareboat-necessities/lysmarine_gen/releases/download/vTest/opencpn_5.10.0+dfsg-5~bpo12+1_arm64.deb
+https://github.com/bareboat-necessities/lysmarine_gen/releases/download/vTest/opencpn-data_5.10.0+dfsg-5~bpo12+1_all.deb
 https://raw.githubusercontent.com/OpenCPN/plugins/master/ocpn-plugins.xml
 EOF
 mv -f ocpn-plugins.xml /home/user/.opencpn/
