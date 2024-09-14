@@ -39,10 +39,28 @@
         "sk_path": "environment.wave.height"
       },
       {
-        "type": "Apparent wave freq",
+        "type": "Heave",
+        "data": "depth",
+        "units": "M",
+        "name": "DRT1",
+        "expression": "x",
+        "decimal": "5",
+        "sk_path": "environment.wave.heave"
+      },
+      {
+        "type": "Apparent wave freq avg",
         "data": "frequency",
         "units": "H",
         "name": "FAV1",
+        "expression": "x",
+        "decimal": "5",
+        "sk_path": "environment.wave.apparentFreqAvg"
+      },
+      {
+        "type": "Apparent wave freq",
+        "data": "frequency",
+        "units": "H",
+        "name": "FRT1",
         "expression": "x",
         "decimal": "5",
         "sk_path": "environment.wave.apparentFreq"
