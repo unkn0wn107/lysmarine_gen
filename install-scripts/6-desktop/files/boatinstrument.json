@@ -510,6 +510,127 @@
           ]
         }
       ]
+    },
+    {
+      "name": "five",
+      "timeout": null,
+      "pageRows": [
+        {
+          "percentage": 1.0,
+          "columns": [
+            {
+              "percentage": 0.5,
+              "rows": [
+                {
+                  "percentage": 0.5,
+                  "boxes": [
+                    {
+                      "percentage": 1.0,
+                      "id": "custom-double-value",
+                      "settings": {
+                        "title": "Waves Height",
+                        "path": "environment.wave.height",
+                        "precision": 3,
+                        "minLen": 2,
+                        "minValue": 0.0,
+                        "maxValue": 200.0,
+                        "angle": false,
+                        "units": "ft",
+                        "multiplier": 3.28084
+                      }
+                    }
+                  ]
+                },
+                {
+                  "percentage": 0.5,
+                  "boxes": [
+                    {
+                      "percentage": 1.0,
+                      "id": "custom-double-value",
+                      "settings": {
+                        "title": "Heave",
+                        "path": "environment.wave.heave",
+                        "precision": 3,
+                        "minLen": 2,
+                        "minValue": -200.0,
+                        "maxValue": 200.0,
+                        "angle": false,
+                        "units": "ft",
+                        "multiplier": 3.28084
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "percentage": 0.5,
+              "rows": [
+                {
+                  "percentage": 0.25,
+                  "boxes": [
+                    {
+                      "percentage": 1.0,
+                      "id": "custom-double-value",
+                      "settings": {
+                        "title": "Apparent Wave Freq Avg",
+                        "path": "environment.wave.apparentFreqAvg",
+                        "precision": 3,
+                        "minLen": 2,
+                        "minValue": 0.0,
+                        "maxValue": 100.0,
+                        "angle": false,
+                        "units": "Hz",
+                        "multiplier": 1.0
+                      }
+                    }
+                  ]
+                },
+                {
+                  "percentage": 0.25,
+                  "boxes": [
+                    {
+                      "percentage": 1.0,
+                      "id": "custom-double-value",
+                      "settings": {
+                        "title": "Apparent Waves Freq",
+                        "path": "environment.wave.apparentFreq",
+                        "precision": 3,
+                        "minLen": 2,
+                        "minValue": 0.0,
+                        "maxValue": 100.0,
+                        "angle": false,
+                        "units": "Hz",
+                        "multiplier": 1.0
+                      }
+                    }
+                  ]
+                },
+                {
+                  "percentage": 0.5,
+                  "boxes": [
+                    {
+                      "percentage": 1.0,
+                      "id": "custom-double-value",
+                      "settings": {
+                        "title": "IMU Sample Rate",
+                        "path": "environment.wave.imuSampleRate",
+                        "precision": 1,
+                        "minLen": 2,
+                        "minValue": 0.0,
+                        "maxValue": 1000.0,
+                        "angle": false,
+                        "units": "Hz",
+                        "multiplier": 1.0
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
     }
   ],
   "boxSettings": {
