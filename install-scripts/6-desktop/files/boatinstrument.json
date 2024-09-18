@@ -528,8 +528,8 @@
                       "percentage": 1.0,
                       "id": "custom-double-value",
                       "settings": {
-                        "title": "Waves Height",
-                        "path": "environment.wave.height",
+                        "title": "Heave Range",
+                        "path": "navigation.heave.range",
                         "precision": 3,
                         "minLen": 2,
                         "minValue": 0.0,
@@ -549,7 +549,7 @@
                       "id": "custom-double-value",
                       "settings": {
                         "title": "Heave",
-                        "path": "environment.wave.heave",
+                        "path": "navigation.heave.heave",
                         "precision": 3,
                         "minLen": 2,
                         "minValue": -200.0,
@@ -573,8 +573,8 @@
                       "percentage": 1.0,
                       "id": "custom-double-value",
                       "settings": {
-                        "title": "Apparent Wave Freq Avg",
-                        "path": "environment.wave.apparentFreqAvg",
+                        "title": "Apparent Heave Freq Avg",
+                        "path": "navigation.heave.apparentFreqAvg",
                         "precision": 3,
                         "minLen": 2,
                         "minValue": 0.0,
@@ -593,8 +593,8 @@
                       "percentage": 1.0,
                       "id": "custom-double-value",
                       "settings": {
-                        "title": "Apparent Waves Freq",
-                        "path": "environment.wave.apparentFreq",
+                        "title": "Apparent Heave Freq",
+                        "path": "navigation.heave.apparentFreq",
                         "precision": 3,
                         "minLen": 2,
                         "minValue": 0.0,
@@ -614,7 +614,7 @@
                       "id": "custom-double-value",
                       "settings": {
                         "title": "IMU Sample Rate",
-                        "path": "environment.wave.imuSampleRate",
+                        "path": "navigation.heave.imuSampleRate",
                         "precision": 1,
                         "minLen": 2,
                         "minValue": 0.0,

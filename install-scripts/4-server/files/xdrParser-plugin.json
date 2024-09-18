@@ -27,16 +27,16 @@
         "name": "SRT1",
         "expression": "x",
         "decimal": "5",
-        "sk_path": "environment.wave.imuSampleRate"
+        "sk_path": "navigation.heave.imuSampleRate"
       },
       {
-        "type": "Wave Height",
+        "type": "Heave Range",
         "data": "depth",
         "units": "M",
         "name": "DRG1",
         "expression": "x",
         "decimal": "5",
-        "sk_path": "environment.wave.height"
+        "sk_path": "navigation.heave.range"
       },
       {
         "type": "Heave",
@@ -45,25 +45,25 @@
         "name": "DRT1",
         "expression": "x",
         "decimal": "5",
-        "sk_path": "environment.wave.heave"
+        "sk_path": "navigation.heave.heave"
       },
       {
-        "type": "Apparent wave freq avg",
+        "type": "Apparent heave freq avg",
         "data": "frequency",
         "units": "H",
         "name": "FAV1",
         "expression": "x",
         "decimal": "5",
-        "sk_path": "environment.wave.apparentFreqAvg"
+        "sk_path": "navigation.heave.apparentFreqAvg"
       },
       {
-        "type": "Apparent wave freq",
+        "type": "Apparent heave freq",
         "data": "frequency",
         "units": "H",
         "name": "FRT1",
         "expression": "x",
         "decimal": "5",
-        "sk_path": "environment.wave.apparentFreq"
+        "sk_path": "navigation.heave.apparentFreq"
       }
     ]
   },
