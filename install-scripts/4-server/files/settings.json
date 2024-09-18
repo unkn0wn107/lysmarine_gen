@@ -321,7 +321,7 @@
           }
         }
       ],
-      "id": "bbn_wave_sensor",
+      "id": "bbn_heave_sensor",
       "enabled": false
     }
   ],
