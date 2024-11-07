@@ -7,20 +7,21 @@
   "signalkMinPeriod": 500,
   "signalkConnectionTimeout": 20000,
   "dataTimeout": 10000,
+  "demoMode": false,
   "darkMode": true,
   "wrapPages": true,
   "brightnessControl": false,
   "keepAwake": true,
   "autoConfirmActions": false,
   "pageTimerOnStart": false,
-  "pageChangeSeconds": 20,
   "distanceUnits": "nm",
   "m2nmThreshold": 500,
   "speedUnits": "kts",
   "windSpeedUnits": "kts",
   "depthUnits": "ft",
   "temperatureUnits": "c",
-  "pressureUnits": "millibar",
+  "airPressureUnits": "millibar",
+  "oilPressureUnits": "kpa",
   "portStarboardColors": "redGreen",
   "pages": [
     {
@@ -623,6 +624,111 @@
                         "units": "Hz",
                         "multiplier": 1.0
                       }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "six",
+      "pageRows": [
+        {
+          "percentage": 1.0,
+          "columns": [
+            {
+              "percentage": 0.37273294497758913,
+              "rows": [
+                {
+                  "percentage": 0.6402412649630165,
+                  "boxes": [
+                    {
+                      "percentage": 1.0,
+                      "id": "propulsion-rpm",
+                      "settings": {}
+                    }
+                  ]
+                },
+                {
+                  "percentage": 0.3597587350369835,
+                  "boxes": [
+                    {
+                      "percentage": 1.0,
+                      "id": "propulsion-oil-pressure",
+                      "settings": {}
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "percentage": 0.37726705502241087,
+              "rows": [
+                {
+                  "percentage": 0.3957860610064338,
+                  "boxes": [
+                    {
+                      "percentage": 1.0,
+                      "id": "propulsion-temp",
+                      "settings": {}
+                    }
+                  ]
+                },
+                {
+                  "percentage": 0.20405802333382322,
+                  "boxes": [
+                    {
+                      "percentage": 1.0,
+                      "id": "electrical-inverter-current",
+                      "settings": {}
+                    }
+                  ]
+                },
+                {
+                  "percentage": 0.40015591565974296,
+                  "boxes": [
+                    {
+                      "percentage": 1.0,
+                      "id": "electrical-solar-current",
+                      "settings": {}
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "percentage": 0.25,
+              "rows": [
+                {
+                  "percentage": 0.19815245128813244,
+                  "boxes": [
+                    {
+                      "percentage": 1.0,
+                      "id": "electrical-battery-voltage",
+                      "settings": {}
+                    }
+                  ]
+                },
+                {
+                  "percentage": 0.19815245128813244,
+                  "boxes": [
+                    {
+                      "percentage": 1.0,
+                      "id": "electrical-battery-current",
+                      "settings": {}
+                    }
+                  ]
+                },
+                {
+                  "percentage": 0.6036950974237352,
+                  "boxes": [
+                    {
+                      "percentage": 1.0,
+                      "id": "_BLANK_",
+                      "settings": {}
                     }
                   ]
                 }
