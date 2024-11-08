@@ -10,6 +10,8 @@ apt-get clean
 rm -rf /var/cache/apt/archives/*
 rm -rf ~/.cache/pip
 
+apt-get install -y libvpx6 libwebp6 libx264-160 libx265-192
+
 xargs -n 1 -P 4 wget -q << EOF
 https://repo.jellyfin.org/files/server/debian/latest-stable/arm64/jellyfin-server_10.10.1%2Bdeb12_arm64.deb
 https://repo.jellyfin.org/files/server/debian/latest-stable/arm64/jellyfin_10.10.1%2Bdeb12_all.deb
