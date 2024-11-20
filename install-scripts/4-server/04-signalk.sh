@@ -212,6 +212,7 @@ sed -i -e s/--save"'",/"--save-prod'",/g /usr/lib/node_modules/signalk-server/li
 
 ## Give set-system-time the possibility to change the date.
 echo "signalk ALL=(ALL) NOPASSWD: /bin/date" >>/etc/sudoers
+echo "signalk ALL=(ALL) NOPASSWD: /usr/bin/timedatectl" >>/etc/sudoers
 
 ## Make some space on the drive for the next stages
 npm cache clean --force
