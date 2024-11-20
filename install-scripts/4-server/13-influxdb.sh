@@ -6,6 +6,10 @@ if [ "$BBN_KIND" == "LITE" ] ; then
   exit 0
 fi
 
+if [ "$BBN_KIND" == "FULL" ] ; then
+  exit 0
+fi
+
 groupadd -g 988 influxdb
 useradd -u 994 -r influxdb -d /var/lib/influxdb
 usermod -a -G influxdb influxdb
