@@ -1,16 +1,16 @@
 ---
 version: 2.1
 orbs:
-  cloudsmith: cloudsmith/cloudsmith@1.0.5
+  cloudsmith: cloudsmith/cloudsmith@1.0.6
 executors:
   boot-linux:
     machine:
       resource_class: large
-      image: ubuntu-2204:2024.01.2
+      image: ubuntu-2204:2024.08.1
   boot-linux-arm:
     machine:
       resource_class: arm.large
-      image: ubuntu-2204:2024.01.2
+      image: ubuntu-2204:2024.08.1
 commands:
   git-checkout:
     steps:
