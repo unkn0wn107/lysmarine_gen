@@ -21,6 +21,33 @@
         "sk_path": "navigation.attitude"
       },
       {
+        "type": "Lightning Distance",
+        "data": "distance",
+        "units": "M",
+        "name": "LIGHTNING_RANGE",
+        "expression": "x",
+        "decimal": "1",
+        "sk_path": "environment.lightning.distance"
+      },
+      {
+        "type": "Lightning Energy Level",
+        "data": "energyLevel",
+        "units": "",
+        "name": "LIGHTNING_LEVEL",
+        "expression": "x",
+        "decimal": "1",
+        "sk_path": "environment.lightning.energyLevel"
+      },
+      {
+        "type": "Motion Detected",
+        "data": "",
+        "units": "",
+        "name": "PIR_MOTION",
+        "expression": "x",
+        "decimal": "0",
+        "sk_path": "environment.motionDetected"
+      },
+      {
         "type": "IMU rate",
         "data": "frequency",
         "units": "H",
