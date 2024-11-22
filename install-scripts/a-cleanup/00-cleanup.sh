@@ -99,6 +99,7 @@ rm -f /opt/vc/src/hello_pi/hello_video/test.h264
 
 rm -f /usr/share/applications/org.buddiesofbudgie.BudgieScreenshot.desktop
 
+apt-get -y autoremove
 apt-get clean
 
 # speed up boot without ethernet plugged
