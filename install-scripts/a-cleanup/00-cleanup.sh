@@ -5,6 +5,7 @@ rm -rf ~/.cache/pip
 rm -rf ~/.npm
 rm -rf ~/.wget*
 
+apt-get clean
 apt-get -y update
 apt-mark hold linux-image-rpi-2712 linux-image-rpi-v8 linux-headers-rpi-2712 linux-headers-rpi-v8 linux-libc-dev
 apt-get -y upgrade
@@ -82,7 +83,6 @@ if [ "$BBN_KIND" == "LITE" ] ; then
   rm -f /usr/share/applications/thunar-bulk-rename.desktop
 fi
 
-apt-get -y autoremove
 apt-get clean
 npm cache clean --force || true
 rm -rf ~/.local/share/pnpm
