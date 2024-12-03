@@ -20,7 +20,6 @@
         "decimal": "5",
         "sk_path": "navigation.attitude"
       },
-
       {
         "type": "Range Sensor",
         "data": "distance",
@@ -38,6 +37,24 @@
         "expression": "x",
         "decimal": "0",
         "sk_path": "sensor.generic.motion.motionDetected"
+      },
+      {
+        "type": "Limit Switch Sensor Last Known State",
+        "data": "",
+        "units": "",
+        "name": "LIMIT_CUR",
+        "expression": "x",
+        "decimal": "0",
+        "sk_path": "sensor.generic.limitSwitch.lastKnownState"
+      },
+      {
+        "type": "Limit Switch Sensor New State",
+        "data": "",
+        "units": "",
+        "name": "LIMIT_NEW",
+        "expression": "x",
+        "decimal": "0",
+        "sk_path": "sensor.generic.limitSwitch.newState"
       },
       {
         "type": "Total Dissolved Solids",
@@ -67,6 +84,24 @@
         "sk_path": "sensor.generic.electric.current"
       },
       {
+        "type": "Electric Voltage",
+        "data": "U",
+        "units": "V",
+        "name": "VOLT",
+        "expression": "x",
+        "decimal": "3",
+        "sk_path": "sensor.generic.electric.voltage"
+      },
+      {
+        "type": "Electric Resistance",
+        "data": "G",
+        "units": "O",
+        "name": "Ohms_esp32",
+        "expression": "x",
+        "decimal": "2",
+        "sk_path": "sensor.generic.electric.resistance"
+      },
+      {
         "type": "Angle",
         "data": "A",
         "units": "D",
@@ -75,8 +110,15 @@
         "decimal": "1",
         "sk_path": "sensor.generic.angle"
       },
-
-
+      {
+        "type": "Illuminance",
+        "data": "X",
+        "units": "L",
+        "name": "ILLU",
+        "expression": "x",
+        "decimal": "1",
+        "sk_path": "sensor.generic.illuminance"
+      },
       {
         "type": "Lightning Distance",
         "data": "distance",
