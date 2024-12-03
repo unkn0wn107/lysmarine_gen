@@ -98,7 +98,7 @@
         "units": "O",
         "name": "Ohms_esp32",
         "expression": "x",
-        "decimal": "2",
+        "decimal": "1",
         "sk_path": "sensor.generic.electric.resistance"
       },
       {
