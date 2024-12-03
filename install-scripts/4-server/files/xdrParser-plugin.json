@@ -20,6 +20,63 @@
         "decimal": "5",
         "sk_path": "navigation.attitude"
       },
+
+      {
+        "type": "Range Sensor",
+        "data": "distance",
+        "units": "M",
+        "name": "Range_JSN_S04T",
+        "expression": "x",
+        "decimal": "1",
+        "sk_path": "sensor.generic.range.distance"
+      },
+      {
+        "type": "Motion Sensor",
+        "data": "",
+        "units": "",
+        "name": "PIR_MOTION",
+        "expression": "x",
+        "decimal": "0",
+        "sk_path": "sensor.generic.motion.motionDetected"
+      },
+      {
+        "type": "Total Dissolved Solids",
+        "data": "ppt",
+        "units": "S",
+        "name": "TDS",
+        "expression": "x",
+        "decimal": "4",
+        "sk_path": "sensor.generic.water.totalDissolvedSolids"
+      },
+      {
+        "type": "Total Volatile Organic Content",
+        "data": "ppb",
+        "units": "",
+        "name": "TVOC",
+        "expression": "x",
+        "decimal": "1",
+        "sk_path": "sensor.generic.air.totalVolatileOrganicContent"
+      },
+      {
+        "type": "Electric Current",
+        "data": "I",
+        "units": "A",
+        "name": "AMPS",
+        "expression": "x",
+        "decimal": "5",
+        "sk_path": "sensor.generic.electric.current"
+      },
+      {
+        "type": "Angle",
+        "data": "A",
+        "units": "D",
+        "name": "ANGLE",
+        "expression": "x",
+        "decimal": "1",
+        "sk_path": "sensor.generic.angle"
+      },
+
+
       {
         "type": "Lightning Distance",
         "data": "distance",
@@ -37,15 +94,6 @@
         "expression": "x",
         "decimal": "1",
         "sk_path": "environment.lightning.energyLevel"
-      },
-      {
-        "type": "Motion Detected",
-        "data": "",
-        "units": "",
-        "name": "PIR_MOTION",
-        "expression": "x",
-        "decimal": "0",
-        "sk_path": "environment.motionDetected"
       },
       {
         "type": "IMU rate",
