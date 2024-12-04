@@ -4,6 +4,10 @@
 [cm4]
 dtoverlay=dwc2,dr_mode=host
 
+# Enable USB on some CM5 boards
+[cm5]
+dtoverlay=dwc2,dr_mode=host
+
 [all]
 # See: https://www.reddit.com/r/raspberry_pi/comments/lahsow/raspberry_pi4_8gb_seems_useless_as_media_player/glsi86w?utm_source=share&utm_medium=web2x&context=3
 #gpu_mem=128
