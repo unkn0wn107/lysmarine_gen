@@ -22,7 +22,7 @@
   "temperatureUnits": "c",
   "airPressureUnits": "millibar",
   "oilPressureUnits": "kpa",
-  "capacityUnits": "percent",
+  "capacityUnits": "liter",
   "portStarboardColors": "redGreen",
   "pages": [
     {
