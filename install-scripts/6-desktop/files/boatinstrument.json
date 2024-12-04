@@ -22,10 +22,12 @@
   "temperatureUnits": "c",
   "airPressureUnits": "millibar",
   "oilPressureUnits": "kpa",
+  "capacityUnits": "percent",
   "portStarboardColors": "redGreen",
   "pages": [
     {
       "name": "one",
+      "timeout": null,
       "pageRows": [
         {
           "percentage": 0.9167567661830357,
@@ -201,6 +203,7 @@
     },
     {
       "name": "two",
+      "timeout": null,
       "pageRows": [
         {
           "percentage": 1.0,
@@ -329,6 +332,7 @@
     },
     {
       "name": "three",
+      "timeout": null,
       "pageRows": [
         {
           "percentage": 1.0,
@@ -382,7 +386,7 @@
                   ]
                 },
                 {
-                  "percentage": 0.3456320339082647,
+                  "percentage": 0.2825821805358307,
                   "boxes": [
                     {
                       "percentage": 1.0,
@@ -392,7 +396,22 @@
                   ]
                 },
                 {
-                  "percentage": 0.19501589362464178,
+                  "percentage": 0.16055780018475493,
+                  "boxes": [
+                    {
+                      "percentage": 0.5,
+                      "id": "environment-depth-belowKeel",
+                      "settings": {}
+                    },
+                    {
+                      "percentage": 0.5,
+                      "id": "environment-depth-belowTransducer",
+                      "settings": {}
+                    }
+                  ]
+                },
+                {
+                  "percentage": 0.09750794681232089,
                   "boxes": [
                     {
                       "percentage": 1.0,
@@ -454,6 +473,7 @@
     },
     {
       "name": "four",
+      "timeout": null,
       "pageRows": [
         {
           "percentage": 1.0,
@@ -635,6 +655,7 @@
     },
     {
       "name": "six",
+      "timeout": null,
       "pageRows": [
         {
           "percentage": 1.0,
@@ -727,7 +748,208 @@
                   "boxes": [
                     {
                       "percentage": 1.0,
-                      "id": "_BLANK_",
+                      "id": "tank-fuel",
+                      "settings": {}
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "seven",
+      "timeout": null,
+      "pageRows": [
+        {
+          "percentage": 0.24074287307696515,
+          "columns": [
+            {
+              "percentage": 1.0,
+              "rows": [
+                {
+                  "percentage": 1.0,
+                  "boxes": [
+                    {
+                      "percentage": 0.5,
+                      "id": "custom-double-value",
+                      "settings": {
+                        "title": "Illuminance",
+                        "path": "sensor.generic.illuminance",
+                        "precision": 1,
+                        "minLen": 2,
+                        "minValue": 0.0,
+                        "maxValue": 1.0,
+                        "angle": false,
+                        "units": "lux",
+                        "multiplier": 1.0,
+                        "step": 1.0
+                      }
+                    },
+                    {
+                      "percentage": 0.5,
+                      "id": "custom-double-value",
+                      "settings": {
+                        "title": "Lightning Strike Distance",
+                        "path": "environment.lightning.distance",
+                        "precision": 1,
+                        "minLen": 2,
+                        "minValue": 0.0,
+                        "maxValue": 100.0,
+                        "angle": false,
+                        "units": "meters",
+                        "multiplier": 1.0,
+                        "step": 1.0
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "percentage": 0.7592571269230348,
+          "columns": [
+            {
+              "percentage": 1.0,
+              "rows": [
+                {
+                  "percentage": 0.3018549082375019,
+                  "boxes": [
+                    {
+                      "percentage": 0.5,
+                      "id": "custom-double-value",
+                      "settings": {
+                        "title": "Air TVOC",
+                        "path": "sensor.generic.air.totalVolatileOrganicContent",
+                        "precision": 4,
+                        "minLen": 2,
+                        "minValue": 0.0,
+                        "maxValue": 100.0,
+                        "angle": false,
+                        "units": "ppt",
+                        "multiplier": 1.0,
+                        "step": 1.0
+                      }
+                    },
+                    {
+                      "percentage": 0.5,
+                      "id": "custom-double-value",
+                      "settings": {
+                        "title": "Lightning Strike Level",
+                        "path": "environment.lightning.energyLevel",
+                        "precision": 1,
+                        "minLen": 2,
+                        "minValue": 0.0,
+                        "maxValue": 100.0,
+                        "angle": false,
+                        "units": "",
+                        "multiplier": 1.0,
+                        "step": 1.0
+                      }
+                    }
+                  ]
+                },
+                {
+                  "percentage": 0.34907254588124903,
+                  "boxes": [
+                    {
+                      "percentage": 0.5,
+                      "id": "environment-outside-temperature",
+                      "settings": {}
+                    },
+                    {
+                      "percentage": 0.5,
+                      "id": "environment-outside-pressure",
+                      "settings": {}
+                    }
+                  ]
+                },
+                {
+                  "percentage": 0.34907254588124914,
+                  "boxes": [
+                    {
+                      "percentage": 0.5,
+                      "id": "custom-double-value",
+                      "settings": {
+                        "title": "Humidity",
+                        "path": "environment.outside.humidity",
+                        "precision": 1,
+                        "minLen": 2,
+                        "minValue": 0.0,
+                        "maxValue": 120.0,
+                        "angle": false,
+                        "units": "%",
+                        "multiplier": 1.0,
+                        "step": 1.0
+                      }
+                    },
+                    {
+                      "percentage": 0.5,
+                      "id": "custom-double-value",
+                      "settings": {
+                        "title": "Heat Index Temperature",
+                        "path": "environment.outside.heatIndexTemperature",
+                        "precision": 1,
+                        "minLen": 2,
+                        "minValue": -50.0,
+                        "maxValue": 100.0,
+                        "angle": false,
+                        "units": "C",
+                        "multiplier": 1.0,
+                        "step": 1.0
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "eight",
+      "timeout": null,
+      "pageRows": [
+        {
+          "percentage": 1.0,
+          "columns": [
+            {
+              "percentage": 1.0,
+              "rows": [
+                {
+                  "percentage": 0.5,
+                  "boxes": [
+                    {
+                      "percentage": 0.5,
+                      "id": "tank-freshwater",
+                      "settings": {
+                        "id": "",
+                        "capacity": 0.5
+                      }
+                    },
+                    {
+                      "percentage": 0.5,
+                      "id": "tank-wastewater",
+                      "settings": {}
+                    }
+                  ]
+                },
+                {
+                  "percentage": 0.5,
+                  "boxes": [
+                    {
+                      "percentage": 0.5,
+                      "id": "tank-blackwater",
+                      "settings": {}
+                    },
+                    {
+                      "percentage": 0.5,
+                      "id": "tank-lubrication",
                       "settings": {}
                     }
                   ]
