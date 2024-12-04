@@ -1,5 +1,7 @@
 #!/bin/bash -e
 
+exit 0   # This is dev tool not needed for almost any boat
+
 if [ "$BBN_KIND" == "LITE" ] ; then
   exit 0
 fi
