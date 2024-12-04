@@ -928,14 +928,17 @@
                       "percentage": 0.5,
                       "id": "tank-freshwater",
                       "settings": {
-                        "id": "",
-                        "capacity": 0.5
+                        "id": "freshwater",
+                        "capacity": 0.1
                       }
                     },
                     {
                       "percentage": 0.5,
                       "id": "tank-wastewater",
-                      "settings": {}
+                      "settings": {
+                        "id": "greywater",
+                        "capacity": 0.1
+                      }
                     }
                   ]
                 },
@@ -945,12 +948,18 @@
                     {
                       "percentage": 0.5,
                       "id": "tank-blackwater",
-                      "settings": {}
+                      "settings": {
+                        "id": "blackwater",
+                        "capacity": 0.1
+                      }
                     },
                     {
                       "percentage": 0.5,
                       "id": "tank-lubrication",
-                      "settings": {}
+                      "settings": {
+                        "id": "lube",
+                        "capacity": 0.1
+                      }
                     }
                   ]
                 }
