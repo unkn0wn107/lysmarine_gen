@@ -1,5 +1,7 @@
 #!/bin/bash -e
 
+exit 0  # not a value even in full version
+
 if [ "$BBN_KIND" == "LITE" ] ; then
   exit 0
 fi
