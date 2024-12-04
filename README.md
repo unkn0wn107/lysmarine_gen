@@ -124,7 +124,6 @@ Default username in login screens is 'user'.
 - [KIP Dashboard](https://github.com/mxtommy/Kip)
 - [PyPilot](https://pypilot.org/)
 - [BBN Launcher](https://github.com/bareboat-necessities/lysmarine_gen/tree/master/install-scripts/4-server/files/bbn-launcher)
-- [SK Sail Gauge](https://github.com/SignalK/sailgauge)
 - [XyGrib](https://opengribs.org/en/xygrib) Weather GRIB Viewer App
 - [Stellarium](http://stellarium.org/)
 - [CanBoat](https://github.com/canboat)

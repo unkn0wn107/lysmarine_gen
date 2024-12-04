@@ -110,25 +110,25 @@ nativefier -a "$arch" --disable-context-menu --disable-dev-tools --single-instan
   --name "instrumentpanel" --icon /home/user/.local/share/icons/signalk.png \
   "http://localhost:3000/@signalk/instrumentpanel/" /opt/
 
-nativefier -a "$arch" --disable-context-menu --disable-dev-tools --single-instance \
-  --disable-old-build-warning-yesiknowitisinsecure \
-  --name "sailgauge" --icon /home/user/.local/share/icons/signalk.png \
-  "http://localhost:3000/@signalk/sailgauge/" /opt/
+#nativefier -a "$arch" --disable-context-menu --disable-dev-tools --single-instance \
+#  --disable-old-build-warning-yesiknowitisinsecure \
+#  --name "sailgauge" --icon /home/user/.local/share/icons/signalk.png \
+#  "http://localhost:3000/@signalk/sailgauge/" /opt/
 
 install -v "$FILE_FOLDER"/Freeboard-sk.desktop /usr/local/share/applications/
 install -v "$FILE_FOLDER"/instrumentpanel.desktop /usr/local/share/applications/
-install -v "$FILE_FOLDER"/sailgauge.desktop /usr/local/share/applications/
+#install -v "$FILE_FOLDER"/sailgauge.desktop /usr/local/share/applications/
 
 ## Make folder name arch independent.
 mv /opt/Freeboard-sk-linux-"$arch" /opt/Freeboard-sk
 mv /opt/instrumentpanel-linux-"$arch" /opt/instrumentpanel
-mv /opt/sailgauge-linux-"$arch" /opt/sailgauge
+#mv /opt/sailgauge-linux-"$arch" /opt/sailgauge
 
 ## On debian, the sandbox environment fail without GUID/SUID
 if [ "$LMOS" == Debian ]; then
   chmod 4755 /opt/Freeboard-sk/chrome-sandbox
   chmod 4755 /opt/instrumentpanel/chrome-sandbox
-  chmod 4755 /opt/sailgauge/chrome-sandbox
+  #chmod 4755 /opt/sailgauge/chrome-sandbox
 fi
 
 # Minimize space by linking identical files

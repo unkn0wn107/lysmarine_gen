@@ -127,7 +127,6 @@ else
                  signalk-simple-notifications  \
                  signalk-wilhelmsk-plugin  \
                  signalk-to-nmea2000  \
-                 @signalk/sailgauge  \
                  @signalk/signalk-autopilot  \
                  @signalk/signalk-node-red  \
                  node-red-dashboard \
