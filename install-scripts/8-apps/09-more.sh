@@ -122,11 +122,11 @@ curl 'https://en.wikisource.org/api/rest_v1/page/pdf/International_Regulations_f
  --output "/usr/local/share/colreg/colreg.pdf"
 install -v "$FILE_FOLDER"/colreg.desktop "/usr/local/share/applications/"
 
-install -d -m 0755 "/usr/local/share/knots"
-install -v -m 0644 "$FILE_FOLDER"/knots/knots.html "/usr/local/share/knots/"
-install -v -m 0644 "$FILE_FOLDER"/knots/knots.svg "/usr/local/share/knots/"
-install -v -m 0644 "$FILE_FOLDER"/knots/License_free.txt "/usr/local/share/knots/"
-install -v "$FILE_FOLDER"/knots.desktop "/usr/local/share/applications/"
+#install -d -m 0755 "/usr/local/share/knots"
+#install -v -m 0644 "$FILE_FOLDER"/knots/knots.html "/usr/local/share/knots/"
+#install -v -m 0644 "$FILE_FOLDER"/knots/knots.svg "/usr/local/share/knots/"
+#install -v -m 0644 "$FILE_FOLDER"/knots/License_free.txt "/usr/local/share/knots/"
+#install -v "$FILE_FOLDER"/knots.desktop "/usr/local/share/applications/"
 
 install -d -o 1000 -g 1000 -m 0755 "/home/user/FloatPlans"
 
