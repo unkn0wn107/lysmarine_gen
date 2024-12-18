@@ -781,7 +781,7 @@
                         "precision": 1,
                         "minLen": 2,
                         "minValue": 0.0,
-                        "maxValue": 1.0,
+                        "maxValue": 10000.0,
                         "angle": false,
                         "units": "lux",
                         "multiplier": 1.0,
