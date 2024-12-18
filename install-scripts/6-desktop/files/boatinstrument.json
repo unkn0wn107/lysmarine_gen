@@ -976,58 +976,79 @@
       "timeout": null,
       "pageRows": [
         {
-          "percentage": 1.0,
+          "percentage": 0.25,
           "columns": [
             {
               "percentage": 1.0,
               "rows": [
                 {
-                  "percentage": 0.22787351634989933,
+                  "percentage": 1.0,
                   "boxes": [
                     {
                       "percentage": 1.0,
                       "id": "custom-text",
                       "settings": {
-                        "text": [
-                          "Vessel Name"
-                        ],
-                        "path": "name"
+                        "template": "MMSI: {mmsi}"
                       }
                     }
                   ]
-                },
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "percentage": 0.25,
+          "columns": [
+            {
+              "percentage": 1.0,
+              "rows": [
                 {
-                  "percentage": 0.23118233558064671,
+                  "percentage": 1.0,
                   "boxes": [
                     {
                       "percentage": 1.0,
                       "id": "custom-text",
                       "settings": {
-                        "text": [
-                          "MMSI"
-                        ],
-                        "path": "mmsi"
+                        "template": "Boat Name: {name}"
                       }
                     }
                   ]
-                },
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "percentage": 0.25,
+          "columns": [
+            {
+              "percentage": 1.0,
+              "rows": [
                 {
-                  "percentage": 0.27047207403472695,
+                  "percentage": 1.0,
                   "boxes": [
                     {
                       "percentage": 1.0,
                       "id": "custom-text",
                       "settings": {
-                        "text": [
-                          "Call Sign"
-                        ],
-                        "path": "communication.callsignVhf"
+                        "template": "Call Sign: {communication.callsignVhf}"
                       }
                     }
                   ]
-                },
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "percentage": 0.25,
+          "columns": [
+            {
+              "percentage": 1.0,
+              "rows": [
                 {
-                  "percentage": 0.27047207403472706,
+                  "percentage": 1.0,
                   "boxes": [
                     {
                       "percentage": 1.0,
