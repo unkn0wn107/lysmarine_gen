@@ -93,6 +93,15 @@
         "sk_path": "sensor.generic.electric.voltage"
       },
       {
+        "type": "Electric Voltage",
+        "data": "U",
+        "units": "V",
+        "name": "VOLT_1",
+        "expression": "x",
+        "decimal": "3",
+        "sk_path": "sensor.generic.electric.voltage.1"
+      },
+      {
         "type": "Electric Resistance",
         "data": "G",
         "units": "O",
