@@ -102,6 +102,42 @@
         "sk_path": "sensor.generic.electric.resistance"
       },
       {
+        "type": "Electric Voltage",
+        "data": "U",
+        "units": "V",
+        "name": "VOLT_INA219_0_0",
+        "expression": "x",
+        "decimal": "3",
+        "sk_path": "sensor.generic.electric.voltage.0"
+      },
+      {
+        "type": "Electric Current",
+        "data": "I",
+        "units": "A",
+        "name": "AMPS_INA219_0_0",
+        "expression": "x",
+        "decimal": "5",
+        "sk_path": "sensor.generic.electric.current.0"
+      },
+      {
+        "type": "Electric Resistance",
+        "data": "G",
+        "units": "O",
+        "name": "OHMS_INA219_0_0",
+        "expression": "x",
+        "decimal": "1",
+        "sk_path": "sensor.generic.electric.resistance.0"
+      },
+      {
+        "type": "Electric Power",
+        "data": "W",
+        "units": "W",
+        "name": "WATT_INA219_0_0",
+        "expression": "x",
+        "decimal": "1",
+        "sk_path": "sensor.generic.electric.power.0"
+      },
+      {
         "type": "Angle",
         "data": "A",
         "units": "D",
