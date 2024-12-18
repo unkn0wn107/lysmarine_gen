@@ -84,6 +84,15 @@
         "sk_path": "sensor.generic.electric.current"
       },
       {
+        "type": "Electric Current",
+        "data": "I",
+        "units": "A",
+        "name": "AMPS_1",
+        "expression": "x",
+        "decimal": "5",
+        "sk_path": "sensor.generic.electric.current.1"
+      },
+      {
         "type": "Electric Voltage",
         "data": "U",
         "units": "V",
