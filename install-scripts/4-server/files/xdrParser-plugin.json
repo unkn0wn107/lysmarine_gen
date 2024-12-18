@@ -98,7 +98,7 @@
         "units": "O",
         "name": "Ohms_esp32",
         "expression": "x",
-        "decimal": "1",
+        "decimal": "3",
         "sk_path": "sensor.generic.electric.resistance"
       },
       {
@@ -125,7 +125,7 @@
         "units": "O",
         "name": "OHMS_INA219_0_0",
         "expression": "x",
-        "decimal": "1",
+        "decimal": "3",
         "sk_path": "sensor.generic.electric.resistance.0"
       },
       {
@@ -134,7 +134,7 @@
         "units": "W",
         "name": "WATT_INA219_0_0",
         "expression": "x",
-        "decimal": "1",
+        "decimal": "4",
         "sk_path": "sensor.generic.electric.power.0"
       },
       {
@@ -154,6 +154,15 @@
         "expression": "x",
         "decimal": "1",
         "sk_path": "sensor.generic.illuminance"
+      },
+      {
+        "type": "Generic Range Measurement",
+        "data": "distance",
+        "units": "M",
+        "name": "RANGE_VL53L0X",
+        "expression": "x",
+        "decimal": "2",
+        "sk_path": "sensor.generic.range"
       },
       {
         "type": "Lightning Distance",
