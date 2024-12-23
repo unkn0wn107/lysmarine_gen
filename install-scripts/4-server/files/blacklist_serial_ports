@@ -12,6 +12,8 @@
 /dev/ttyS1
 /dev/ttyS2
 /dev/ttyS3
+/dev/ttyS4
+/dev/ttyS5
 /dev/ttyACM0
 /dev/ttyACM1
 /dev/ttyACM2
