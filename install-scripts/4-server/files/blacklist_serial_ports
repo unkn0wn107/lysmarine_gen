@@ -1,6 +1,8 @@
 /dev/ttyAMA0
 /dev/ttyAMA1
 /dev/ttyAMA10
+/dev/ttyAMA11
+/dev/ttyAMA12
 /dev/ttyAMA2
 /dev/ttyAMA3
 /dev/ttyAMA4
