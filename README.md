@@ -132,7 +132,6 @@ Default username in login screens is 'user'.
 - Vessel Specs App
 - ColReg 
 - [Sailing Trip and Provisioning Checklist](https://bareboat-necessities.github.io/my-bareboat/bareboat-equipment-checklist)
-- Knots
 - [JTides](https://arachnoid.com/JTides/)
 - [PC-NavTex](https://github.com/juerec/pc-navtex)
 
@@ -187,7 +186,6 @@ Default username in login screens is 'user'.
 - [YAAC](https://www.ka2ddo.org/ka2ddo/YAAC.html)
 - [morse2ascii](https://packages.ubuntu.com/bionic/morse2ascii)
 - [APRX](https://github.com/PhirePhly/aprx)
-- [dump1090-fa](https://github.com/adsbxchange/dump1090-fa)
 - [PiAware](https://flightaware.com/adsb/piaware/)
 - [APM Planner 2](https://ardupilot.org/planner2/)
 - RTL AIS
@@ -269,7 +267,6 @@ Windlass, Bow Thruster, Lights)
 
 - [QtVlm](https://www.meltemus.com/)
 - [DeskPi Pro](https://github.com/DeskPi-Team/deskpi) support
-- ArgonOne case support
 - Text-To-Speech App
 - Touchscreen calibration
 - [NMEA Sleuth Chromium Plugin](https://chrome.google.com/webstore/detail/nmea-sleuth/pkikkfglomloligndkaibecgapljgjok?hl=en)
