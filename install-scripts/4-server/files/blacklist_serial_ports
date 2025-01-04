@@ -8,6 +8,14 @@
 /dev/ttyAMA4
 /dev/ttyAMA5
 /dev/ttyAMA6
+/dev/ttyATH0
+/dev/ttyATH1
+/dev/ttyATH2
+/dev/ttyATH3
+/dev/ttyTHS0
+/dev/ttyTHS1
+/dev/ttyTHS2
+/dev/ttyTHS3
 /dev/ttyS0
 /dev/ttyS1
 /dev/ttyS2
