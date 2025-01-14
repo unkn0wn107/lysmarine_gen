@@ -1,5 +1,10 @@
 #!/bin/bash -e
 
+rm -rf ~/.local/share/pnpm
+rm -rf ~/.cache/pip
+rm -rf ~/.npm
+rm -rf ~/.wget*
+
 apt-get clean
 
 install -d -m 755 "/usr/local/share/noaa-apt"
