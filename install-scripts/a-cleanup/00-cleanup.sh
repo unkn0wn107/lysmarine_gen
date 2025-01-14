@@ -7,6 +7,7 @@ rm -rf ~/.wget*
 rm -rf $(find /var/log/ -type f)
 rm -f /opt/vc/src/hello_pi/hello_video/test.h264
 rm -f /usr/lib/python3/dist-packages/scipy/io/tests/data/*.wav
+rm -rf /usr/share/doc/python3-pyglet/examples/
 
 apt-get clean
 apt-get -y update
