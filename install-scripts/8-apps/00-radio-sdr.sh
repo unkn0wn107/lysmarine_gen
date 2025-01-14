@@ -136,7 +136,7 @@ pushd /usr/local/share
   # Moving to first-run due to this bug: https://gitlab.kitware.com/cmake/cmake/-/issues/20568
   if [ "$LMARCH" == 'arm64' ]; then
     cmake ../ -DCMAKE_BUILD_TYPE=RELEASE
-    make -j 4
+    make -j 5
     cp aisdecoder /usr/local/bin/
     make clean
   fi
@@ -150,14 +150,14 @@ install -v "$FILE_FOLDER"/propagation.desktop "/usr/local/share/applications/"
 
 git clone --depth=1 https://github.com/globecen/rtl-ais
 cd rtl-ais
-make -j 4
+make -j 5
 cp rtl_ais /usr/bin/
 cd ..
 rm -rf rtl-ais
 
 git clone --depth=1 https://github.com/steve-m/kalibrate-rtl
 cd kalibrate-rtl/
-./bootstrap && CXXFLAGS='-W -Wall -O3' ./configure && make -j 4
+./bootstrap && CXXFLAGS='-W -Wall -O3' ./configure && make -j 5
 cp src/kal /usr/local/bin/
 cd ..
 rm -rf kalibrate-rtl/

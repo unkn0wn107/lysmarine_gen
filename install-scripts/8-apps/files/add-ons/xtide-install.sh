@@ -10,7 +10,7 @@ wget https://flaterco.com/files/xtide/xtide-2.15.5.tar.xz
 xzcat xtide-2.15.5.tar.xz | tar xvf -
 cd xtide-2.15.5/
 ./configure
-make -j 4
+make -j 5
 sudo make install
 sudo ldconfig
 cd ..
@@ -47,7 +47,7 @@ cd xtwsd/
 mkdir build
 cd build/
 cmake -Wno-dev ..
-make -j 4
+make -j 5
 sudo ldconfig
 sudo make install
 cd ../../

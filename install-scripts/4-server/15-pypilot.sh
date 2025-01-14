@@ -36,7 +36,7 @@ usermod -a -G lirc pypilot
 install -v -m 0644 "$FILE_FOLDER"/60-watchdog.rules "/etc/udev/rules.d/60-watchdog.rules"
 
 # performance of the build, make parallel jobs
-export MAKEFLAGS='-j 4'
+export MAKEFLAGS='-j 5'
 
 if [ "$LMARCH" == 'arm64' ]; then
 #  pip3 install pywavefront pyglet gps gevent-websocket websocket-client importlib_metadata \
@@ -67,7 +67,7 @@ pushd ./stageCache
 
   pushd ./RTIMULib2/Linux/RTIMULibCal
     curl -o Makefile https://raw.githubusercontent.com/bareboat-necessities/my-bareboat/master/RTIMULibCal/Makefile
-    make -j 4
+    make -j 5
     cp Output/RTIMULibCal /usr/local/bin/
     make clean
     install -v -o user -g pypilot -m 0775 -d "/home/user/kts"
@@ -103,7 +103,7 @@ pushd ./stageCache
     mkdir build
     cd build
     cmake ..
-    make -j 4
+    make -j 5
     rm -f "$(find . -name \*.o)"
     cd ..
   popd

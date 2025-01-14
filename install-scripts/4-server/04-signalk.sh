@@ -280,7 +280,7 @@ wget http://tar.gwsocket.io/gwsocket-0.3.tar.gz
 tar -xzvf gwsocket-0.3.tar.gz
 cd gwsocket-0.3/
 ./configure
-make -j 4
+make -j 5
 make install
 cd ..
 rm -rf gwsocket-0.3/ gwsocket-0.3.tar.gz

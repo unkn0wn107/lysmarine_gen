@@ -11,7 +11,7 @@ apt-get -y install --no-install-recommends --no-install-suggests \
 git clone --depth=1 https://github.com/bareboat-necessities/twofing.git
 
 cd twofing || exit 255
-make -j 4 && cp twofing /usr/local/bin/
+make -j 5 && cp twofing /usr/local/bin/
 cd .. && rm -rf twofing
 
 bash -c 'cat << EOF > /etc/udev/rules.d/70-touchscreen.rules

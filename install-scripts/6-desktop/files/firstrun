@@ -23,7 +23,7 @@ if [ -d /usr/local/share/aisdecoder ]; then
       cd build
       # Moving to first-run due to this bug: https://gitlab.kitware.com/cmake/cmake/-/issues/20568
       cmake ../ -DCMAKE_BUILD_TYPE=RELEASE
-      make -j 4
+      make -j 5
       cp aisdecoder /usr/local/bin/
       make clean
       cd ..

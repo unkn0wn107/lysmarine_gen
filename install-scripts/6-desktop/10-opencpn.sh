@@ -89,7 +89,7 @@ rm /etc/apt/sources.list.d/opencpn.list
 apt-get -y install libfreeimage-dev
 git clone --depth=1 https://github.com/nohal/imgkap
 cd imgkap
-make -j 4
+make -j 5
 make install
 cd ..
 rm -rf imgkap
