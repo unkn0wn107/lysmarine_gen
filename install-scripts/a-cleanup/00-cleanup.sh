@@ -13,6 +13,9 @@ rm -rf /usr/share/doc/python3*/HISTORY.*
 rm -rf /usr/share/doc/python3*/NEWS.*
 rm -rf /usr/share/backgrounds/budgie/*
 
+find /usr/share/doc -name changelog\*.gz -exec rm -f {} \;
+find /usr/share/doc -name NEWS\*.gz -exec rm -f {} \;
+
 apt-get clean
 apt-get -y update
 apt-mark hold linux-image-rpi-2712 linux-image-rpi-v8 linux-headers-rpi-2712 linux-headers-rpi-v8 linux-libc-dev
