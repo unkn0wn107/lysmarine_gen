@@ -4,6 +4,8 @@ rm -rf ~/.local/share/pnpm
 rm -rf ~/.cache/pip
 rm -rf ~/.npm
 rm -rf ~/.wget*
+rm -rf $(find /var/log/ -type f)
+rm -f /opt/vc/src/hello_pi/hello_video/test.h264
 
 apt-get clean
 
