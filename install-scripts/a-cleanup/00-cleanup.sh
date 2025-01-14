@@ -6,6 +6,7 @@ rm -rf ~/.npm
 rm -rf ~/.wget*
 rm -rf $(find /var/log/ -type f)
 rm -f /opt/vc/src/hello_pi/hello_video/test.h264
+rm -f /usr/lib/python3/dist-packages/scipy/io/tests/data/*.wav
 
 apt-get clean
 apt-get -y update
