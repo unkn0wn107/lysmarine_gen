@@ -9,6 +9,7 @@ rm -f /opt/vc/src/hello_pi/hello_video/test.h264
 rm -f /usr/lib/python3/dist-packages/scipy/io/tests/data/*.wav
 rm -rf /usr/share/doc/python3-pyglet/examples/
 rm -rf /usr/share/doc/tcllib/examples/
+rm -rf /usr/share/doc/xmlstarlet/examples/
 rm -rf /usr/share/doc/openjdk*/test*/*
 rm -rf /usr/share/doc/python3*/HISTORY.*
 rm -rf /usr/share/doc/python3*/NEWS.*
