@@ -9,7 +9,7 @@ executors:
       image: ubuntu-2204:2024.11.1
   boot-linux-arm:
     machine:
-      resource_class: arm.large
+      resource_class: arm.xlarge
       image: ubuntu-2204:2024.11.1
 commands:
   git-checkout:
