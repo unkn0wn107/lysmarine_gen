@@ -8,6 +8,9 @@ fi
 
 apt-get -y install libwxgtk3.2-dev libwxgtk-media3.2-dev libboost-dev cmake make git
 
+# Skip it
+if [ "1" == "0" ] ; then
+
 git clone --recursive https://github.com/wxFormBuilder/wxFormBuilder
 cd wxFormBuilder
 #git checkout 0efcecf0214321ce94469a47d0e0ceef131de602  # 4.0.0
@@ -42,6 +45,7 @@ Categories=Utility
 Keywords=wxWidgets;XRC;GUI;builder;designer;
 EOF'
 
+fi
 
 apt-get -y remove --purge libboost-dev libwxgtk3.2-dev libwxgtk-media3.2-dev
 
