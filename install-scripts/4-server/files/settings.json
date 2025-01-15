@@ -316,7 +316,7 @@
               "validateChecksum": true,
               "type": "serial",
               "device": "/dev/ttyACM1",
-              "baudrate": 115200
+              "baudrate": 38400
             }
           }
         }
