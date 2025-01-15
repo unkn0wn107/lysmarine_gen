@@ -1,5 +1,7 @@
 #!/bin/bash -e
 
+exit 0
+
 apt-get clean
 
 x11vnc=0
