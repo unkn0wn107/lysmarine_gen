@@ -16,17 +16,20 @@ else
   apt-get -y install realvnc-vnc-server
 fi
 
-install -d /etc/systemd/system/xrdp.d
+xrdp=0
+if [ $xrdp == 1 ]; then
+  install -d /etc/systemd/system/xrdp.d
 
-apt-get install -y -q xrdp
-install -v "$FILE_FOLDER"/Xwrapper.config "/etc/X11/Xwrapper.config"
+  apt-get install -y -q xrdp
+  install -v "$FILE_FOLDER"/Xwrapper.config "/etc/X11/Xwrapper.config"
 
-adduser xrdp ssl-cert
-touch /var/log/xrdp.log
-chown xrdp:adm /var/log/xrdp.log
+  adduser xrdp ssl-cert
+  touch /var/log/xrdp.log
+  chown xrdp:adm /var/log/xrdp.log
 
-systemctl disable xrdp
-systemctl disable xrdp-sesman
+  systemctl disable xrdp
+  systemctl disable xrdp-sesman
+fi
 
 if [ $x11vnc == 1 ]; then
   systemctl enable vnc
