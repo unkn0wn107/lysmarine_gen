@@ -79,7 +79,6 @@ if [ "$BBN_KIND" == "LITE" ] ; then
                  @signalk/resources-provider \
                  @signalk/charts-plugin  \
                  @signalk/course-provider \
-                 freeboard-sk-helper  \
                  signalk-raspberry-pi-bme280  \
                  signalk-raspberry-pi-bmp180  \
                  signalk-raspberry-pi-ina219  \
@@ -110,7 +109,6 @@ else
                  @signalk/resources-provider \
                  @signalk/charts-plugin  \
                  @signalk/course-provider \
-                 freeboard-sk-helper  \
                  signalk-pmtiles-plugin \
                  signalk-raspberry-pi-bme280  \
                  signalk-raspberry-pi-bmp180  \
