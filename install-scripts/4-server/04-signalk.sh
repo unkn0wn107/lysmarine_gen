@@ -68,7 +68,7 @@ install -m 644 "$FILE_FOLDER"/signalk.service "/etc/systemd/system/signalk.servi
 ## Install signalK
 npm cache clean --force
 npm install -g npm pnpm patch-package
-npm install -g --unsafe-perm --production signalk-server
+npm install -g --unsafe-perm --production signalk-server@2.12.0
 
 if [ "$BBN_KIND" == "LITE" ] ; then
   ## Install signalK published plugins
