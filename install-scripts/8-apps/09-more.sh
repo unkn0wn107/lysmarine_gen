@@ -103,7 +103,7 @@ install -v -o 1000 -g 1000 -m 0755 "$FILE_FOLDER"/add-ons/dvb-t-install.sh "/hom
 install -v -o 1000 -g 1000 -m 0755 "$FILE_FOLDER"/add-ons/findacrew-install.sh "/home/user/add-ons/"
 install -v -o 1000 -g 1000 -m 0755 "$FILE_FOLDER"/add-ons/homeassistant-install.sh "/home/user/add-ons/"
 install -v -o 1000 -g 1000 -m 0755 "$FILE_FOLDER"/add-ons/jellyfin-install.sh "/home/user/add-ons/"
-#install -v -o 1000 -g 1000 -m 0755 "$FILE_FOLDER"/add-ons/stdc-install.sh "/home/user/add-ons/"
+install -v -o 1000 -g 1000 -m 0755 "$FILE_FOLDER"/add-ons/stdc-install.sh "/home/user/add-ons/"
 install -v -o 1000 -g 1000 -m 0755 "$FILE_FOLDER"/add-ons/sailorhat-install.sh "/home/user/add-ons/"
 install -v -o 1000 -g 1000 -m 0755 "$FILE_FOLDER"/add-ons/maiana-ais-install.sh "/home/user/add-ons/"
 install -v -o 1000 -g 1000 -m 0755 "$FILE_FOLDER"/add-ons/tripwire-install.sh "/home/user/add-ons/"
