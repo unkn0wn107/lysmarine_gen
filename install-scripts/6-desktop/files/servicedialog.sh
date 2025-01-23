@@ -50,7 +50,6 @@ takeAction3 () {
 ## List services and their status
 rows="\
 $(isEnabled NetworkManager) \
-$(isEnabled create_ap) \
 $(isEnabled ssh) \
 $(isEnabled kplex) \
 $(isEnabled pypilot@pypilot.service) \
@@ -58,7 +57,6 @@ $(isEnabled pypilot_web) \
 $(isEnabled rtl-ais) \
 $(isEnabled signalk) \
 $(isEnabled vncserver-x11-serviced) \
-$(isEnabled xrdp) \
 $(isEnabled avnav) \
 $(isEnabled avnavupdater) \
 $(isEnabled mopidy) \
@@ -86,7 +84,6 @@ export SUDO_ASKPASS="/usr/bin/ssh-askpass"
 
 {
   echo 10; takeAction1 "$save" NetworkManager
-  echo 20; takeAction1 "$save" create_ap
   echo 30; takeAction1 "$save" ssh
   echo 40; takeAction1 "$save" kplex
   echo 45; takeAction1 "$save" pypilot@pypilot.service
@@ -94,7 +91,6 @@ export SUDO_ASKPASS="/usr/bin/ssh-askpass"
   echo 55; takeAction1 "$save" rtl-ais
   echo 60; takeAction1 "$save" signalk
   echo 65; takeAction1 "$save" vncserver-x11-serviced
-  echo 70; takeAction1 "$save" xrdp
   echo 75; takeAction2 "$save" avnav
   echo 80; takeAction2 "$save" avnavupdater
   echo 85; takeAction3 "$save" mopidy
