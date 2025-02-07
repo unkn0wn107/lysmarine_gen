@@ -6,7 +6,7 @@ fi
 
 pushd /home/signalk/.signalk
   su signalk --shell=/bin/bash -c " \
-  pnpm install next tailwindcss; \
+  pnpm install next tailwindcss @tailwindcss/postcss; \
   cd node_modules;
   git clone --depth=1 https://github.com/laborima/ocearo-ui; \
   cd ocearo-ui; \
