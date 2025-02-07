@@ -5,7 +5,7 @@ if [ "$BBN_KIND" == "FULL" ] ; then
 fi
 
 pushd /home/signalk/.signalk
-  su signalk --shell=/bin/bash -c " \
+  su signalk --shell=/bin/bash -e -c " \
   cd node_modules;
   git clone --depth=1 https://github.com/laborima/ocearo-ui; \
   cd ocearo-ui; \
