@@ -7,7 +7,7 @@ fi
 git clone --depth=1 https://github.com/laborima/ocearo-ui
 cd ocearo-ui
 npm install
-nmp install tailwindcss @tailwindcss/postcss next react react-dom
+nmp install tailwindcss @tailwindcss/postcss next 
 export MAKEFLAGS='-j 8'
 export NODE_ENV=production
 npm run build
