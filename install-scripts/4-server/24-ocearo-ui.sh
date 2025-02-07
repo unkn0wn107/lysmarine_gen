@@ -4,16 +4,17 @@ if [ "$BBN_KIND" == "FULL" ] ; then
   exit 0
 fi
 
-pushd /home/signalk/.signalk/node_modules
+pushd /home/signalk/.signalk
   su signalk --shell=/bin/bash -c " \
+  cd node_modules;
   git clone --depth=1 https://github.com/laborima/ocearo-ui; \
   cd ocearo-ui; \
-  npm install next react react-dom; \
+  pnpm install next tailwindcss; \
   export MAKEFLAGS='-j 8'; \
   export NODE_ENV=production; \
-  npm run build; \
+  pnpm run build; \
   cp -r ./out/* public/; rm -rf ./out; \
-  rm -rf ./.git; cd .."
+  rm -rf ./.git; cd ../.."
 popd
 
 bash -c 'cat << EOF > /usr/local/share/applications/ocearo-ui.desktop
