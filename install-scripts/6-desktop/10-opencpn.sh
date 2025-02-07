@@ -105,3 +105,9 @@ mv -f ocpn-plugins.xml /home/user/.opencpn/
 chown user:user /home/user/.opencpn/ocpn-plugins.xml
 
 apt-mark hold opencpn
+
+# fixes for touchscreen
+cat << EOF > /etc/apt/sources.list.d/bookworm-preview.list
+deb https://www.free-x.de/deb4op bookworm-preview main
+EOF
+wget -O - https://www.free-x.de/deb4op/oss.boating.gpg.key | gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/oss.boating.gpg
