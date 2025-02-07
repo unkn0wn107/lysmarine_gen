@@ -225,7 +225,6 @@ Windlass, Bow Thruster, Lights)
 - SMS (Using Gammu)
 - Bluetooth (File Transfer)
 - AirPlay (via shairport-sync)
-- [SolarThing](https://github.com/wildmountainfarms/solarthing) Solar power monitoring
 
 
 ## Tools
