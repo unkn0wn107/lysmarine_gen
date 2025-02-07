@@ -110,4 +110,4 @@ apt-mark hold opencpn
 cat << EOF > /etc/apt/sources.list.d/bookworm-preview.list
 deb https://www.free-x.de/deb4op bookworm-preview main
 EOF
-wget -O - https://www.free-x.de/deb4op/oss.boating.gpg.key | gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/oss.boating.gpg
+wget -O - https://www.free-x.de/deb4op/oss.boating.gpg.key | gpg --dearmor | tee /etc/apt/trusted.gpg.d/oss.boating.gpg
