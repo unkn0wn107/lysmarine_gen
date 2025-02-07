@@ -94,11 +94,11 @@ inflateImage() {
     cp -fv "${imageLocation}" "$imageLocationInflated"
 
     if [ "$BBN_KIND" == "LITE" ] ; then
-      log "truncate image to 8.5G"
+      log "truncate image to 9.2G"
       truncate -s "9216M" "$imageLocationInflated"
     else
-      log "truncate image to 14.5G"
-      truncate -s "14848M" "$imageLocationInflated"
+      log "truncate image to 15.2G"
+      truncate -s "15232M" "$imageLocationInflated"
     fi
 
     log "resize last partition to 100%"
