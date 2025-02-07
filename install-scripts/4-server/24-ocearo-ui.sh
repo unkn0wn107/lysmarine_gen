@@ -11,7 +11,7 @@ npm install tailwindcss @tailwindcss/postcss next
 export MAKEFLAGS='-j 8'
 export NODE_ENV=production
 npm run build
-mv ./out/* ./public/; rm -rf ./out
+cp -rf ./out/* ./public/; rm -rf ./out
 rm -rf ./.git
 cd ..
 mv ./ocearo-ui /home/signalk/.signalk/node_modules/
