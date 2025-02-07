@@ -9,9 +9,9 @@ pushd /home/signalk/.signalk
   cd node_modules;
   git clone --depth=1 https://github.com/laborima/ocearo-ui; \
   cd ocearo-ui; \
+  pnpm install; \
   export MAKEFLAGS='-j 8'; \
   export NODE_ENV=production; \
-  pnpm install; \
   pnpm run build; \
   cp -r ./out/* public/; rm -rf ./out; \
   rm -rf ./.git; cd ../.."
