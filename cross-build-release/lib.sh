@@ -95,7 +95,7 @@ inflateImage() {
 
     if [ "$BBN_KIND" == "LITE" ] ; then
       log "truncate image to 8.5G"
-      truncate -s "8960M" "$imageLocationInflated"
+      truncate -s "9088M" "$imageLocationInflated"
     else
       log "truncate image to 14.5G"
       truncate -s "14848M" "$imageLocationInflated"
