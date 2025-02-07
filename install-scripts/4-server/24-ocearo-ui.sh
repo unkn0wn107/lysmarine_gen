@@ -1,6 +1,6 @@
 #!/bin/bash -e
 
-if [ "$BBN_KIND" == "FULL" ] ; then
+if [ "$BBN_KIND" == "LITE" ] ; then
   exit 0
 fi
 
