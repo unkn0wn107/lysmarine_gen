@@ -6,15 +6,15 @@ fi
 
 git clone --depth=1 https://github.com/laborima/ocearo-ui
 cd ocearo-ui
-npm install
-nmp install tailwindcss @tailwindcss/postcss next react react-dom
+#npm install
+npm install tailwindcss @tailwindcss/postcss next 
 export MAKEFLAGS='-j 8'
 export NODE_ENV=production
 npm run build
-mv -r ./out/* ./public/; rm -rf ./out
+cp -rf ./out/* ./public/; rm -rf ./out
 rm -rf ./.git
 cd ..
-mv -r ./ocearo-ui /home/signalk/.signalk/node_modules/
+mv ./ocearo-ui /home/signalk/.signalk/node_modules/
 chown -R signalk:signalk /home/signalk/.signalk/node_modules/ocearo-ui
 
 bash -c 'cat << EOF > /usr/local/share/applications/ocearo-ui.desktop
