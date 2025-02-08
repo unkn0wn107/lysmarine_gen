@@ -107,7 +107,12 @@ chown user:user /home/user/.opencpn/ocpn-plugins.xml
 apt-mark hold opencpn
 
 # fixes for touchscreen
-cat << EOF > /etc/apt/sources.list.d/bookworm-preview.list
-deb https://www.free-x.de/deb4op bookworm-preview main
-EOF
-wget -O - https://www.free-x.de/deb4op/oss.boating.gpg.key | gpg --dearmor | tee /etc/apt/trusted.gpg.d/oss.boating.gpg
+# we use gtk3 update with the fix from https://www.free-x.de/deb4op bookworm-preview
+# (Note: disabled this fix as it broke other programs Stellarium, APMPlanner2, swipe gesture on BBNLauncher
+# It worked for OpenCPN and make zoom more sensitive (same might be achieved with twofing to change zoom step in
+# default profile)
+#cat << EOF > /etc/apt/sources.list.d/bookworm-preview.list
+#deb https://www.free-x.de/deb4op bookworm-preview main
+#EOF
+#wget -O - https://www.free-x.de/deb4op/oss.boating.gpg.key | gpg --dearmor | tee /etc/apt/trusted.gpg.d/oss.boating.gpg
+
