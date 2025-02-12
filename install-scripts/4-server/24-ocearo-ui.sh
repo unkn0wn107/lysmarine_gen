@@ -19,6 +19,8 @@ Icon=gnome-globe
 Categories=Navigation
 EOF'
 
+exit 0 # Now it is installed as SignalK plugin
+
 git clone --depth=1 https://github.com/laborima/ocearo-ui
 cd ocearo-ui
 #npm install
