@@ -154,7 +154,6 @@ else
                  signalk-polar \
                  signalk-scheduler \
                  openweather-signalk \
-                 ocearo-ui \
                  signalk-noaa-weather \
                  xdr-parser-plugin \
                  signalk-to-influxdb \
