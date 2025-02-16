@@ -64,7 +64,6 @@ apt-get -y -q --no-install-recommends --no-install-suggests install \
   cutesdr                               \
   fldigi                                \
   gpredict                              \
-  previsat                              \
   rtl-sdr                               \
   librtlsdr-dev                         \
   dos2unix                              \
@@ -86,6 +85,7 @@ apt-get -y -q --no-install-recommends --no-install-suggests install \
   libfftw3-dev
 
 #  direwolf                              \
+#  previsat                              \
 #  w-scan                                \
 #  multimon-ng                           \
 #  aprx                                  \
