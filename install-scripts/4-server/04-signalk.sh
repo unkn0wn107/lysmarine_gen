@@ -135,7 +135,6 @@ else
                  node-red-node-email \
                  node-red-node-serialport \
                  node-red-node-openweathermap \
-                 node-red-contrib-dht-sensor \
                  node-red-contrib-ds18b20-sensor \
                  node-red-contrib-sht31 \
                  @rakwireless/shtc3 \
