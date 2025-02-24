@@ -67,7 +67,7 @@ install -m 644 "$FILE_FOLDER"/signalk.service "/etc/systemd/system/signalk.servi
 
 ## Install signalK
 npm cache clean --force
-npm install -g npm pnpm patch-package
+npm install -g npm pnpm patch-package typescript node-gyp
 npm install -g --unsafe-perm --production signalk-server@2.13.2
 
 if [ "$BBN_KIND" == "LITE" ] ; then
@@ -194,6 +194,12 @@ else
   popd
 fi
 
+#d_old=$(pwd)
+#su signalk --shell=/bin/bash -c ' export MAKEFLAGS="-j 8"; \
+#  export NODE_ENV=production; \
+#  for i in /home/signalk/.signalk/node_modules/.pnpm/*/node_modules/sqlite3 ; \
+#  do cd $i; pnpm run rebuild; cd /home/signalk/.signalk/node_modules/.pnpm; done'
+#cd $d_old
 
 sed -i "s#sudo ##g" /home/signalk/.signalk/node_modules/signalk-raspberry-pi-monitoring/index.js || true
 sed -i "s#/opt/vc/bin/##g" /home/signalk/.signalk/node_modules/signalk-raspberry-pi-monitoring/index.js || true
