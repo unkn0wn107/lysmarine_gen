@@ -83,7 +83,6 @@ if [ "$BBN_KIND" == "LITE" ] ; then
                  signalk-raspberry-pi-bmp180  \
                  signalk-raspberry-pi-ina219  \
                  signalk-raspberry-pi-1wire  \
-                 signalk-raspberry-mcs  \
                  signalk-venus-plugin  \
                  signalk-mqtt-gw  \
                  signalk-derived-data  \
@@ -114,7 +113,6 @@ else
                  signalk-raspberry-pi-bmp180  \
                  signalk-raspberry-pi-ina219  \
                  signalk-raspberry-pi-1wire  \
-                 signalk-raspberry-mcs  \
                  signalk-venus-plugin  \
                  signalk-mqtt-gw  \
                  signalk-mqtt-home-asisstant  \
