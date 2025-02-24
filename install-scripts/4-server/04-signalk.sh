@@ -145,7 +145,6 @@ else
                  signalk-sonoff-ewelink  \
                  signalk-raspberry-pi-monitoring  \
                  @mxtommy/kip  \
-                 signalk-fusion-stereo  \
                  signalk-barometer-trend  \
                  @oehoe83/signalk-raspberry-pi-bme680  \
                  signalk-barograph \
