@@ -32,7 +32,7 @@ fi
 
 ## Dependencies of signalK.
 apt-get install -y -q python3-dev git nodejs \
- libnss-mdns avahi-utils \
+ libnss-mdns avahi-utils libsqlite3-0 g++ \
  node-abstract-leveldown node-nan libzmq3-dev libkrb5-dev libavahi-compat-libdnssd-dev jq
 
 install -d -m 755 -o signalk -g signalk "/home/signalk/.signalk"
