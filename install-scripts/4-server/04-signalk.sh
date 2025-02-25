@@ -70,6 +70,15 @@ npm cache clean --force
 npm install -g npm pnpm patch-package typescript node-gyp
 npm install -g --unsafe-perm --production signalk-server@2.13.2
 
+
+# pnpm approve-builds -g needed to fix
+# Ignored build scripts: @serialport/bindings, @serialport/bindings-cpp,
+# @signalk/vedirect-serial-usb, abstract-socket, bcrypt, better-sqlite3,
+# bufferutil, core-js, es5-ext, fs-ext, i2c-bus, kerberos, leveldown,
+# mdns, node-cron, node-red-dashboard, serialport, snappy, snyk, sqlite3,
+# utf-8-validate, zmq.
+# Run "pnpm approve-builds" to pick which dependencies should be allowed
+
 if [ "$BBN_KIND" == "LITE" ] ; then
   ## Install signalK published plugins
   pushd /home/signalk/.signalk
