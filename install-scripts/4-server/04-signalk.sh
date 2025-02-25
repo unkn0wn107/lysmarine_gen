@@ -107,7 +107,7 @@ if [ "$BBN_KIND" == "LITE" ] ; then
                  signalk-path-filter \
                  signalk-datetime \
                  @meri-imperiumi/signalk-autostate --unsafe-perm --loglevel error; \
-                 echo -e 'ay\n' | pnpm approve-builds \
+                 echo -e 'a\ny\n' | pnpm approve-builds \
                  @serialport/bindings @serialport/bindings-cpp \
                  @signalk/vedirect-serial-usb abstract-socket bcrypt better-sqlite3 \
                  bufferutil core-js es5-ext fs-ext i2c-bus kerberos leveldown \
@@ -202,7 +202,7 @@ else
                  @meri-imperiumi/signalk-autostate \
                  @meri-imperiumi/signalk-alternator-engine-on \
                  signalk-saillogger --unsafe-perm --loglevel error; \
-                 echo -e 'ay\n' | pnpm approve-builds \
+                 echo -e 'a\ny\n' | pnpm approve-builds \
                  @serialport/bindings @serialport/bindings-cpp \
                  @signalk/vedirect-serial-usb abstract-socket bcrypt better-sqlite3 \
                  bufferutil core-js es5-ext fs-ext i2c-bus kerberos leveldown \
