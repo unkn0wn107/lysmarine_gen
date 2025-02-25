@@ -46,6 +46,7 @@ install -o 1000 -g 1000 -d /home/user/.config/autostart
   echo "dconf write /org/gnome/desktop/screensaver/lock-enabled false"
   echo "dconf write /org/gnome/desktop/screensaver/lock-delay 'uint32 0'"
   echo "dconf write /org/gnome/desktop/session/idle-delay 'uint32 0'"
+  echo "dconf write /org/gnome/calculator/refresh-interval 0"
 } >> /home/user/.config/openbox/autostart
 
 echo "sed -i 's/^dconf\ /#&/' /home/user/.config/openbox/autostart" >> /home/user/.config/openbox/autostart
