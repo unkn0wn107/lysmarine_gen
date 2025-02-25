@@ -83,6 +83,7 @@ su homeassistant --shell=/bin/bash -c "
   source bin/activate;
   python3.11 -m pip install wheel;
   pip3.11 install esphome tornado esptool;
+  pip3.11 install josepy==1.15.0 certifi==2024.12.14
   rm -rf /home/homeassistant/.cache"
 
 bash -c 'cat << EOF > /etc/systemd/system/esphome@homeassistant.service
