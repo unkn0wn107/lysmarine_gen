@@ -71,7 +71,7 @@ npm install -g npm pnpm patch-package typescript node-gyp
 npm install -g --unsafe-perm --production signalk-server@2.13.2
 
 
-# pnpm approve-builds -g needed to fix
+# pnpm approve-builds needed to fix
 # Ignored build scripts: @serialport/bindings, @serialport/bindings-cpp,
 # @signalk/vedirect-serial-usb, abstract-socket, bcrypt, better-sqlite3,
 # bufferutil, core-js, es5-ext, fs-ext, i2c-bus, kerberos, leveldown,
@@ -83,7 +83,13 @@ if [ "$BBN_KIND" == "LITE" ] ; then
   ## Install signalK published plugins
   pushd /home/signalk/.signalk
     su signalk --shell=/bin/bash -c "export MAKEFLAGS='-j 8'; \
-                 export NODE_ENV=production; pnpm approve-builds -g; \
+                 export NODE_ENV=production;
+                 echo -e 'a\n' | pnpm approve-builds \
+                 @serialport/bindings @serialport/bindings-cpp \
+                 @signalk/vedirect-serial-usb abstract-socket bcrypt better-sqlite3 \
+                 bufferutil core-js es5-ext fs-ext i2c-bus kerberos leveldown \
+                 mdns, node-cron node-red-dashboard serialport snappy snyk sqlite3 \
+                 utf-8-validate zmq; \
                  pnpm install \
                  @signalk/resources-provider \
                  @signalk/charts-plugin  \
@@ -112,7 +118,13 @@ else
   ## Install signalK published plugins
   pushd /home/signalk/.signalk
     su signalk --shell=/bin/bash -c "export MAKEFLAGS='-j 8'; \
-                 export NODE_ENV=production; pnpm approve-builds -g; \
+                 export NODE_ENV=production; \
+                 echo -e 'a\n' | pnpm approve-builds \
+                 @serialport/bindings @serialport/bindings-cpp \
+                 @signalk/vedirect-serial-usb abstract-socket bcrypt better-sqlite3 \
+                 bufferutil core-js es5-ext fs-ext i2c-bus kerberos leveldown \
+                 mdns, node-cron node-red-dashboard serialport snappy snyk sqlite3 \
+                 utf-8-validate zmq; \
                  pnpm install \
                  @signalk/resources-provider \
                  @signalk/charts-plugin  \
