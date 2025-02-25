@@ -84,12 +84,6 @@ if [ "$BBN_KIND" == "LITE" ] ; then
   pushd /home/signalk/.signalk
     su signalk --shell=/bin/bash -c "export MAKEFLAGS='-j 8'; \
                  export NODE_ENV=production;
-                 echo -e 'a\n' | pnpm approve-builds \
-                 @serialport/bindings @serialport/bindings-cpp \
-                 @signalk/vedirect-serial-usb abstract-socket bcrypt better-sqlite3 \
-                 bufferutil core-js es5-ext fs-ext i2c-bus kerberos leveldown \
-                 mdns, node-cron node-red-dashboard serialport snappy snyk sqlite3 \
-                 utf-8-validate zmq; \
                  pnpm install \
                  @signalk/resources-provider \
                  @signalk/charts-plugin  \
@@ -112,7 +106,13 @@ if [ "$BBN_KIND" == "LITE" ] ; then
                  xdr-parser-plugin \
                  signalk-path-filter \
                  signalk-datetime \
-                 @meri-imperiumi/signalk-autostate --unsafe-perm --loglevel error"
+                 @meri-imperiumi/signalk-autostate --unsafe-perm --loglevel error; \
+                 echo -e 'a\n' | pnpm approve-builds \
+                 @serialport/bindings @serialport/bindings-cpp \
+                 @signalk/vedirect-serial-usb abstract-socket bcrypt better-sqlite3 \
+                 bufferutil core-js es5-ext fs-ext i2c-bus kerberos leveldown \
+                 mdns, node-cron node-red-dashboard serialport snappy snyk sqlite3 \
+                 utf-8-validate zmq"
   popd
 else
   ## Install signalK published plugins
@@ -207,7 +207,13 @@ else
                  signalk-navtex-plugin \
                  @meri-imperiumi/signalk-autostate \
                  @meri-imperiumi/signalk-alternator-engine-on \
-                 signalk-saillogger --unsafe-perm --loglevel error"
+                 signalk-saillogger --unsafe-perm --loglevel error; \
+                 echo -e 'a\n' | pnpm approve-builds \
+                 @serialport/bindings @serialport/bindings-cpp \
+                 @signalk/vedirect-serial-usb abstract-socket bcrypt better-sqlite3 \
+                 bufferutil core-js es5-ext fs-ext i2c-bus kerberos leveldown \
+                 mdns, node-cron node-red-dashboard serialport snappy snyk sqlite3 \
+                 utf-8-validate zmq"
   popd
 fi
 
