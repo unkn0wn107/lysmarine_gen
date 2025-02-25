@@ -74,7 +74,7 @@ if [ "$BBN_KIND" == "LITE" ] ; then
   ## Install signalK published plugins
   pushd /home/signalk/.signalk
     su signalk --shell=/bin/bash -c "export MAKEFLAGS='-j 8'; \
-                 export NODE_ENV=production; \
+                 export NODE_ENV=production; pnpm approve-builds -g; \
                  pnpm install \
                  @signalk/resources-provider \
                  @signalk/charts-plugin  \
@@ -103,7 +103,7 @@ else
   ## Install signalK published plugins
   pushd /home/signalk/.signalk
     su signalk --shell=/bin/bash -c "export MAKEFLAGS='-j 8'; \
-                 export NODE_ENV=production; \
+                 export NODE_ENV=production; pnpm approve-builds -g; \
                  pnpm install \
                  @signalk/resources-provider \
                  @signalk/charts-plugin  \
