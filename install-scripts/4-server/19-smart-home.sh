@@ -35,7 +35,6 @@ su homeassistant --shell=/bin/bash -c "
   mkdir -p /home/homeassistant/.homeassistant;
   rm -rf /home/homeassistant/.cache"
 
-
 bash -c 'cat << EOF > /etc/systemd/system/home-assistant@homeassistant.service
 [Unit]
 Description=Home Assistant
