@@ -190,17 +190,17 @@ else
   popd
 fi
 
-d_old=$(pwd)
-su signalk --shell=/bin/bash -c ' export MAKEFLAGS="-j 8"; \
-  export NODE_ENV=production; \
-  for i in /home/signalk/.signalk/node_modules/.pnpm/*/node_modules/sqlite3 ; \
-  do cd $i; pnpm run rebuild; cd /home/signalk/.signalk/node_modules/.pnpm; done'
-
-su signalk --shell=/bin/bash -c ' export MAKEFLAGS="-j 8"; \
-  export NODE_ENV=production; \
-  for i in /home/signalk/.signalk/node_modules/.pnpm/*/node_modules/i2c-bus ; \
-  do cd $i; pnpm run install; cd /home/signalk/.signalk/node_modules/.pnpm; done'
-cd $d_old
+#d_old=$(pwd)
+#su signalk --shell=/bin/bash -c ' export MAKEFLAGS="-j 8"; \
+#  export NODE_ENV=production; \
+#  for i in /home/signalk/.signalk/node_modules/.pnpm/*/node_modules/sqlite3 ; \
+#  do cd $i; pnpm run rebuild; cd /home/signalk/.signalk/node_modules/.pnpm; done'
+#
+#su signalk --shell=/bin/bash -c ' export MAKEFLAGS="-j 8"; \
+#  export NODE_ENV=production; \
+#  for i in /home/signalk/.signalk/node_modules/.pnpm/*/node_modules/i2c-bus ; \
+#  do cd $i; pnpm run install; cd /home/signalk/.signalk/node_modules/.pnpm; done'
+#cd $d_old
 
 sed -i "s#sudo ##g" /home/signalk/.signalk/node_modules/signalk-raspberry-pi-monitoring/index.js || true
 sed -i "s#/opt/vc/bin/##g" /home/signalk/.signalk/node_modules/signalk-raspberry-pi-monitoring/index.js || true
