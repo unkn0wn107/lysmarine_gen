@@ -15,7 +15,7 @@ rm -rf /usr/share/doc/openjdk*/test*/*
 rm -rf /usr/share/doc/python3*/HISTORY.*
 rm -rf /usr/share/doc/python3*/NEWS.*
 rm -rf /usr/share/backgrounds/budgie/*
-rm -rf /opt/arduino-*/examples
+#rm -rf /opt/arduino-*/examples
 #rm -rf /opt/arduino-*/libraries/*/examples
 
 find /usr/share/doc -name changelog\*.gz -exec rm -f {} \;
