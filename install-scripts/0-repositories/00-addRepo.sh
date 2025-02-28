@@ -3,6 +3,10 @@
 apt-get update  -y -q
 apt-get install -y -q wget gnupg ca-certificates
 
+# Detect architecture
+CPU_ARCH=$(dpkg --print-architecture)
+echo "Detected architecture: $CPU_ARCH"
+
 ## Add repository sources
 install -m 0644 -v "$FILE_FOLDER"/nodesource.list "/etc/apt/sources.list.d/"
 install -m 0644 -v "$FILE_FOLDER"/mosquitto.list "/etc/apt/sources.list.d/"
@@ -12,7 +16,14 @@ install -m 0644 -v "$FILE_FOLDER"/mopidy.list "/etc/apt/sources.list.d/"
 install -m 0644 -v "$FILE_FOLDER"/bbn-autoadb.list "/etc/apt/sources.list.d/"
 #install -m 0644 -v "$FILE_FOLDER"/bbn-rce.list "/etc/apt/sources.list.d/"
 install -m 0644 -v "$FILE_FOLDER"/raspotify.list "/etc/apt/sources.list.d/"
-install -m 0644 -v "$FILE_FOLDER"/jellyfin.list "/etc/apt/sources.list.d/"
+
+# Use architecture-specific Jellyfin repository
+if [ "$CPU_ARCH" = "amd64" ]; then
+  install -m 0644 -v "$FILE_FOLDER"/jellyfin-amd64.list "/etc/apt/sources.list.d/jellyfin.list"
+else
+  install -m 0644 -v "$FILE_FOLDER"/jellyfin.list "/etc/apt/sources.list.d/"
+fi
+
 install -m 0644 -v "$FILE_FOLDER"/debian-backports.list "/etc/apt/sources.list.d/"
 install -m 0644 -v "$FILE_FOLDER"/opencpn.list "/etc/apt/sources.list.d/"
 install -m 0644 -v "$FILE_FOLDER"/xygrib.list "/etc/apt/sources.list.d/"
@@ -25,7 +36,11 @@ install -m 0644 -v "$FILE_FOLDER"/bbn-noaa-apt.list "/etc/apt/sources.list.d/"
 #install -m 0644 -v "$FILE_FOLDER"/chirp.list "/etc/apt/sources.list.d/"
 install -m 0644 -v "$FILE_FOLDER"/stellarium.list "/etc/apt/sources.list.d/"
 #install -m 0644 -v "$FILE_FOLDER"/piaware-bookworm.list "/etc/apt/sources.list.d/"
-install -m 0644 -v "$FILE_FOLDER"/box86.list "/etc/apt/sources.list.d/"
+
+# Box86 is only needed for ARM architectures
+if [ "$CPU_ARCH" != "amd64" ]; then
+  install -m 0644 -v "$FILE_FOLDER"/box86.list "/etc/apt/sources.list.d/"
+fi
 
 #wget -O /etc/apt/sources.list.d/piaware.list https://abcd567a.github.io/rpi/abcd567a.list
 #wget -O /etc/apt/sources.list.d/box86.list https://ryanfortner.github.io/box86-debs/box86.list
@@ -68,7 +83,12 @@ curl -1sLf https://raw.githubusercontent.com/bareboat-necessities/lysmarine_gen/
 curl -1sLf https://raw.githubusercontent.com/bareboat-necessities/lysmarine_gen/master/public-keys/flightaware/gpg.flightaware.key | apt-key add -
 
 wget -O /etc/apt/trusted.gpg.d/abcd567a-key.gpg https://github.com/abcd567a/abcd567a.github.io/raw/master/debian12/KEY2.gpg # PiAware
-wget -qO- https://ryanfortner.github.io/box86-debs/KEY.gpg | gpg --dearmor | tee /usr/share/keyrings/box86-debs-archive-keyring.gpg # Box86
+
+# Box86 key only needed for ARM architectures
+if [ "$CPU_ARCH" != "amd64" ]; then
+  wget -qO- https://ryanfortner.github.io/box86-debs/KEY.gpg | gpg --dearmor | tee /usr/share/keyrings/box86-debs-archive-keyring.gpg # Box86
+fi
+
 wget -q -O - https://apt.grafana.com/gpg.key | gpg --dearmor > /usr/share/keyrings/grafana.gpg
 
 mkdir -p /etc/apt/keyrings
@@ -79,13 +99,23 @@ echo '393e8779c89ac8d958f81f942f9ad7fb82a25e133faddaf92e15b16e6ac9ce4c influxdat
 echo 'deb [signed-by=/etc/apt/trusted.gpg.d/influxdata-archive_compat.gpg] https://repos.influxdata.com/debian stable main' | tee /etc/apt/sources.list.d/influxdata.list
 rm influxdata-archive_compat.key
 
-wget https://www.flightaware.com/adsb/piaware/files/packages/pool/piaware/f/flightaware-apt-repository/flightaware-apt-repository_1.2_all.deb
-dpkg -i flightaware-apt-repository_1.2_all.deb
-rm -f flightaware-apt-repository_1.2_all.deb
+if [ "$CPU_ARCH" = "amd64" ]; then
+  # No FlightAware repo for AMD64
+  echo "AMD64 build - skipping FlightAware repository setup"
+else
+  # FlightAware for ARM only
+  wget https://www.flightaware.com/adsb/piaware/files/packages/pool/piaware/f/flightaware-apt-repository/flightaware-apt-repository_1.2_all.deb
+  dpkg -i flightaware-apt-repository_1.2_all.deb
+  rm -f flightaware-apt-repository_1.2_all.deb
+fi
 
 ## Update && Upgrade
 apt-get update  -y -q
-apt-mark hold linux-image-rpi-2712 linux-image-rpi-v8 linux-headers-rpi-2712 linux-headers-rpi-v8 linux-libc-dev
+
+if [ "$CPU_ARCH" != "amd64" ]; then
+  apt-mark hold linux-image-rpi-2712 linux-image-rpi-v8 linux-headers-rpi-2712 linux-headers-rpi-v8 linux-libc-dev
+fi
+
 apt-get upgrade -y -q
 apt-get autoremove -y --purge
 
