@@ -17,7 +17,7 @@
 
   # Download the Debian image
   log "Downloading Debian image from internet."
-  myCache=./cache/$thisArch
+  myCache=${cacheDir}/$thisArch
   if [ ! -f $myCache/"$(basename $imageSource)" ]; then
     wget -P $myCache/ $imageSource
   fi
@@ -86,7 +86,9 @@ EOF
     # Configure the system
     chroot $myCache/mnt/rootfs /bin/bash -xe << EOF
 apt-get update
-apt-get install -y linux-image-amd64 grub-pc network-manager sudo iproute2 firmware-linux
+sed -i 's/deb http:\/\/deb.debian.org\/debian bookworm main/deb http:\/\/deb.debian.org\/debian bookworm main contrib non-free non-free-firmware/g' /etc/apt/sources.list
+apt-get update
+apt-get install -y linux-image-amd64 grub-pc network-manager sudo iproute2 firmware-linux-free firmware-misc-nonfree
 EOF
     
     # Install bootloader
