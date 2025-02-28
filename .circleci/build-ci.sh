@@ -29,7 +29,7 @@ DOCKER_CONTAINER_ID=$(docker ps --last 4 | grep "$CONTAINER_DISTRO" | awk '{prin
 
 docker exec --privileged -ti "$DOCKER_CONTAINER_ID" apt-get update
 docker exec --privileged -ti "$DOCKER_CONTAINER_ID" apt-get -y install dpkg-dev debhelper devscripts equivs pkg-config apt-utils fakeroot \
-  proot git-core live-build kpartx p7zip p7zip-full parted fdisk e2fsprogs qemu-user zerofree
+  proot git-core live-build kpartx p7zip p7zip-full parted fdisk e2fsprogs qemu-user zerofree dosfstools
 
 # Determine which build script to use based on architecture
 if [ "$PKG_ARCH" = "amd64" ]; then
