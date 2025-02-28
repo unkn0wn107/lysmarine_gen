@@ -114,21 +114,27 @@ setArguments() {
 
 # Create caching folder hierarchy to work with this architecture
 setupWorkSpace() {
+  # Set default paths if not already set
+  cacheDir="${cacheDir:-./cache}"
+  workDir="${workDir:-./work}"
+  releaseDir="${releaseDir:-./release}"
+  
+  thisArch=$1
   ## Folder containing the unziped original content of the isofile
-	mkdir -p "$cacheDir/iso"
+	mkdir -p "$cacheDir/$thisArch/iso"
 	## Content of the root filesystem extracted from isofile ( unused if it's an imagefile)
-	mkdir -p "$cacheDir/mnt"
+	mkdir -p "$cacheDir/$thisArch/mnt"
 	## mountPoint of the root fileSystem of the original OS to be served as lower layer in overlayfs
-	mkdir -p "$workDir/mnt"
+	mkdir -p "$workDir/$thisArch/mnt"
 	## mountPoint of the root fileSystem of the release OS to put the payload in it
-	mkdir -p "$workDir/releaseMnt"
+	mkdir -p "$workDir/$thisArch/releaseMnt"
   # OverlayFS merged and work layers
-	mkdir -p "$workDir/workdir"
-	mkdir -p "$workDir/fakeLayer"
+	mkdir -p "$workDir/$thisArch/workdir"
+	mkdir -p "$workDir/$thisArch/fakeLayer"
 	# Where the final lysmarine OS is stored.
-	mkdir -p "$releaseDir"
+	mkdir -p "$releaseDir/$thisArch"
 	# mergerFS location for where overlayfs need can't see mounts.
-	mkdir -p "$workDir/mergedMnt"
+	mkdir -p "$workDir/$thisArch/mergedMnt"
 }
 
 
