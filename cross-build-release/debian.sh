@@ -188,4 +188,48 @@ EOF
   cp -v -l ./work/$thisArch/$imageName ./release/$thisArch/"$BBN_IMG"
 
   exit 0
+}
+
+# Define the mountImageFile function that is missing
+mountImageFile() {
+  thisArch=$1
+  imageFile=$2
+  
+  # Mount the image and make the binds required to chroot
+  log "Mounting image file for chroot: $imageFile"
+  
+  # Create mount points if they don't exist
+  mkdir -p work/${thisArch}/rootfs
+  mkdir -p work/${thisArch}/bootfs
+  
+  # Set up loop device
+  loopdevice=$(losetup -f --show "$imageFile")
+  partitions=$(kpartx -sav "$loopdevice" | cut -d' ' -f3)
+  loopId=$(echo "$partitions" | grep -oh '[0-9]*' | head -n 1)
+  
+  # Mount partitions
+  mount -v "/dev/mapper/loop${loopId}p2" "work/${thisArch}/rootfs"
+  mount -v "/dev/mapper/loop${loopId}p1" "work/${thisArch}/rootfs/boot"
+  
+  # Return loop device and ID for later cleanup
+  export MOUNTED_LOOP_DEVICE=$loopdevice
+  export MOUNTED_LOOP_ID=$loopId
+}
+
+# Define the umountImageFile function for cleanup
+umountImageFile() {
+  thisArch=$1
+  imageFile=$2
+  
+  log "Unmounting image file: $imageFile"
+  
+  # Unmount partitions
+  umount -v "work/${thisArch}/rootfs/boot" || true
+  umount -v "work/${thisArch}/rootfs" || true
+  
+  # Clean up loop device
+  if [ -n "$MOUNTED_LOOP_DEVICE" ]; then
+    kpartx -d "$MOUNTED_LOOP_DEVICE"
+    losetup -d "$MOUNTED_LOOP_DEVICE"
+  fi
 } 
