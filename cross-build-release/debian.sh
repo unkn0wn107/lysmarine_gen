@@ -66,6 +66,12 @@
     mount /dev/mapper/loop${loopId}p1 $myCache/mnt/bootfs
     mount /dev/mapper/loop${loopId}p2 $myCache/mnt/rootfs
     
+    # Mount virtual filesystems for chroot
+    mount -o bind /dev $myCache/mnt/rootfs/dev
+    mount -o bind /dev/pts $myCache/mnt/rootfs/dev/pts
+    mount -o bind /proc $myCache/mnt/rootfs/proc
+    mount -o bind /sys $myCache/mnt/rootfs/sys
+    
     # Extract Debian base system (using debootstrap)
     apt-get update
     apt-get install -y debootstrap
@@ -92,13 +98,20 @@ apt-get install -y linux-image-amd64 grub-pc network-manager sudo iproute2 firmw
 EOF
     
     # Install bootloader
+    LOOP_DEVICE_PATH=$loopdevice
     chroot $myCache/mnt/rootfs /bin/bash -xe << EOF
-grub-install --boot-directory=/boot --force /dev/loop${loopId}
+# Make sure grub can find the correct device
+mkdir -p /boot/grub
+grub-install --boot-directory=/boot --root-directory=/ --force ${LOOP_DEVICE_PATH}
 update-grub
 EOF
     
     # Clean up mounts
     umount $myCache/mnt/rootfs/boot
+    umount $myCache/mnt/rootfs/dev/pts
+    umount $myCache/mnt/rootfs/dev
+    umount $myCache/mnt/rootfs/proc
+    umount $myCache/mnt/rootfs/sys
     umount $myCache/mnt/rootfs
     umount $myCache/mnt/bootfs
     
