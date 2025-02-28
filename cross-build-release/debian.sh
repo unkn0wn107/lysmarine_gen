@@ -66,16 +66,21 @@
     mount /dev/mapper/loop${loopId}p1 $myCache/mnt/bootfs
     mount /dev/mapper/loop${loopId}p2 $myCache/mnt/rootfs
     
+    # Extract Debian base system (using debootstrap)
+    apt-get update
+    apt-get install -y debootstrap
+    debootstrap --arch=amd64 bookworm $myCache/mnt/rootfs http://deb.debian.org/debian
+    
+    # Create mount points for virtual filesystems
+    mkdir -p $myCache/mnt/rootfs/dev/pts
+    mkdir -p $myCache/mnt/rootfs/proc
+    mkdir -p $myCache/mnt/rootfs/sys
+    
     # Mount virtual filesystems for chroot
     mount -o bind /dev $myCache/mnt/rootfs/dev
     mount -o bind /dev/pts $myCache/mnt/rootfs/dev/pts
     mount -o bind /proc $myCache/mnt/rootfs/proc
     mount -o bind /sys $myCache/mnt/rootfs/sys
-    
-    # Extract Debian base system (using debootstrap)
-    apt-get update
-    apt-get install -y debootstrap
-    debootstrap --arch=amd64 bookworm $myCache/mnt/rootfs http://deb.debian.org/debian
     
     # Basic system configuration
     mkdir -p $myCache/mnt/rootfs/boot
@@ -99,10 +104,30 @@ EOF
     
     # Install bootloader
     LOOP_DEVICE_PATH=$loopdevice
+    BOOT_PARTITION=/dev/mapper/loop${loopId}p1
+    ROOT_PARTITION=/dev/mapper/loop${loopId}p2
+    
+    # Create a device.map file to help GRUB find the right device
+    mkdir -p $myCache/mnt/rootfs/boot/grub
+    cat > $myCache/mnt/rootfs/boot/grub/device.map << EOF
+(hd0) ${LOOP_DEVICE_PATH}
+(hd0,1) ${BOOT_PARTITION}
+(hd0,2) ${ROOT_PARTITION}
+EOF
+    
+    # Create a custom configuration for GRUB
+    cat > $myCache/mnt/rootfs/etc/default/grub << EOF
+GRUB_DISTRIBUTOR="Lysmarine"
+GRUB_DEFAULT=0
+GRUB_TIMEOUT=5
+GRUB_CMDLINE_LINUX_DEFAULT="quiet"
+GRUB_CMDLINE_LINUX="root=/dev/sda2"
+EOF
+    
     chroot $myCache/mnt/rootfs /bin/bash -xe << EOF
 # Make sure grub can find the correct device
 mkdir -p /boot/grub
-grub-install --boot-directory=/boot --root-directory=/ --force ${LOOP_DEVICE_PATH}
+grub-install --boot-directory=/boot --force ${LOOP_DEVICE_PATH}
 update-grub
 EOF
     
