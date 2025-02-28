@@ -70,9 +70,22 @@ jobs:
       - EMU=off
     steps:
       - do-all
+  build-debian-bookworm-amd64:
+    executor: boot-linux
+    environment:
+      - DOCKER_IMAGE=debian:bookworm
+      - CONTAINER_DISTRO=debian:bookworm
+      - PKG_RELEASE=debian
+      - PKG_DISTRO=bookworm
+      - PKG_ARCH=amd64
+      - BBN_KIND=FULL
+      - EMU=off
+    steps:
+      - do-all
 workflows:
   version: 2
   build_all:
     jobs:
       - build-full-raspbian-bookworm-arm64
       - build-lite-raspbian-bookworm-arm64
+      - build-debian-bookworm-amd64
